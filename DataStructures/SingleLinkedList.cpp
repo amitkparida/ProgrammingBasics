@@ -190,8 +190,6 @@ void CLinkedList::InsertAtPosition(int position, int newdata) {
 	}
 
 	newnode = new Node(newdata);
-	//newnode->data = newdata;
-	//newnode->next = NULL;
 
 	if (position == 1)
 	{
