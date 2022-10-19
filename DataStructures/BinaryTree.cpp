@@ -41,32 +41,20 @@ Node* buildTree(Node* root) {
 void levelOrderTraversal(Node* root) {
     queue<Node*> q;
     q.push(root);
-    q.push(NULL);  //separator to print in tree like structure
 
     while (!q.empty()) {
         Node* temp = q.front();
+        cout << temp->data << " ";
         q.pop();
 
-        if (temp == NULL) {
-            //purana level complete traverse ho chuka hai
-            cout << endl;
-            if (!q.empty()) {
-                //queue still has some child ndoes
-                q.push(NULL);
-            }
+        if (temp->left) {
+            q.push(temp->left);
         }
-        else {
-            cout << temp->data << " ";
-            if (temp->left) {
-                q.push(temp->left);
-            }
 
-            if (temp->right) {
-                q.push(temp->right);
-            }
+        if (temp->right) {
+            q.push(temp->right);
         }
     }
-
 }
 
 void inorder(Node* root) {
