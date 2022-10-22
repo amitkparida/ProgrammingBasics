@@ -1,63 +1,3 @@
-
-/*
-// From Udemy Abdul Bari course : https://www.udemy.com/course/datastructurescncpp/learn/lecture/13193650#overview
-//BFS for Adjacency matrix representation of graph
-#include <iostream>
-#include <queue>
-
-using namespace std;
-
-void BFS(int vtx, int A[][8], int n) {
-    queue<int> Q;
-    int visited[8]{ 0 };
-
-    // Initial
-    cout << vtx << ", " << flush;  // Visit vertex
-    visited[vtx] = 1;
-    Q.emplace(vtx);
-
-    // Explore
-    while (!Q.empty()) {
-        int u = Q.front();  // Vertex u for exploring
-        Q.pop();
-        for (int v = 1; v <= n; v++) {  // Adjacent vertices of vertex u
-            if (A[u][v] == 1 && visited[v] == 0) {  // Adjacent vertex and not visited
-                cout << v << ", " << flush;  // Visit vertex
-                visited[v] = 1;
-                Q.emplace(v);
-            }
-        }
-    }
-    cout << endl;
-}
-
-int main() {
-
-    int A[8][8] = { {0, 0, 0, 0, 0, 0, 0, 0},
-                   {0, 0, 1, 1, 1, 0, 0, 0},
-                   {0, 1, 0, 1, 0, 0, 0, 0},
-                   {0, 1, 1, 0, 1, 1, 0, 0},
-                   {0, 1, 0, 1, 0, 1, 0, 0},
-                   {0, 0, 0, 1, 1, 0, 1, 1},
-                   {0, 0, 0, 0, 0, 1, 0, 0},
-                   {0, 0, 0, 0, 0, 1, 0, 0} };
-
-    cout << "Vertex: 1 -> " << flush;
-    BFS(1, A, 8);
-
-    cout << "Vertex: 4 -> " << flush;
-    BFS(4, A, 8);
-
-
-    return 0;
-}
-*/
-
-
-
-
-//From : https://www.youtube.com/watch?v=0rg74kONSgU
-
 /*
 NOTES:
 0. BFS is one of the tree / graph traversal algorithm.
@@ -82,56 +22,86 @@ STEPS:
 
 */
 
+//  https://takeuforward.org/graph/breadth-first-search-bfs-level-order-traversal/
+// For class representaion : https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
+
 #include <iostream>
 #include <vector>
 #include <queue>
 using namespace std;
 
-vector<vector<int>> Vec;
-vector <bool> visited;
 
-void BFS(int node) {
-    queue<int> q;
-    q.push(node);
-    visited[node] = true;
+// node = starting node
+vector<int> BFS(int node, vector<vector<int>> adj) {
+	vector <int> result;
 
-    while (!q.empty()) {
-        node = q.front();
-        q.pop();
-        cout << node << " ";
+	//Mark all the vertices as not visited
+	vector <bool> visited;
+	visited.resize(adj.size(), false); // size  = nodes + 1 if the input graph is 1 based. If the input graph starts at 0. then size = nodes.
 
-        for (int i = 0; i < Vec[node].size(); i++) {
-            if (!visited[Vec[node][i]]) {
-                q.push(Vec[node][i]);
-                visited[Vec[node][i]] = true;
-            }
-        }
+	//Create a queue for BFS
+	queue<int> q;
 
-    }
+	// Push the current vertex to queue and mark it as visited 
+	q.push(node);
+	visited[node] = true;
+
+	while (!q.empty()) {
+		// Dequeue a vertex from queue and add it to the result vector 
+		node = q.front();
+		q.pop();
+		result.push_back(node);
+
+		// Traverse the adjacent vertices of the dequeued vertex. If a adjacent vertex has not been visited, then enqueue it and mark it as visited.
+		for (int i = 0; i < adj[node].size(); i++) {
+			if (!visited[adj[node][i]]) {
+				q.push(adj[node][i]);
+				visited[adj[node][i]] = true;
+			}
+		}
+
+		//for (auto it : adj[node]) {
+		//	if (!visited[it]) {
+		//		q.push(it);
+		//		visited[it] = true;
+		//	}
+		//}
+	}
+
+	return result;
 }
 
 int main() {
+	int V, E, u, v; //V = no of vertices/nodes, E = no of edges, (u, v) are source and destination nodes that represent an edge 
 
-    int N, u, v;
-    cin >> N;
+	cin >> V >> E;
 
-    Vec.resize(N + 1);
-    visited.resize(N + 1);
+	// declare the adjacent list 
+	vector<vector<int>> adj;
+	adj.resize(V + 1); // size  = nodes + 1 if the input graph is 1 based. If the input graph starts at 0. then size = nodes.
 
-    while (N--) {
-        cin >> u >> v; 
-        Vec[u].push_back(v);
-        Vec[v].push_back(v);
-    }
+	// take edges as input 
+	for (int i = 0; i < E; ++i)
+	{
+		cin >> u >> v;
+		adj[u].push_back(v);
+		adj[v].push_back(u);
+	}
 
-    BFS(1);
+	cout << "Following is Breadth First Traversal starting from vertex 1 \n";
 
-    return 0;
+	vector<int> result = BFS(1, adj); 
+
+	for (int i = 0; i < result.size(); i++) {
+		cout << result[i] << " ";
+	}
+	cout << endl;
+
+	return 0;
 }
 
-
 //Input format
-//7
+//6 7    <------- 6 = No of nodes, 7 = no of edges
 //1 2
 //1 4
 //4 5
@@ -139,5 +109,64 @@ int main() {
 //2 3
 //3 6
 //4 6
+
+
+//===========================================================================================================
+
+
+
+/*
+// From Udemy Abdul Bari course : https://www.udemy.com/course/datastructurescncpp/learn/lecture/13193650#overview
+//BFS for Adjacency matrix representation of graph
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+void BFS(int vtx, int A[][8], int n) {
+	queue<int> Q;
+	int visited[8]{ 0 };
+
+	// Initial
+	cout << vtx << ", " << flush;  // Visit vertex
+	visited[vtx] = 1;
+	Q.emplace(vtx);
+
+	// Explore
+	while (!Q.empty()) {
+		int u = Q.front();  // Vertex u for exploring
+		Q.pop();
+		for (int v = 1; v <= n; v++) {  // Adjacent vertices of vertex u
+			if (A[u][v] == 1 && visited[v] == 0) {  // Adjacent vertex and not visited
+				cout << v << ", " << flush;  // Visit vertex
+				visited[v] = 1;
+				Q.emplace(v);
+			}
+		}
+	}
+	cout << endl;
+}
+
+int main() {
+
+	int A[8][8] = { {0, 0, 0, 0, 0, 0, 0, 0},
+				   {0, 0, 1, 1, 1, 0, 0, 0},
+				   {0, 1, 0, 1, 0, 0, 0, 0},
+				   {0, 1, 1, 0, 1, 1, 0, 0},
+				   {0, 1, 0, 1, 0, 1, 0, 0},
+				   {0, 0, 0, 1, 1, 0, 1, 1},
+				   {0, 0, 0, 0, 0, 1, 0, 0},
+				   {0, 0, 0, 0, 0, 1, 0, 0} };
+
+	cout << "Vertex: 1 -> " << flush;
+	BFS(1, A, 8);
+
+	cout << "Vertex: 4 -> " << flush;
+	BFS(4, A, 8);
+
+
+	return 0;
+}
+*/
 
 
