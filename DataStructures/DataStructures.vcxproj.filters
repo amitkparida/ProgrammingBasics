@@ -22,6 +22,9 @@
     <Filter Include="Source Files\LinkedList">
       <UniqueIdentifier>{d50fb962-3b73-4511-8c75-a9cceda031dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\C++">
+      <UniqueIdentifier>{4f83a8a2-84dd-49ba-8e43-ff247ab4a75a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stack.cpp">
@@ -56,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="DoublyLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyConstructor.cpp">
+      <Filter>Source Files\C++</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
