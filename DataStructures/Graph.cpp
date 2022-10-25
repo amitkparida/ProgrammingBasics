@@ -1,61 +1,6 @@
 
 //===========================================================================================================
 
-
-/*
-//Adjacent List representation, taking input from console
-
-#include <iostream>
-#include <vector>
-using namespace std;
-
-int main() {
-	int V, E, u, v; //V = no of vertices/nodes, E = no of edges, (u, v) are source and destination nodes that represent an edge 
-
-	cin >> V >> E;
-
-	// declare the adjacent list 
-	vector<vector<int>> adj;
-
-	//Resize the 2D vector as adj[V+1][]
-	adj.resize(V + 1); // size  = V + 1 if the input graph is 1 based. If the input graph starts at 0, then size will be V.
-
-	// take edges as input 
-	for (int i = 0; i < E; ++i)
-	{
-		cin >> u >> v;
-		adj[u].push_back(v);
-		adj[v].push_back(u);
-	}
-
-	//Print graph
-	cout << endl << "The Graph (Adjacent List) is: " << endl;
-	for (int node = 1; node < adj.size(); ++node) { // Initially node = 1 since graph is 1 based. node = 0 if graph starts at 0, not 1.
-		cout << node << " -> ";
-		for (int i = 0; i < adj[node].size(); i++) {
-			cout << adj[node][i] << " ";
-		}
-		cout << endl;
-	}
-
-	return 0;
-}
-
-//Input format
-//6 7    <------- 6 = No of nodes, 7 = no of edges
-//1 2
-//1 4
-//4 5
-//2 4
-//2 3
-//3 6
-//4 6
-*/
-
-
-//===========================================================================================================
-
-
 // Adjacent List representation of graph
 
 #include <iostream>
@@ -110,6 +55,60 @@ int main()
 	printGraph(adj);
 	return 0;
 }
+
+
+//===========================================================================================================
+
+
+/*
+//Adjacent List representation, taking input from console
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+	int V, E, u, v; //V = no of vertices/nodes, E = no of edges, (u, v) are source and destination nodes that represent an edge
+
+	cin >> V >> E;
+
+	// declare the adjacent list
+	vector<vector<int>> adj;
+
+	//Resize the 2D vector as adj[V+1][]
+	adj.resize(V + 1); // size  = V + 1 if the input graph is 1 based. If the input graph starts at 0, then size will be V.
+
+	// take edges as input
+	for (int i = 0; i < E; ++i)
+	{
+		cin >> u >> v;
+		adj[u].push_back(v);
+		adj[v].push_back(u);
+	}
+
+	//Print graph
+	cout << endl << "The Graph (Adjacent List) is: " << endl;
+	for (int node = 1; node < adj.size(); ++node) { // Initially node = 1 since graph is 1 based. node = 0 if graph starts at 0, not 1.
+		cout << node << " -> ";
+		for (int i = 0; i < adj[node].size(); i++) {
+			cout << adj[node][i] << " ";
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
+
+//Input format
+//6 7    <------- 6 = No of nodes, 7 = no of edges
+//1 2
+//1 4
+//4 5
+//2 4
+//2 3
+//3 6
+//4 6
+*/
 
 
 //===========================================================================================================
