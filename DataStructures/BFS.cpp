@@ -80,7 +80,7 @@ int main() {
 	vector<vector<int>> adj;
 	adj.resize(V + 1); // size  = nodes + 1 if the input graph is 1 based. If the input graph starts at 0. then size = nodes.
 
-	// take edges as input 
+	// take edges as input and add edges in the undirected graph.
 	for (int i = 0; i < E; ++i)
 	{
 		cin >> u >> v;
