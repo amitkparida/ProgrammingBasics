@@ -14,7 +14,7 @@ private:
     int length; 
 
 public:
-    CString(const char* inStr = NULL); // Default constructor
+    CString(const char* inStr = NULL); // Default/Parameterized constructor
     ~CString() { delete[] str; } // Destructor
     CString(const CString&); // Copy constructor
     CString& operator=(const CString&); //Assignment operator
@@ -38,7 +38,6 @@ CString::CString(const char* inStr)
     }
 }
 
-
 //Overload Copy Constructor
 CString::CString(const CString& rhs)
 {
@@ -51,7 +50,7 @@ CString::CString(const CString& rhs)
 //Use tempStr as we should not delete str first, then call str = new char[]. 
 //Because if new throws exception, the object will be left in a bad state because str would have already been deleted.
 CString& CString::operator=(const CString& rhs) {
-    if (this != &rhs) { //to avoid self assignment
+    if (this != &rhs) { //handle self assignment
         char* tempStr = new char[rhs.length + 1];
         strcpy(tempStr, rhs.str);
         delete[] str;
@@ -67,7 +66,7 @@ int main()
     CString str1("Amit Kumar Parida");
     CString str2 = str1; //Copy constructor will be called
     CString str3;
-    str3 = str1; // Assignment operator will be called (when you assign one object to another existing object)
+    str3 = str1; //Assignment operator will be called (when you assign one object to another existing object)
 
     //When main goes out of scope, the destructors of all the above objects will be called.
     //If we don't overload copy constructor or assignment operator, then it will cause multiple times delete of same underlying str array

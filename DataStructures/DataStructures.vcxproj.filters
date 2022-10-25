@@ -63,5 +63,11 @@
     <ClCompile Include="CopyConstructor.cpp">
       <Filter>Source Files\C++</Filter>
     </ClCompile>
+    <ClCompile Include="SmartPointers.cpp">
+      <Filter>Source Files\C++</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>Source Files\C++</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
