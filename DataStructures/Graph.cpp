@@ -61,7 +61,7 @@ int main() {
 //===========================================================================================================
 
 
-// A simple representation of graph using STL
+// Adjacent List representation of graph using STL
 #include <iostream>
 #include <vector>
 using namespace std;

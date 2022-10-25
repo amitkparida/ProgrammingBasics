@@ -62,13 +62,13 @@ vector<int> DFS(int node, const vector<vector<int>>& adj) {
 }
 
 //Using recursion
-void DFS_Rec(int node, vector<vector<int>> adj, vector<bool>& visited, vector<int>& result) {
+void DFS_Recursive(int node, vector<vector<int>> adj, vector<bool>& visited, vector<int>& result) {
     visited[node] = true;
     result.push_back(node);
 
     for (auto it : adj[node]) {
         if (!visited[it]) {
-            DFS_Rec(it, adj, visited, result);
+            DFS_Recursive(it, adj, visited, result);
         }
     }
 
@@ -107,7 +107,7 @@ int main() {
     addEdge(adj, 0, 1);
     addEdge(adj, 0, 3);
 
-    cout << "The graph: \n";
+    cout << "The graph is: \n";
     printGraph(adj);
 
 
@@ -125,7 +125,7 @@ int main() {
     visited.resize(adj.size(), false);
     result.clear();
 
-    DFS_Rec(0, adj, visited, result);
+    DFS_Recursive(0, adj, visited, result);
 
     for (int i = 0; i < result.size(); i++) {
         cout << result[i] << " ";
@@ -136,15 +136,6 @@ int main() {
     return 0;
 }
 
-//Input format
-//6 7  <------- 6 = No of nodes, 7 = no of edges
-//1 2
-//1 4
-//4 5
-//2 4
-//2 3
-//3 6
-//4 6
 
 
 //===========================================================================================================
