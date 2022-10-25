@@ -87,7 +87,7 @@ void addEdge(vector<vector<int>>& adj, int u, int v)
 
 void printGraph(vector<vector<int>> adj)
 {
-    for (int v = 0; v < adj.size(); ++v) { // v = 0 since graph is 0 based. v = 1 if graph starts at 1
+    for (int v = 0; v < adj.size(); ++v) { //Initially v = 0 since graph is 0 based. v = 1 if graph starts at 1
         cout << v << " -> ";
         for (int i = 0; i < adj[v].size(); i++) {
             cout << adj[v][i] << " ";
