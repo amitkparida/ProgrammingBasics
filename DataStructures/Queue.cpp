@@ -109,10 +109,7 @@ int CQueue::Back() {
 	return rear->data;
 }
 
-
-
 int main() {
-
 	CQueue q;
 
 	q.Push(1);
@@ -133,8 +130,6 @@ int main() {
 
 	return 0;
 } */
-
-
 
 
 
