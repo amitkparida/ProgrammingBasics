@@ -13,9 +13,9 @@ public:
 
 	// Other non-static member functions
 private:
-	CMySingleton() {};                                 // Private constructor
-	CMySingleton(const CMySingleton&);                 // Prevent copy-construction
-	CMySingleton& operator=(const CMySingleton&);      // Prevent assignment
+	CMySingleton() {};                                 // Private constructor defined
+	CMySingleton(const CMySingleton&);                 // Prevent copy-construction, definition not required
+	CMySingleton& operator=(const CMySingleton&);      // Prevent assignment, definition not required
 };
 
 
