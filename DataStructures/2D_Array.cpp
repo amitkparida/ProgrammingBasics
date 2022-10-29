@@ -1,3 +1,6 @@
+
+//Ways to declare/allocate 2D array in C/C++
+
 #include <iostream>
 using namespace std;
 
