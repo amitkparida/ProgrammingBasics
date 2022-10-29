@@ -178,8 +178,6 @@ void CLinkedList::DeleteAtPosition(int position) {
 	}
 }
 
-
-
 void CLinkedList::InsertAtPosition(int position, int newdata) {
 	Node *newnode, *temp;
 

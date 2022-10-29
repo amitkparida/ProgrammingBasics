@@ -78,5 +78,8 @@
     <ClCompile Include="BinarySearch.cpp">
       <Filter>Source Files\Searching</Filter>
     </ClCompile>
+    <ClCompile Include="2D_Array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
