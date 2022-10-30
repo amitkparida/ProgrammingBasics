@@ -1,5 +1,5 @@
 
-/* //Implementation of Stack using LinkedList
+//Implementation of Stack using LinkedList
 
 #include <iostream>
 using namespace std;
@@ -15,6 +15,7 @@ private:
 
 public:
 	CStack();
+	~CStack();
 	void Push(int newdata);
 	void Pop(); 
 	void Print();
@@ -32,9 +33,21 @@ CStack::CStack() {
 	top = NULL;
 }
 
+CStack::~CStack() {
+	Node* temp = top;
+	while (top) {
+		top = top->next;
+		delete temp;
+		temp = top;
+	}
+}
+
 //Insert At Head of the Linkedlist
 void CStack::Push(int newdata) {
 	Node* newnode = new Node(newdata);
+	//newnode = new Node;  //If you don't define constructor of the Node structure, you can assign manually like this
+	//newnode->data = newdata; 
+	//newnode->next = NULL;
 
 	if (top == NULL)
 	{
@@ -74,8 +87,12 @@ void CStack::Print()
 	temp = top;
 	while (temp != NULL)
 	{
-		cout << temp->data << " ";
+		cout << temp->data;
 		temp = temp->next;
+
+		if (temp != NULL) {
+			cout << " -> ";
+		}
 	}
 	cout << endl;
 }
@@ -142,12 +159,12 @@ int main() {
 	st.Print();
 
 	return 0;
-}*/
+}
 
 
 
 
-
+/*
 //Implement Using dynamic Array
 #include <iostream>
 using namespace std;
@@ -239,3 +256,4 @@ int main() {
 	cout << s.Top() << endl;
 	return 0;
 }
+*/

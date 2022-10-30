@@ -15,6 +15,7 @@ private:
 
 public:
 	CDoublyLinkedList();
+	~CDoublyLinkedList();
 	void PushBack(int newdata); //InsertAtTail
 	void PushFront(int newdata); //InsertAtHead
 	void Print();
@@ -23,6 +24,7 @@ public:
 	void InsertAtPosition(int position, int newdata);
 	void DeleteList();
 	void Reverse();
+	int Length();
 };
 
 CDoublyLinkedList::Node::Node(int newdata, Node* newnext, Node* newprev) {
@@ -35,6 +37,14 @@ CDoublyLinkedList::CDoublyLinkedList() {
 	head = NULL;
 }
 
+CDoublyLinkedList::~CDoublyLinkedList() {
+	Node* temp = head;
+	while (head) {
+		head = head->next;
+		delete temp;
+		temp = head;
+	}
+}
 
 //InsertAtTail
 void CDoublyLinkedList::PushBack(int newdata) {
@@ -89,8 +99,12 @@ void CDoublyLinkedList::Print() {
 
 	while (temp != NULL)
 	{
-		cout << temp->data << " ";
+		cout << temp->data;
 		temp = temp->next;
+
+		if (temp != NULL) {
+			cout << " <-> ";
+		}
 	}
 	cout << endl;
 }
@@ -153,7 +167,6 @@ void CDoublyLinkedList::DeleteAtPosition(int position) {
 	}
 	else
 	{
-		//deleting any middle node or last node
 		curr = head;
 		previous = head;
 		int count = 1;
@@ -175,7 +188,6 @@ void CDoublyLinkedList::DeleteAtPosition(int position) {
 		}
 	}
 }
-
 
 
 void CDoublyLinkedList::InsertAtPosition(int position, int newdata) {
@@ -218,34 +230,44 @@ void CDoublyLinkedList::InsertAtPosition(int position, int newdata) {
 
 
 void CDoublyLinkedList::DeleteList() {
-	Node* curr = head;
-	Node* next;
+	Node* temp = head;
 
-	while (curr != NULL) {
-		next = curr->next;
-		delete curr;
-		curr = next;
+	while (head)
+	{
+		head = head->next;
+		delete temp;
+		temp = head;
 	}
-	head = NULL;
 }
 
 
 void CDoublyLinkedList::Reverse() {
-	Node* previous, * curr, * temp;
+	Node * prevNode, * currNode, * nextNode;
 
-	curr = head;
-	previous = NULL;
+	currNode = head;
+	prevNode = NULL;
 
-	while (curr)
+	while (currNode)
 	{
-		temp = curr->next;
-		curr->next = previous;
-		curr->prev = temp;
-		previous = curr;
-		curr = temp;
+		nextNode = currNode->next;
+		currNode->next = prevNode;
+		currNode->prev = nextNode;
+		prevNode = currNode;
+		currNode = nextNode;
 	}
 
-	head = previous;
+	head = prevNode;
+}
+
+
+int CDoublyLinkedList::Length() {
+	int length = 0;
+	Node* temp = head;
+	while (temp != nullptr) {
+		length++;
+		temp = temp->next;
+	}
+	return length;
 }
 
 

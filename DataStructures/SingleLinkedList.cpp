@@ -20,17 +20,22 @@ private:
 
 public:
 	CLinkedList();
+	~CLinkedList();
 	void PushBack(int newdata); //InsertAtTail
 	void PushFront(int newdata); //InsertAtHead
 	void Print();
 	void DeleteNode(int data);
 	void DeleteAtPosition(int position);
 	void InsertAtPosition(int position, int newdata);
+	int Length();
 	void DeleteList();
 	void Reverse();
-	void ReverseUsingRecursion();
-	Node* ReverseRecUtil(Node* currentNode, Node* nextNode);
+	void Reverse2();
 	void ReverseUsingStack();
+	void ReverseUsingRecursion();
+
+private:
+	void ReverseRecUtil(Node* prevNode, Node* currentNode);
 };
 
 CLinkedList::Node::Node(int newdata, Node* newnext) {
@@ -42,6 +47,16 @@ CLinkedList::CLinkedList() {
 	head = NULL;
 }
 
+CLinkedList::~CLinkedList()
+{
+	Node* temp = head;
+	while (head)
+	{
+		head = head->next;
+		delete temp;
+		temp = head;
+	}
+}
 
 //InsertAtTail
 void CLinkedList::PushBack(int newdata) { 
@@ -99,6 +114,10 @@ void CLinkedList::Print() {
 	{
 		cout << temp->data << " ";
 		temp = temp->next;
+
+		if (temp != NULL) {
+			cout << " -> ";
+		}
 	}
 	cout << endl;
 }
@@ -213,59 +232,65 @@ void CLinkedList::InsertAtPosition(int position, int newdata) {
 	}
 }
 
+int CLinkedList::Length()
+{
+	Node* temp = head;
+	int len = 0;
+
+	while (temp)
+	{
+		len++;
+		temp = temp->next;
+	}
+	return len;
+}
+
 
 void CLinkedList::DeleteList() {
-	Node* curr = head;
-	Node* next;
+	Node* temp = head;
 
-	while (curr != NULL) {
-		next = curr->next;
-		delete curr;
-		curr = next;
+	while (head)
+	{
+		head = head->next;
+		delete temp;
+		temp = head;
 	}
-	head = NULL;
 }
 
-
+//From MyCodeSchool (YouTube)
 void CLinkedList::Reverse() {
-	Node* prev, * current, * temp;
+	Node* prevNode, * currNode, * nextNode;
 
-	current = head;
-	prev = NULL;
-	while (current != NULL) {
-		//store next
-		temp = current->next;
-		//update the current
-		current->next = prev;
-		//prev and current
-		prev = current;
-		current = temp;
+	currNode = head;
+	prevNode = NULL;
+	while (currNode != NULL) {
+		nextNode = currNode->next; // Store Current's next in nextNode
+		currNode->next = prevNode; // Point the Current's next to Previous
+		prevNode = currNode; 	   // Move Previous to Current
+		currNode = nextNode; 	   // Move Current to Next
 	}
 
-	head = prev;
-	return;
+	head = prevNode;
 }
 
+//From Abdul Bari (Udemy)
+void CLinkedList::Reverse2()
+{
+	Node * p, * q , * r;
 
-//Using recursion
-void CLinkedList::ReverseUsingRecursion() {
-	head = ReverseRecUtil(head, NULL);
-}
-
-CLinkedList::Node* CLinkedList::ReverseRecUtil(Node* currentNode,Node* nextNode) {
-	Node* ret;
-	if (currentNode == NULL) {
-		return NULL;
+	p = head; //Current
+	q = NULL; //Previous of current
+	r = NULL; //Previous of previous of current
+	while (p != NULL)
+	{
+		r = q;       //r became Previous
+		q = p;		 //q became Current
+		p = p->next; //p became Next
+		q->next = r; //Point current's next to Previous
 	}
-	if (currentNode->next == NULL) {
-		currentNode->next = nextNode;
-		return currentNode;
-	}
-
-	ret = ReverseRecUtil(currentNode->next, currentNode);
-	currentNode->next = nextNode;
-	return ret;
+	head = q;
 }
+
 
 //Using Stack
 void CLinkedList::ReverseUsingStack()
@@ -291,10 +316,25 @@ void CLinkedList::ReverseUsingStack()
 		S.pop();
 		temp = temp->next;
 	}
-	temp->next = NULL; 
+	temp->next = NULL;
 }
 
 
+//Using Recursion
+void CLinkedList::ReverseUsingRecursion() {
+	ReverseRecUtil(NULL, head);
+}
+void CLinkedList::ReverseRecUtil(Node* prevNode, Node* currentNode)
+{
+	if (currentNode)
+	{
+		ReverseRecUtil(currentNode, currentNode->next);
+		currentNode->next = prevNode;
+	}
+	else {
+		head = prevNode;
+	}
+}
 
 int main() {
 	CLinkedList* mylist = new CLinkedList;
@@ -317,10 +357,12 @@ int main() {
 	mylist->Print();
 
 	//mylist->DeleteNode(200);
-	mylist->ReverseUsingStack();
+	mylist->Reverse();
 	mylist->Print();
 
-	mylist->DeleteList();
+	//mylist->DeleteList();
+	delete mylist;
+
 	return 0;
 }
 

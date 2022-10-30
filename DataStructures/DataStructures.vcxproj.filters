@@ -69,7 +69,7 @@
     <ClCompile Include="Singleton.cpp">
       <Filter>Source Files\C++</Filter>
     </ClCompile>
-    <ClCompile Include="Sorting.cpp">
+    <ClCompile Include="SelectionSort.cpp">
       <Filter>Source Files\Sorting</Filter>
     </ClCompile>
     <ClCompile Include="LinearSearch.cpp">
@@ -80,6 +80,21 @@
     </ClCompile>
     <ClCompile Include="2D_Array.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BubbleSort.cpp">
+      <Filter>Source Files\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="InsertionSort.cpp">
+      <Filter>Source Files\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="QuickSort.cpp">
+      <Filter>Source Files\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="MergeSort.cpp">
+      <Filter>Source Files\Sorting</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

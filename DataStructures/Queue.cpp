@@ -1,4 +1,4 @@
-/* //Implementation of Queue using LinkedList
+//Implementation of Queue using LinkedList
 
 #include <iostream>
 using namespace std;
@@ -14,6 +14,7 @@ private:
 
 public:
 	CQueue();
+	~CQueue();
 	void Push(int newdata);
 	void Pop();
 	void Print();
@@ -31,9 +32,22 @@ CQueue::CQueue() {
 	rear = NULL;
 }
 
+CQueue::~CQueue() {
+	Node* temp = front;
+	while (front) {
+		front = front->next;
+		delete temp;
+		temp = front;
+	}
+}
+
+
 //Insert At Head of the Linkedlist
 void CQueue::Push(int newdata) {
 	Node* newnode = new Node(newdata);
+	//newnode = new Node;  //If you don't define constructor of the Node structure, you can assign manually like this
+	//newnode->data = newdata;
+	//newnode->next = NULL;
 
 	if (rear == NULL)
 	{
@@ -51,7 +65,7 @@ void CQueue::Push(int newdata) {
 void CQueue::Pop() {
 	Node* temp;
 
-	if (front == NULL && rear == NULL)
+	if (front == NULL)
 	{
 		cout << "Queue is empty" << endl;
 	}
@@ -59,6 +73,7 @@ void CQueue::Pop() {
 	{
 		if (front == rear)
 		{
+			delete front;
 			front = rear = NULL;
 		}
 		else
@@ -85,6 +100,10 @@ void CQueue::Print()
 	{
 		cout << temp->data << " ";
 		temp = temp->next;
+
+		if (temp != NULL) {
+			cout << " <- ";
+		}
 	}
 	cout << endl;
 }
@@ -129,10 +148,10 @@ int main() {
 	q.Print();
 
 	return 0;
-} */
+} 
 
 
-
+/*
 //Implementation of Queue using Array
 
 #include <iostream>
@@ -256,7 +275,7 @@ int main() {
 	cout << q.Back() << endl;
 	return 0;
 }
-
+*/
 
 
 
