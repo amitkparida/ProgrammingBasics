@@ -11,6 +11,9 @@
 
 //Average case: O(nlogn)
 
+//Time Complexity = O(nlogn) <- Average, Best, O(n^2) <- Worst 
+//Space Complexity = O(logn)
+
 //In Selection sort, we select the position and find out an element for that position. But in Quick sort we select an element and find out a postion for that element.
 
 // Quick sort is also called Selection Exchange sort or Partition Exchange sort
