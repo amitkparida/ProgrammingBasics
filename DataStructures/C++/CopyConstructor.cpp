@@ -11,7 +11,7 @@ using namespace std;
 class CString {
 private:
     char* str;
-    int length; 
+    size_t length; 
 
 public:
     CString(const char* inStr = NULL); // Default/Parameterized constructor
@@ -32,7 +32,7 @@ CString::CString(const char* inStr)
         str = NULL;
     }
     else {
-        length = (int)strlen(inStr);
+        length = strlen(inStr);
         str = new char[length + 1];
         strcpy(str, inStr);
     }
