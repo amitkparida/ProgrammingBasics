@@ -33,55 +33,55 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Stack.cpp">
+    <ClCompile Include="Stack\Stack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Queue.cpp">
+    <ClCompile Include="Queue\Queue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BFS.cpp">
+    <ClCompile Include="Graph\BFS.cpp">
       <Filter>Source Files\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="DFS.cpp">
+    <ClCompile Include="Graph\DFS.cpp">
       <Filter>Source Files\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="Graph.cpp">
+    <ClCompile Include="Graph\Graph.cpp">
       <Filter>Source Files\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="BinarySearchTree.cpp">
+    <ClCompile Include="Tree\BinarySearchTree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="BinaryTree.cpp">
+    <ClCompile Include="Tree\BinaryTree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="SingleLinkedList.cpp">
+    <ClCompile Include="LinkedList\SingleLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
-    <ClCompile Include="DoublyLinkedList.cpp">
+    <ClCompile Include="LinkedList\DoublyLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
-    <ClCompile Include="CopyConstructor.cpp">
+    <ClCompile Include="C++\CopyConstructor.cpp">
       <Filter>Source Files\C++</Filter>
     </ClCompile>
-    <ClCompile Include="SmartPointers.cpp">
+    <ClCompile Include="C++\SmartPointers.cpp">
       <Filter>Source Files\C++</Filter>
     </ClCompile>
-    <ClCompile Include="Singleton.cpp">
+    <ClCompile Include="C++\Singleton.cpp">
       <Filter>Source Files\C++</Filter>
     </ClCompile>
     <ClCompile Include="Sorting\SelectionSort.cpp">
       <Filter>Source Files\Sorting</Filter>
     </ClCompile>
-    <ClCompile Include="LinearSearch.cpp">
+    <ClCompile Include="Searching\LinearSearch.cpp">
       <Filter>Source Files\Searching</Filter>
     </ClCompile>
-    <ClCompile Include="BinarySearch.cpp">
+    <ClCompile Include="Searching\BinarySearch.cpp">
       <Filter>Source Files\Searching</Filter>
     </ClCompile>
-    <ClCompile Include="2D_Array.cpp">
+    <ClCompile Include="Array\2D_Array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Array.cpp">
+    <ClCompile Include="Array\Array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sorting\BubbleSort.cpp">
