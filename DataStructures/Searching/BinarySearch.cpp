@@ -49,7 +49,7 @@ int main()
     int size = sizeof(arr) / sizeof(arr[0]);
 
     //Sort the array as BinarySearch() takes sorted array (increasing) as input 
-    sort(arr, arr + size);
+    sort(arr, arr + size); //Time complexity = O(NLogN)
     //sort(arr, arr + size, greater<int>()); // For sorting in decreasing order
 
     int index = binarySearch(arr, size, 10);
@@ -67,4 +67,15 @@ int main()
     else {
         cout << "Element is present at index " << index << endl;
     }
+
+    //STL binary_search
+    bool bPresent = binary_search(arr, arr + size, 10);
+    if (bPresent == false) {
+        cout << "Element is not present in array" << endl;
+    }
+    else {
+        cout << "Element is present" << endl;
+    }
 }
+
+//Time Complexity of Binary Search: O(logN)
