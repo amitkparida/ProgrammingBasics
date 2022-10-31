@@ -31,14 +31,17 @@
     <Filter Include="Source Files\Sorting">
       <UniqueIdentifier>{b872a762-4b08-49da-94b8-17652771726f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Array">
+      <UniqueIdentifier>{01102360-ad5c-4fd3-85a3-f0a9ea8376ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Stack">
+      <UniqueIdentifier>{a77b2607-c700-4a67-a3f1-b60c94e4118f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Queue">
+      <UniqueIdentifier>{fccc6569-223d-49dd-8e5c-71495e90a978}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Stack\Stack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Queue\Queue.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Graph\BFS.cpp">
       <Filter>Source Files\Graph</Filter>
     </ClCompile>
@@ -78,12 +81,6 @@
     <ClCompile Include="Searching\BinarySearch.cpp">
       <Filter>Source Files\Searching</Filter>
     </ClCompile>
-    <ClCompile Include="Array\2D_Array.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Array\Array.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sorting\BubbleSort.cpp">
       <Filter>Source Files\Sorting</Filter>
     </ClCompile>
@@ -95,6 +92,18 @@
     </ClCompile>
     <ClCompile Include="Sorting\MergeSort.cpp">
       <Filter>Source Files\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="Array\Array.cpp">
+      <Filter>Source Files\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Array\2D_Array.cpp">
+      <Filter>Source Files\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack\Stack.cpp">
+      <Filter>Source Files\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue\Queue.cpp">
+      <Filter>Source Files\Queue</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
