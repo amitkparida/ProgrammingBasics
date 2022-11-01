@@ -10,8 +10,32 @@
 
 // EXAMPLE: Dictionary
 
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<string, int> Map; // Elements will be sorted in ascending order of the strings. To get descending order, greater<> must be passed as 3rd argument. Passing less<> is optional if you need ascending order. 
+    //map<string, int, greater<>> Map; // Elements will be sorted in descending order of the strings.  
+    Map["Amit"] = 30;
+    Map["Sumit"] = 32;
+    Map.insert(make_pair("Rohit", 35));
+
+    ////Alternate ways to initialize the above map
+    //map<string, int> Map = { make_pair("Amit", 30), make_pair("Sumit", 32), make_pair("Rohit", 35) };
+    //map<string, int> Map = { {"Amit", 30}, {"Sumit", 32}, {"Rohit", 35} };
+
+    for (auto& el : Map) {
+        cout << el.first << " : " << el.second<< endl;
+    }
+
+    //Access using [] operator
+    cout << Map["Sumit"] << endl;
+}
 
 
+/*
+//User defined
 
 #include <iostream>
 #include <map>
@@ -22,22 +46,30 @@ class Person{
     int age;
     string name;
     
+    //comparision operators must be overloaded for user defined classes
     bool operator < (const Person& rhs) const { return age<rhs.age; }
     bool operator > (const Person& rhs) const { return age>rhs.age; }
 
-    Person(int n):age(n) {
+    Person(int inAge, const string& inName) :age(inAge), name(inName) {
     }
 };
 
 int main() {
-    map<Person, int, less<>> Map;
-    Person p1(10), p2(20);
+    map<Person, int, less<>> Map; //less<> is optional if you need ascending order. To get descnding order, greater<> must be passed as 3rd argument
+    Person p1(30, "Amit"), p2(32, "Sumit");
     Map[p1] = 100;
     Map[p2] = 200;
 
-    for (auto& el1 : Map) {
-        cout << el1.first.age << " " << el1.second << endl;
+    ////Alternate ways to initialize the above map
+    //map<Person, int> Map = { make_pair(Person(30, "Amit"), 100), make_pair(Person(32, "Sumit"), 200) };
+    //map<Person, int> Map = { {Person(30, "Amit"), 100}, {Person(32, "Sumit"),200} };
+    //map<Person, int> Map = { {{30, "Amit"}, 100}, {{32, "Sumit"}, 200} };
+
+    for (auto& el : Map) {
+        cout << el.first.age << " " << el.second << endl;
     }
 
     return 0;
 } 
+*/
+

@@ -72,8 +72,11 @@
     <ClCompile Include="7 unordered_map.cpp">
       <Filter>Source Files\AssociativeContainer</Filter>
     </ClCompile>
-    <ClCompile Include="unordered_multimap.cpp">
+    <ClCompile Include="8 unordered_multimap.cpp">
       <Filter>Source Files\AssociativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="emplace.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

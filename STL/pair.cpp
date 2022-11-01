@@ -16,21 +16,21 @@ void print(std::pair<int, int>& obj) { cout << obj.first << " " << obj.second <<
 int main()
 {
     {
-        std::pair<int, int> obj(10, 20);
+        pair<int, int> obj(10, 20);
         print(obj);
     }
 
     {
-        std::pair<int, int> obj = std::make_pair(10, 20);
+        pair<int, int> obj = make_pair(10, 20);
         print(obj);
     }
 
     {
-        std::vector<std::pair<std::string, int>> list;
+        vector<pair<string, int>> list;
         list.push_back(make_pair("Rupesh", 30));
         list.push_back(make_pair("Hitesh", 28));
-        list.push_back(std::pair<std::string, int>("Bhupendra", 22));
-        list.push_back(std::pair<std::string, int>("Sagar", 18));
+        list.push_back(pair<string, int>("Bhupendra", 22)); //Note the difference here
+        list.push_back(pair<string, int>("Sagar", 18));
 
         for (auto& elm : list) {
             cout << elm.first << " " << elm.second << endl;

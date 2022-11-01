@@ -33,6 +33,8 @@ class Person {
 public:
     float age;
     string name;
+
+    //If you want to store user defined data type in multiset then you have to provide compare functions so that multiset can store them in sorted order.
     bool operator < (const Person& rhs) const { return age < rhs.age; }
     bool operator > (const Person& rhs) const { return age > rhs.age; }
 };

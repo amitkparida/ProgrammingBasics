@@ -10,25 +10,50 @@
 // 5. We can pass the order of sorting while constructing set object.
 
 // BOTTOM LINE:
-// It store unique elements and they are stored in sorted order (A/D)
+// It store unique elements and they are stored in sorted order (Ascending/Descending)
+
 
 #include <iostream>
 #include <set>
 #include <string>
 using namespace std;
 
+ int main() {
+     set<int> Set = { 1,5,2,4,4,3,2,5 }; // Elements will be sorted in ascending order. To get descending order, greater<> must be passed as 2nd argument. Passing less<> is optional if you need ascending order.
+     //set<int, greater<>> Set = { 1,5,2,4,4,3,2,5 }; // Elements will be sorted in descending order of the strings.  
+
+     Set.insert(20);
+
+     for(const auto& e: Set) {
+         cout << e << endl;
+     }
+ }
+
+
+ /*
+//User defined datatype
+
 class Person {
 public:
-    float age;
+    int age;
     string name;
+
+    //If you want to store user defined data type in set then you have to provide compare functions so that set can store them in sorted order.
     bool operator < (const Person& rhs) const { return age < rhs.age; }
     bool operator > (const Person& rhs) const { return age > rhs.age; }
+
+    Person(int inAge, const string& inName) :age(inAge), name(inName) {
+    }
 };
 
 int main() {
-    set<Person, std::less<>> Set = { {30, "Rupesh"}, {25, "Hitesh"}, {22, "Jhon"} };
+    set<Person> Set = { {30, "Rupesh"}, {25, "Hitesh"}, {22, "Jhon"} };
+
+    //set<Person> Set = { Person(30, "Rupesh"), Person(25, "Hitesh"), Person(22, "Jhon") };
+
     for (const auto& e : Set) {
         cout << e.age << " " << e.name << endl;
     }
     return 0;
 }
+*/

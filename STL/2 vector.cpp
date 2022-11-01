@@ -18,12 +18,12 @@ int main() {
 
     // Declarations
     std::vector<int> arr1;
-    std::vector<int> arr2(5, 20);
+    std::vector<int> arr2(5, 20); // size = 5, value of each element = 20
     std::vector<int> arr3 = { 1, 2, 3, 4, 5 }; // initializer list 
     std::vector<int> arr4{ 1, 2, 3, 4, 5 };   // uniform initialization
 
     // Accessing Elements
-    arr2[3] = 10;
+    arr2[3] = 10; 
     arr2.at(3) = 10;
 
     for (int i = 0; i <= 10; ++i) { arr1.push_back(i); }
