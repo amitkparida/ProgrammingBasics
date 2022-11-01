@@ -18,9 +18,6 @@
     <Filter Include="Source Files\LinkedList">
       <UniqueIdentifier>{d50fb962-3b73-4511-8c75-a9cceda031dc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\C++">
-      <UniqueIdentifier>{4f83a8a2-84dd-49ba-8e43-ff247ab4a75a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -62,15 +59,6 @@
     </ClCompile>
     <ClCompile Include="LinkedList\DoublyLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
-    </ClCompile>
-    <ClCompile Include="C++\CopyConstructor.cpp">
-      <Filter>Source Files\C++</Filter>
-    </ClCompile>
-    <ClCompile Include="C++\SmartPointers.cpp">
-      <Filter>Source Files\C++</Filter>
-    </ClCompile>
-    <ClCompile Include="C++\Singleton.cpp">
-      <Filter>Source Files\C++</Filter>
     </ClCompile>
     <ClCompile Include="Sorting\SelectionSort.cpp">
       <Filter>Source Files\Sorting</Filter>

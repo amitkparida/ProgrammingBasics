@@ -74,4 +74,4 @@ int main() {
 //Time Complexity =  O(nLogn) <- Best, Worst, Average
 //Space Complexity = O(n)
 
-//Merge sort is stable, not in-place 
+//Merge sort is stable, but not in-place 
