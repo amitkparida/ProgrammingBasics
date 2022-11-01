@@ -30,13 +30,22 @@
     <ClCompile Include="SmartPointer\unique_ptr.cpp">
       <Filter>Source Files\SmartPointer</Filter>
     </ClCompile>
-    <ClCompile Include="shared_ptr.cpp">
+    <ClCompile Include="SmartPointer\shared_ptr.cpp">
       <Filter>Source Files\SmartPointer</Filter>
     </ClCompile>
-    <ClCompile Include="weak_ptr.cpp">
+    <ClCompile Include="SmartPointer\weak_ptr.cpp">
       <Filter>Source Files\SmartPointer</Filter>
     </ClCompile>
     <ClCompile Include="PureVirtualFunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualFunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualDestructor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vPtr_vTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,3 +1,22 @@
+// TOPIC: Binary Search
+
+// NOTES:
+// 1. Binary Search technique works on sorted array. (both SORTED and ARRAY words are very important)
+// 2. It works on divide and conquer (each iteration it divides array in half).
+
+// ALGO:
+// 1. Get middle element of array check if it is the one we are looking.
+// 2. If yes, then we have found the number.
+// 3. If no, then check if the middle element is bigger than our element.
+// 4. If yes, then we will choose left half of the array.
+// 5. Otherwise we will choose right half of the array.
+// 6. Repeat this until we find the number or 
+
+// COMPLEXITY:
+// Worst Case Time:     O(log2(n))
+// Best Case Time:      O(1)
+// Average Case Time:   O(log2(n))
+
 #include <algorithm>
 #include <iostream>
 using namespace std;
