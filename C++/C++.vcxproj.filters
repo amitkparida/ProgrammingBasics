@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\SmartPointer">
+      <UniqueIdentifier>{e45d0580-8ecb-4d6f-a657-de2e85b2d227}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CopyConstructor.cpp">
@@ -21,10 +24,19 @@
     <ClCompile Include="Singleton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SmartPointers.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="SmartPointer\SmartPointer.cpp">
+      <Filter>Source Files\SmartPointer</Filter>
     </ClCompile>
-    <ClCompile Include="unique_ptr.cpp">
+    <ClCompile Include="SmartPointer\unique_ptr.cpp">
+      <Filter>Source Files\SmartPointer</Filter>
+    </ClCompile>
+    <ClCompile Include="shared_ptr.cpp">
+      <Filter>Source Files\SmartPointer</Filter>
+    </ClCompile>
+    <ClCompile Include="weak_ptr.cpp">
+      <Filter>Source Files\SmartPointer</Filter>
+    </ClCompile>
+    <ClCompile Include="PureVirtualFunction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

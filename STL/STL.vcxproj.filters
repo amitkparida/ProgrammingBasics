@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\SequenceContainers">
+      <UniqueIdentifier>{7e11e99e-4abc-4664-952c-5c00d91d16c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ContainerAdaptors">
+      <UniqueIdentifier>{7b2accbe-d2ad-492c-8b10-b1e68ab5f5e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AssociativeContainer">
+      <UniqueIdentifier>{3aa56b13-f1c3-45ba-a405-f4551a440dbf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="1 array.cpp">
+      <Filter>Source Files\SequenceContainers</Filter>
+    </ClCompile>
+    <ClCompile Include="2 vector.cpp">
+      <Filter>Source Files\SequenceContainers</Filter>
+    </ClCompile>
+    <ClCompile Include="3 forward_list.cpp">
+      <Filter>Source Files\SequenceContainers</Filter>
+    </ClCompile>
+    <ClCompile Include="4 list.cpp">
+      <Filter>Source Files\SequenceContainers</Filter>
+    </ClCompile>
+    <ClCompile Include="5 deque.cpp">
+      <Filter>Source Files\SequenceContainers</Filter>
+    </ClCompile>
+    <ClCompile Include="1 stack.cpp">
+      <Filter>Source Files\ContainerAdaptors</Filter>
+    </ClCompile>
+    <ClCompile Include="2 queue.cpp">
+      <Filter>Source Files\ContainerAdaptors</Filter>
+    </ClCompile>
+    <ClCompile Include="3 priority_queue.cpp">
+      <Filter>Source Files\ContainerAdaptors</Filter>
+    </ClCompile>
+    <ClCompile Include="pair.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1 set.cpp">
+      <Filter>Source Files\AssociativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="2 multiset.cpp">
+      <Filter>Source Files\AssociativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="5 unordered_set.cpp">
+      <Filter>Source Files\AssociativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="6 unordered_multiset.cpp">
+      <Filter>Source Files\AssociativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="3 map.cpp">
+      <Filter>Source Files\AssociativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="4 multimap.cpp">
+      <Filter>Source Files\AssociativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="7 unordered_map.cpp">
+      <Filter>Source Files\AssociativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="unordered_multimap.cpp">
+      <Filter>Source Files\AssociativeContainer</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
