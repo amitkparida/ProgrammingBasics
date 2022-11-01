@@ -9,7 +9,7 @@
 //    it refers to the exact bucket the element is placed into.
 
 // WHY UNORDERED SET?
-// 0. maintain a collection of uniqe items with fast insertion and removal.
+// 0. maintain a collection of unique items with fast insertion and removal.
 
 // PROGRAM:
 #include <iostream>
