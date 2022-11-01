@@ -1,6 +1,24 @@
 
-// Watch this to understand the code: https://www.youtube.com/watch?v=5NiXlPrLslg&list=PLDzeHZWIZsTo87y1ytEAqp7wYlEP3nner
+// TOPIC: Binary Tree  ( IT IS NOT BINARY SEARCH TREE )
 
+// NOTES:
+// 0. A tree whose nodes can have at most two children is called binary tree.
+// 1. As there can only be two children of a node we call them left and right child.
+
+// TYPES OF BINARY TREE:
+// 0. FULL BINARY TREE / STRICTLY BINARY TREE
+//    Every node must have two children, except the leaf nodes.
+// 1. INCOMPLETE BINARY TREE / ALMOST COMPLETE BINARY TREE
+//    Every node must have two childrens in all levels except second last level and should be filled from left to right.
+// 2. COMPLETE BINARY TREE / PERFECT BINARY TREE
+//    Every node must have two childrens in all the levels (Each level there should be 2^L where L is level)
+// 3. LEFT SKEWED BINARY TREE
+//    Every node should have only left children.
+// 4. RIGHT SKEWED BINARY TREE
+//    Every node should have only right children.
+
+
+// Watch this to understand the code: https://www.youtube.com/watch?v=5NiXlPrLslg&list=PLDzeHZWIZsTo87y1ytEAqp7wYlEP3nner
 #include<iostream>
 #include<queue>
 using namespace std;

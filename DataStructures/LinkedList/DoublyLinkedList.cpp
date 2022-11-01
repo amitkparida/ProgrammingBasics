@@ -1,4 +1,16 @@
 
+// TOPIC: Doubly Linked List
+
+// NOTES:
+// 1. Unlike singly linked list, doubly linked list can traverse in both forward and backward direction.
+// 2. Doubly linked list requires one more pointer to point at previous node.
+
+// ADVANTAGE:
+// 1. DLL can traverse in both direction.
+
+// DISADVATAGE:
+// 1. It is more complicated then SLL.
+// 2. It takes more space than SLL.
 
 #include <iostream>
 using namespace std;

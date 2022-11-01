@@ -3,7 +3,8 @@
 // You can read more problems here 
 // https://github.com/loveBabbar/CodeHelp-DSA-Busted-Series/blob/main/Lecture044%20Linked%20List%20Day1/singlyLinkedList.cpp
 // https://github.com/Hemant-Jain-Author/Problem-Solving-in-Data-Structures-and-Algorithms-using-Cpp/blob/master/LinkedList/LinkedList.cpp
-// https://github.com/coding-minutes/data-structures-algorithms-level-up-bootcamp/blob/master/07%20Linked%20Lists/linked_list.cpp
+// https://github.com/cppnuts-yt/CppNuts
+// https://github.com/coding-minutes/dsa-essentials-course
 
 #include <iostream>
 #include <stack>
