@@ -1,9 +1,10 @@
 // TOPIC: Virtual Destructor 
 
 // NOTES:
-// 1. If we delete child class object through a pointer of parent class then it is undefined behaviour, 
+// 1. The base class destructor must be virtual if you delete a derived class object through its base class pointer.
+// 2. If we delete derived class object through a pointer of base class then it is undefined behaviour
 //    if parent class doesn't have virtual destructor.
-// 2. If we fail to declare destructor as virtual in parent class then we endup having memory leak.
+// 3. If we fail to declare destructor as virtual in parent class then we end up having memory leak.
 
 #include <iostream>
 using namespace std;

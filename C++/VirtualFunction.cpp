@@ -6,8 +6,8 @@
 
 // 2. HOW to use virtual function?
 //    a. By declaring function as virtual in Base class and overriding that function in Derived class.
-//       (Function signature should be same in Base and Dervied class)
-//    b. Declaring a function as virtual in Base class is enough, Derived class function need not to be declared virtual.
+//       (Function signature should be same in Base and Derived class)
+//    b. Declaring a function as virtual in Base class is enough. The same function need not to be declared virtual in Derived class.
 //    c. Virtual functions should be accessed using pointer(*) or reference(&) of Base class type to achieve run time polymorphism.
 
 // ADITIONAL NOTES:
@@ -50,84 +50,95 @@ int main() {
 */
 
 
-/*
+// ================================================================================================
+
+
 #include<iostream>
 using namespace std;
-struct CBase
-{
-public:
-	virtual void M1()
-	{
-		cout << "In Method CBase::M1" << endl;
-	}
-	void M2()
-	{
-		cout << "In Method CBase::M2" << endl;
-	}
-	virtual void M4()
-	{
-		cout << "In Method CBase::M4" << endl;
-	}
-};
 
-struct CDerived :public CBase
+class CBase
 {
 public:
-	virtual void M1()
+	void M1()
 	{
-		cout << "In Method CDerived::M1" << endl;
+		cout << "In Method CBase::M1()" << endl;
 	}
-	virtual void M2(int x)
+	virtual void M2()
 	{
-		cout << "In Method CDerived::M2(int x)" << endl;
+		cout << "In Method CBase::M2()" << endl;
 	}
 	virtual void M3()
 	{
-		cout << "In Method CDerived::M3" << endl;
+		cout << "In Method CBase::M3()" << endl;
 	}
 	virtual void M5()
 	{
-		cout << "In Method CDerived::M5" << endl;
+		cout << "In Method CBase::M5()" << endl;
+	}
+};
+
+class CDerived :public CBase
+{
+public:
+	virtual void M1()
+	{
+		cout << "In Method CDerived::M1()" << endl;
+	}
+	virtual void M2()
+	{
+		cout << "In Method CDerived::M2()" << endl;
+	}
+	virtual void M4()
+	{
+		cout << "In Method CDerived::M4()" << endl;
+	}
+	virtual void M5(int x)
+	{
+		cout << "In Method CDerived::M5(int x)" << endl;
 	}
 };
 
 int main()
 {
-	//Carefully observe the call to M2() in each case 
+	//Carefully observe the call to M5() in each case 
 
 	CBase* pBase = new CBase;
-	pBase->M1();	//In Method CBase::M1
-	pBase->M2();	//In Method CBase::M2
-	//pBase->M3();	//Compile Error
-	pBase->M4();	//In Method CBase::M4
+	pBase->M1();	//In Method CBase::M1()
+	pBase->M2();	//In Method CBase::M2()
+	pBase->M3();	//In Method CBase::M3()
+	//pBase->M4();	//Compile Error as CBase::M4() is not there
+	pBase->M5();	//In Method CBase::M5()
 	cout << endl;
 
 
 	CBase* pBase2 = new CDerived;
-	pBase2->M1();	//In Method CDerived::M1
-	pBase2->M2();	//In Method CBase::M2
-	//pBase2->M2(10);	//Compile Error as call resolves to CBase::M2(int) which is not there 
-	//pBase2->M3();	//Compile Error
-	pBase2->M4();	//In Method CBase::M4
-	//pBase2->M5();	//Compile Error
+	pBase2->M1(); //In Method CBase::M1()
+	pBase2->M2(); //In Method CDerived::M2()
+	pBase2->M3(); //In Method CBase::M3()
+	//pBase2->M4(); //Compile Error as CBase::M4() is not there
+	pBase2->M5(); //In Method CBase::M5()
+	//pBase2->M5(10);	//Compile Error as call resolves to CBase::M5(int) which is not there 
 	cout << endl;
 
 
 	CDerived* pDerived = new CDerived;
-	pDerived->M1();	//In Method CDerived::M1
-	//pDerived->M2();	//Compile Error as call resolves to CDerived::M2() at compile time which is not there.
-						//It can't call CBase::M2() as it's hidden by CDerived::M2(int). It's called Method Hiding  
-	pDerived->M3();	//In Method CDerived::M3
-	pDerived->M4();	//In Method CBase::M4
-	pDerived->M5();	//In Method CDerived::M5
+	pDerived->M1();	//In Method CDerived::M1()
+	pDerived->M2();	//In Method CDerived::M2()
+	pDerived->M3();	//In Method CBase::M3()
+	pDerived->M4();	//In Method CDerived::M4()
+	//pDerived->M5();	//Compile Error as call resolves to CDerived::M5() at compile time which is not there. 
+					    //It can't call CBase::M5() as it's hidden by CDerived::M5(int x). It's called Method Hiding.
+	pDerived->M5(10); //In Method CDerived::M5(int x)
+	cout << endl;
 
 
-	//CDerived* pDerived2 = new CBase; //Compile error as Derived class can't point to Base class
+	//CDerived* pDerived2 = new CBase; //Compile error as Derived class pointer can't point to Base class object
 
 	return 0;
 }
 
-*/
+
+// ============================================================================================
 
 
 /*
@@ -165,63 +176,3 @@ int main() {
 */
 
 
-
-
-
-
-//
-//	Find the problem in the following program (Soln: need to provide deep copy or use void GlobleFun(Test1 obj))
-//
-
-#include <iostream>
-using namespace std;
-
-class Test1
-{
-	char* m_strString;
-public:
-	Test1()
-	{
-		m_strString = new char[256];
-		memset(m_strString, 0, 255);
-	}
-
-	void SetString(string str)
-	{
-		memcpy_s(m_strString, 256, str.c_str(), 50);
-	}
-
-	~Test1()
-	{
-		delete m_strString;
-		m_strString = NULL;
-
-		cout << "destructor called" << endl;
-	}
-
-	void Print()
-	{
-		cout << m_strString << endl;
-	}
-
-	//Test1(const Test1& obj)
-	//{
-	//	m_strString = new char[256];
-	//	memcpy_s(m_strString,256,obj.m_strString,50);
-	//}
-};
-
-
-void GlobleFun(Test1 obj)
-{
-	obj.Print();
-}
-
-int main()
-{
-	Test1 t;
-	t.SetString("Symantec");
-	GlobleFun(t);
-	t.Print();
-	return 0;
-}

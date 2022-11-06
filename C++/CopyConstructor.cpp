@@ -1,8 +1,27 @@
 
-//For explanation, read From: https://www.codeproject.com/articles/23533/copy-constructors-and-assignment-operators-just-te
+//NOTES:
+// 1. In C++ (before C++11), if we do not write our own, then compiler automatically creates 
+//    a default constructor, a copy constructor, an assignment operator and a destructor for every class.
+
+// 2. Compiler creates 2 constructors by default - Default constructor and Copy constructor.
+//    If you explicitly define any constructor in the class, compiler doesn't create the default constructor, 
+//    however it creates the copy constructor.
+
+// 3. If you explicitly define a parameterized or any other constructor in the class, 
+//    compiler doesn't create the default constructor, however it creates the copy constructor. 
+//    You will have to explicitly write a default constructor, if you want to create objects like, ClassName obj.
+
+// 4. In C++11 and above, if we do not write our own, then compiler automatically creates 
+//    a default constructor, a copy constructor, an assignment operator and a destructor, a move constructor 
+//    and a move assignment operator for every class.
+
+// 5. Rule of Three vs Rule of Five in C++: https://www.tutorialspoint.com/Rule-of-Three-vs-Rule-of-Five-in-Cplusplus
 
 
-// C++ program to demonstrate the Working of Copy constructor
+
+// C++ program to demonstrate the Working of Copy constructor and Assignment Operator
+// For explanation, read https://www.codeproject.com/articles/23533/copy-constructors-and-assignment-operators-just-te
+
 #define _CRT_SECURE_NO_WARNINGS 
 #include <iostream>
 #include <string.h>
