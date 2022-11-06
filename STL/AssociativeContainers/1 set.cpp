@@ -20,7 +20,8 @@ using namespace std;
 
  int main() {
      set<int> Set = { 1,5,2,4,4,3,2,5 }; // Elements will be sorted in ascending order. To get descending order, greater<> must be passed as 2nd argument. Passing less<> is optional if you need ascending order.
-     //set<int, greater<>> Set = { 1,5,2,4,4,3,2,5 }; // Elements will be sorted in descending order of the strings.  
+     //set<int, less<>> Set = { 1,5,2,4,4,3,2,5 }; // Elements will be sorted in ascending order. Same as above.  
+     //set<int, greater<>> Set = { 1,5,2,4,4,3,2,5 }; // Elements will be sorted in descending order.  
 
      Set.insert(20);
 

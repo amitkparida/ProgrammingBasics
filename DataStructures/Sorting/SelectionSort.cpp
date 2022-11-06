@@ -1,3 +1,12 @@
+//Time Complexity =  O(n^2) <- Average, Worst, O(n) <- Best
+//Space Complexity = O(1)
+
+// Slection sort is not adaptive, not stable.
+// Bubble and Insertion sorts are adaptive (Adaptive means, if the list is already sorted, the algorithm should take minimum time.)
+// Bubble, Insertion and Merge sorts are stable (Stable means, elements with duplicate values don't change their order. Useful for Databases.).
+// k no of passes in Selection sort gives you k smallest elements
+// k no of passes in Bubble sort gives you k largest elements
+// Insertion sort is suitable for LinkedList
 
 #include<iostream>
 using namespace std;
@@ -32,15 +41,7 @@ int main() {
 	}
 }
 
-//Time Complexity =  O(n^2) <- Average, Worst, O(n) <- Best
-//Space Complexity = O(1)
 
-// Slection sort is not adaptive, not stable.
-// Bubble and Insertion sorts are adaptive (Adaptive means, if the list is already sorted, the algorithm should take minimum time.)
-// Bubble, Insertion and Merge sorts are stable (Stable means, elements with duplicate values don't change their order. Useful for Databases.).
-// k no of passes in Selection sort gives you k smallest elements
-// k no of passes in Bubble sort gives you k largest elements
-// Insertion sort is suitable for LinkedList
 
 
 
