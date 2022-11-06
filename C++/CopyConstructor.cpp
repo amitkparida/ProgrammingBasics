@@ -115,6 +115,74 @@ public:
 //===========================================================================================
 
 
+/*
+// Find the problem in the following program 
+
+// Probem: Test1 destructor will be called when GlobalPrint() returns. This will delete the string.
+// So next call t.Print() will print garbage. And the program will crash when main() returns because
+// it will call the  Test1 destructor again causing a double delete of the string.
+
+// Solution: Explicitly define deep copy constructor or 
+// Pass the object by reference in void GlobalPrint(Test1& obj) to avoid copy constructor and destuctor calls
+
+#include <iostream>
+using namespace std;
+
+class Test1
+{
+    char* m_strString;
+public:
+    Test1()
+    {
+        m_strString = new char[256];
+        memset(m_strString, 0, 255);
+    }
+
+    void SetString(const char* str)
+    {
+        memcpy_s(m_strString, 256, str, 50);
+    }
+
+    ~Test1()
+    {
+        delete m_strString;
+        m_strString = NULL;
+        cout << "destructor called" << endl;
+    }
+
+    void Print()
+    {
+        cout << m_strString << endl;
+    }
+
+    //Test1(const Test1& obj)
+    //{
+    //	m_strString = new char[256];
+    //	memcpy_s(m_strString,256,obj.m_strString,50);
+    //}
+};
+
+//void GlobalPrint(Test1& obj)
+void GlobalPrint(Test1 obj)
+{
+    obj.Print();
+}
+
+int main()
+{
+    Test1 t;
+    t.SetString("Symantec");
+    GlobalPrint(t);
+    t.Print();
+    return 0;
+}
+*/
+
+
+
+//===========================================================================================
+
+
 // string size test
 //#include <iostream>
 //using namespace std;
