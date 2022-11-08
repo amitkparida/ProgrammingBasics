@@ -1,32 +1,4 @@
 
-
-/*
-There are 3 types of design patterns.
-
-1.Creational Design Patterns:
-The first thing that we do while designing any system is, to create classes and instantiate them. How do we do that?
-Creational Design Patterns solve this problem.
-- Factory
-- Abstract Factory
-- Singleton
-- Builder
-
-2. Structural Design Patterns:
-After creating the classes and objects, you have to organize these different classes to form a single structure and support a functionality)
-Organizing these to form a structure comes under Structural Design patterns
-- Bridge
-- Adaptive
-- Composite
-
-3. Behavioral Design Patterns
-After creating the classes and after putting them in a structure, we have to see the interaction between the classes,
-how will they communicate with each other. This comes under the Behavioral design Patterns
-- Interpreter
-- Stratergy
-- Observer
-*/
-
-
 #include <iostream>
 #include <mutex>
 #include <thread>
