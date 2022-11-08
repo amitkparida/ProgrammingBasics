@@ -6,7 +6,7 @@
 //In Builder class, product is a member
 //In Director class, Builder is a member
 //Director will use the Builder to build the product.
-//A Builder has product. Director has builder which is going to use the builder to create the product
+//To summerize, Builder has product. Director has builder which is going to use the builder to create the product
 
 #include <iostream>
 using namespace std;
