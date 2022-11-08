@@ -3,6 +3,10 @@
 // Answer  : Because i want to build an object(plane) and it is compossed of complex 
 //           objects(body, engine) step by step.
 
+//In Builder class, product is a member
+//In Director class, Builder is a member
+//Director will use the Builder to build the product.
+//A Builder has product. Director has builder which is going to use the builder to create the product
 
 #include <iostream>
 using namespace std;
@@ -66,8 +70,7 @@ public:
 	}
 };
 
-
-//Director: It defines steps and tells to the builder that build in given order
+//Director: It defines the steps and tells the builder to follow those steps to build the product.
 class Director
 {
 private:
@@ -81,10 +84,7 @@ public:
 	Car* buildCar() {
 		m_pCarBuilder->buildBody();
 		m_pCarBuilder->buildEngine();
-		return m_pCarBuilder->getCar();
-	}
 
-	Car* getCar() {
 		return m_pCarBuilder->getCar();
 	}
 };
