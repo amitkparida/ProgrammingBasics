@@ -81,7 +81,6 @@ mutex CMySingleton3::mtx;
 
 
 
-
 void ThreadFun1() {
 	CMySingleton3* p1 = CMySingleton3::getInstance();
 	CMySingleton3* p2 = p1->getInstance();
