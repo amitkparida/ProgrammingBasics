@@ -1,4 +1,4 @@
 Programming Basics
 - C++
-- Data Sructures
+- Data Structures
 - STL
