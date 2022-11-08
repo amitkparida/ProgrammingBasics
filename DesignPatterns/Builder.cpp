@@ -44,6 +44,10 @@ public:
 	virtual Car* getCar() {
 		return m_pCar;
 	}
+
+	virtual ~CarBuilder() {
+		delete m_pCar;
+	}
 };
 
 //TataCarBuilder concrete class, knows only how to build Tata Car
