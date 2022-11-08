@@ -57,7 +57,7 @@ public:
 		if (pInstance == NULL) //Double check to avoid locking if the object is already created
 		{
 			mtx.lock();
-			if (pInstance == NULL) 
+			if (pInstance == NULL)
 			{
 				pInstance = new CMySingleton3;
 			}
