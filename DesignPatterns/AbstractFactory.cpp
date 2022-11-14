@@ -5,99 +5,99 @@
 #include <iostream>
 using namespace std;
 
-class IButton {
+class ICar {
 public:
-	virtual void click() = 0;
+	virtual void driveCar() = 0;
 };
 
-class MacButton :public IButton {
+class TataCar :public ICar {
 public:
-	void click() {
-		cout << "Clicking Mac Button" << endl;
+	void driveCar() {
+		cout << "Driving Tata Car" << endl;
 	}
 };
 
-class WinButton :public IButton {
+class HondaCar :public ICar {
 public:
-	void click() {
-		cout << "Clicking Windows Button" << endl;
+	void driveCar() {
+		cout << "Driving Honda Car" << endl;
 	}
 };
 
-class ITextBox {
+class IBike {
 public:
-	virtual void showText() = 0;
+	virtual void rideBike() = 0;
 };
 
-class MacTextBox :public ITextBox {
+class TataBike :public IBike {
 public:
-	void showText() {
-		cout << "Showing Mac TextBox" << endl;
+	void rideBike() {
+		cout << "Riding Tata Bike" << endl;
 	}
 };
 
-class WinTextBox :public ITextBox {
+class HondaBike :public IBike {
 public:
-	void showText() {
-		cout << "Showing Windows TextBox" << endl;
+	void rideBike() {
+		cout << "Riding Honda Bike" << endl;
 	}
 };
 
-class IFactory {
+class IVehicleFactory {
 public:
-	virtual IButton* CreateButton() = 0;
-	virtual ITextBox* CreateTextBox() = 0;
+	virtual ICar* createCar() = 0;
+	virtual IBike* createBike() = 0;
 
 };
 
-class MacFactory :public IFactory {
+class TataFactory :public IVehicleFactory {
 public:
-	virtual IButton* CreateButton() {
-		return new MacButton;
+	virtual ICar* createCar() {
+		return new TataCar;
 	}
 
-	virtual ITextBox* CreateTextBox() {
-		return new MacTextBox;
+	virtual IBike* createBike() {
+		return new TataBike;
 	}
 };
 
-class WinFactory :public IFactory {
+class HondaFactory :public IVehicleFactory {
 public:
-	virtual IButton* CreateButton() {
-		return new WinButton;
+	ICar* createCar() {
+		return new HondaCar;
 	}
 
-	virtual ITextBox* CreateTextBox() {
-		return new WinTextBox;
+	IBike* createBike() {
+		return new HondaBike;
 	}
 };
 
-class GUIAbstractFactory {
+class VehicleAbstractFactory {
 public:
-	static IFactory* CreateFactory(string osType) {
-		if (osType == "windows") {
-			return new WinFactory;
+	static IVehicleFactory* CreateFactory(string vehicleBrand) {
+		if (vehicleBrand == "Tata") {
+			return new TataFactory;
 		}
-		else if (osType == "mac") {
-			return new MacFactory;
+		else if (vehicleBrand == "Honda") {
+			return new HondaFactory;
 		}
 		else {
-			return new MacFactory; //Default if also Mac, for example
+			cout << "Invalid input" << endl;
 		}
 	}
 };
 
 int main() {
-	cout << "Enter you machine OS " << endl;
-	string osType;
-	cin >> osType;
+	cout << "Enter vehicle brand name " << endl;
+	string vehicleBrand;
+	cin >> vehicleBrand;
 
-	IFactory* fact = GUIAbstractFactory::CreateFactory(osType);
+	IVehicleFactory* factory = VehicleAbstractFactory::CreateFactory(vehicleBrand);
 
-	IButton* button = fact->CreateButton();
-	button->click();
+	ICar* car = factory->createCar();
+	car->driveCar();
 
-	ITextBox* textBox = fact->CreateTextBox();
-	textBox->showText();
+	IBike* bike = factory->createBike();
+	bike->rideBike();
 }
 
