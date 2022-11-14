@@ -16,6 +16,9 @@
     <Filter Include="Source Files\SmartPointer">
       <UniqueIdentifier>{e45d0580-8ecb-4d6f-a657-de2e85b2d227}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TypeCasting">
+      <UniqueIdentifier>{d523d9a2-5cd9-4737-b7b4-91e408b74544}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CopyConstructor.cpp">
@@ -44,6 +47,18 @@
     </ClCompile>
     <ClCompile Include="vPtr_vTable.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="static_cast.cpp">
+      <Filter>Source Files\TypeCasting</Filter>
+    </ClCompile>
+    <ClCompile Include="reinterpret_cast.cpp">
+      <Filter>Source Files\TypeCasting</Filter>
+    </ClCompile>
+    <ClCompile Include="dynamic_cast.cpp">
+      <Filter>Source Files\TypeCasting</Filter>
+    </ClCompile>
+    <ClCompile Include="const_cast.cpp">
+      <Filter>Source Files\TypeCasting</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
