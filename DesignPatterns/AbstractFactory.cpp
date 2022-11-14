@@ -88,7 +88,7 @@ public:
 };
 
 int main() {
-	cout << "Enter vehicle brand name " << endl;
+	cout << "Enter vehicle brand name (Tata/Honda): ";
 	string vehicleBrand;
 	cin >> vehicleBrand;
 
