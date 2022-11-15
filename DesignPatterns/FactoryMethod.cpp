@@ -1,5 +1,10 @@
 
-// https://www.youtube.com/watch?v=E2VZNLNptLg&list=PLJhxHp6j1l-8_kjEL2hVJDs0_4eJbHtWH&index=9
+// 1. Factory Method pattern uses factory methods to deal with the problem of creating objects 
+// without having to specify the exact class of the object that will be created.
+// 
+// 2. This is done by creating objects by calling a factory method - either specified in an abstract class
+// and implemented by child classes, or implemented in a base class and optionally overriden by derived classes
+// rather than by calling a constructor.
 
 #include <iostream>
 using namespace std;
