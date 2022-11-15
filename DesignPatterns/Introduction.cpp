@@ -24,7 +24,7 @@
 //After creating the classes and objects, you have to organize these different classes to form a single structureand support a functionality)
 //Organizing these to form a structure comes under Structural Design patterns
 //- Bridge
-//- Adaptive
+//- Adapter
 //- Composite
 
 //3. Behavioral Design Patterns
