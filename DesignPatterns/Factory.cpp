@@ -15,6 +15,18 @@
 // 3. We get the benefits of virtual consructor
 
 
+// Factory vs Factory Method vs Abstract Factory
+// ===================================================
+// 1. Factory itself is responsible for instantiating the object.
+//
+// 2. Factory Method also is responsible for instantiating the object 
+//    but the instantiation logic will be delegated to subclass inheriting the factory.
+//
+// 3. Abstract Factory is not at all responsible for instantiating instead it will create
+//    another concrete factoryand force it to have the creation of at least those object
+//    which is mentioned in the abstract factory class.
+
+
 #include <iostream>
 using namespace std;
 
