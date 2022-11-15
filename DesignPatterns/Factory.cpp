@@ -20,23 +20,25 @@ using namespace std;
 
 class Vehicle {
 public:
-	virtual void createVehicle() = 0;
+	virtual void printVehicle() = 0;
 };
 
 class Car : public Vehicle {
 public:
-	void createVehicle() {
-		cout << "Creating Car" << endl;
+	void printVehicle() {
+		cout << "I am a Car" << endl;
 	}
 };
 
 class Bike :public Vehicle {
 public:
-	void createVehicle() {
-		cout << "Creating Bike" << endl;
+	void printVehicle() {
+		cout << "I am a Bike" << endl;
 	}
 };
 
+//Factory class to create objects of different types.
+//Change is required only in this function to create a new object type
 class VehicleFactory {
 public:
 	static Vehicle* getVehicle(string vehicleType) {
@@ -62,7 +64,7 @@ int main() {
 	cin >> vehicleType;
 
 	Vehicle* pVehicle = VehicleFactory::getVehicle(vehicleType);
-	pVehicle->createVehicle();
+	pVehicle->printVehicle();
 }
 
 

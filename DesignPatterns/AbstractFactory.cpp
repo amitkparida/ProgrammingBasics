@@ -13,70 +13,71 @@
 #include <iostream>
 using namespace std;
 
-
 class ICar {
 public:
-	virtual void driveCar() = 0;
+	virtual void printCar() = 0;
 };
 
 class TataCar :public ICar {
 public:
-	void driveCar() {
-		cout << "Driving Tata Car" << endl;
+	void printCar() {
+		cout << "Tata Car" << endl;
 	}
 };
 
 class HondaCar :public ICar {
 public:
-	void driveCar() {
-		cout << "Driving Honda Car" << endl;
+	void printCar() {
+		cout << "Honda Car" << endl;
 	}
 };
 
 class IBike {
 public:
-	virtual void rideBike() = 0;
+	virtual void printBike() = 0;
 };
 
 class TataBike :public IBike {
 public:
-	void rideBike() {
-		cout << "Riding Tata Bike" << endl;
+	void printBike() {
+		cout << "Tata Bike" << endl;
 	}
 };
 
 class HondaBike :public IBike {
 public:
-	void rideBike() {
-		cout << "Riding Honda Bike" << endl;
+	void printBike() {
+		cout << "Honda Bike" << endl;
 	}
 };
 
+//This is abstract factory which will return factory of similar objects
+//Example Tata, Honda etc
 class IVehicleFactory {
 public:
-	virtual ICar* createCar() = 0;
-	virtual IBike* createBike() = 0;
-
+	virtual ICar* getCar() = 0;
+	virtual IBike* getBike() = 0;
 };
 
+//This is a factory of similar object which will actually create the objects
 class TataFactory :public IVehicleFactory {
 public:
-	virtual ICar* createCar() {
+	virtual ICar* getCar() {
 		return new TataCar;
 	}
 
-	virtual IBike* createBike() {
+	virtual IBike* getBike() {
 		return new TataBike;
 	}
 };
 
 class HondaFactory :public IVehicleFactory {
 public:
-	ICar* createCar() {
+	ICar* getCar() {
 		return new HondaCar;
 	}
 
-	IBike* createBike() {
+	IBike* getBike() {
 		return new HondaBike;
 	}
 };
@@ -99,14 +100,14 @@ public:
 
 int main() {
 	cout << "Enter vehicle brand name (Tata/Honda): ";
-	string vehicleBrand;
-	cin >> vehicleBrand;
+	string vehicleCompany;
+	cin >> vehicleCompany;
 
-	IVehicleFactory* factory = VehicleAbstractFactory::CreateFactory(vehicleBrand);
+	IVehicleFactory* factory = VehicleAbstractFactory::CreateFactory(vehicleCompany);
 
-	ICar* car = factory->createCar();
-	car->driveCar();
+	ICar* car = factory->getCar();
+	car->printCar();
 
-	IBike* bike = factory->createBike();
-	bike->rideBike();
+	IBike* bike = factory->getBike();
+	bike->printBike();
 }
