@@ -1,6 +1,5 @@
-// I referred one YouTube video for this program. I am not confident about this program
-// https://www.youtube.com/watch?v=E2VZNLNptLg&list=PLJhxHp6j1l-8_kjEL2hVJDs0_4eJbHtWH&index=9
 
+// https://www.youtube.com/watch?v=E2VZNLNptLg&list=PLJhxHp6j1l-8_kjEL2hVJDs0_4eJbHtWH&index=9
 
 #include <iostream>
 using namespace std;
@@ -39,10 +38,15 @@ public:
 };
 
 class IVehicleFactory {
-public:
-
-	//This is the factory method
+protected:
 	virtual IVehicle* getVehicle(string vehicleType) = 0;
+
+public:
+	virtual IVehicle* createVehicle(string vehicleType) {
+		IVehicle* vehicle = getVehicle(vehicleType);
+		vehicle->printVehicle();
+		return vehicle;
+	}
 };
 
 class TataFactory :public IVehicleFactory {
@@ -74,16 +78,11 @@ public:
 };
 
 int main() {
-
 	IVehicleFactory* tata = new TataFactory;
-	IVehicle* tatacar = tata->getVehicle("car");
-	IVehicle* tatabike = tata->getVehicle("bike");
-	tatacar->printVehicle();
-	tatabike->printVehicle();
+	IVehicle* tatacar = tata->createVehicle("car");
+	IVehicle* tatabike = tata->createVehicle("bike");
 
 	IVehicleFactory* honda = new HondaFactory;
-	IVehicle* hondacar = honda->getVehicle("car");
-	IVehicle* hondabike = honda->getVehicle("bike");
-	hondacar->printVehicle();
-	hondabike->printVehicle();
+	IVehicle* hondacar = honda->createVehicle("car");
+	IVehicle* hondabike = honda->createVehicle("bike");
 }
