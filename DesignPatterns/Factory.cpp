@@ -2,6 +2,19 @@
 //Library should be responsible to decide which object type to create based on the input.
 //Client should just call library's factory and pass type without worrying about actual implementation of creation of object.
 
+// Factory Design Pattern:
+// 1. It creates object for you, rather you initiating object directly
+// 2. It is also known as "Virtual Constructor". (Note: C++ does not support Virtual Constructor)
+
+// How to implement FDP
+// Ans: Define an interface or an abstract class for creating an object, but let the subclass decide which class to initiate.
+
+// Advantages:
+// 1. Less code change if we change object creation process
+// 2. We create object without exposing creation logic to the client
+// 3. We get the benefits of virtual consructor
+
+
 #include <iostream>
 using namespace std;
 

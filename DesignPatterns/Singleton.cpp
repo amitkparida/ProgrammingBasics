@@ -1,3 +1,31 @@
+//DESCRIPTION:
+// 1. Singleton design pattern is a creational design pattern and one of the main design pattern to learn, 
+// 2. It gives great flexibility over global variables, but this design pattern should be built with good care 
+//    otherwise developer may fall into lots of problem.
+//
+// 3. And one of the main problem could be concurrency, when two or more threads are trying to access
+//    the same object which you created as singleton might end up corrupting the data.
+//    So one need to be very careful which design Singleton Design Pattern.
+
+// Definition:
+// Singleton Design Pattern defines a class that has only one instance and provides a global point of access that instance.
+
+// Requirements:
+// 1. One and only one instance
+// 2. Global access
+// 3. No ownership
+// 4. Lazy initialization
+
+//Advantages:
+// 1. Save Memory: Only one instance is required, so why to create so many?
+// 2. SIngle access point: Logger, database connection
+// 3. Flexibility: Change anytime you want to
+
+// Usage: 
+// Multithreaded environment: Threadpool
+// Database application: Logging
+// Configuration Settings - Game settings, application settings etc.
+
 
 #include <iostream>
 #include <mutex>

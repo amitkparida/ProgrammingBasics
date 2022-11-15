@@ -2,8 +2,17 @@
 // Abstract Factory design pattern is going to create factories that are going to create objects.
 // Basically, abstract Factory design pattern is going to create a family of objects
 
+// Abstracte Factory Design Pattern:
+// It defines an abstract class for creating families of related objects but without specifying their concrete sub-class.
+
+//Why/When to use Abstract Factory Design Pattern?
+// 1. You need system to be independent of how objects are created, composed and represented.
+// 2. Show interface, not implementation
+// 3. System need to be configured with one of the multiple family of objects.
+
 #include <iostream>
 using namespace std;
+
 
 class ICar {
 public:
@@ -83,6 +92,7 @@ public:
 		}
 		else {
 			cout << "Invalid input" << endl;
+
 		}
 	}
 };
@@ -100,4 +110,3 @@ int main() {
 	IBike* bike = factory->createBike();
 	bike->rideBike();
 }
-

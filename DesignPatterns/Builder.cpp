@@ -1,7 +1,8 @@
 
 // Question: WHY Builder Design Pattern
-// Answer  : Because i want to build an object(plane) and it is compossed of complex 
+// Answer  : Because I want to build an object (Car) and it is compossed of complex 
 //           objects(body, engine) step by step.
+//			 And I want to create these complex objects step by step (Director will handle that)
 
 //In Builder class, product is a member
 //In Director class, Builder is a member

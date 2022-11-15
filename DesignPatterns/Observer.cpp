@@ -1,5 +1,10 @@
 //Subject-Observer. Also called Publisher-Subscriber
 
+// Observer Design Pattern:
+// It defines a one-to-may dependency between objects so that when one object changes state, 
+// all its dependents are notified and updated automatically.
+
+
 #include <iostream>
 #include <list>
 using namespace std;
