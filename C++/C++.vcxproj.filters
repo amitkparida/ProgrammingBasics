@@ -48,16 +48,16 @@
     <ClCompile Include="vPtr_vTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="static_cast.cpp">
+    <ClCompile Include="TypeCasting\static_cast.cpp">
       <Filter>Source Files\TypeCasting</Filter>
     </ClCompile>
-    <ClCompile Include="reinterpret_cast.cpp">
+    <ClCompile Include="TypeCasting\reinterpret_cast.cpp">
       <Filter>Source Files\TypeCasting</Filter>
     </ClCompile>
-    <ClCompile Include="dynamic_cast.cpp">
+    <ClCompile Include="TypeCasting\dynamic_cast.cpp">
       <Filter>Source Files\TypeCasting</Filter>
     </ClCompile>
-    <ClCompile Include="const_cast.cpp">
+    <ClCompile Include="TypeCasting\const_cast.cpp">
       <Filter>Source Files\TypeCasting</Filter>
     </ClCompile>
   </ItemGroup>
