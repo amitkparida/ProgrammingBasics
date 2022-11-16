@@ -34,18 +34,19 @@ using namespace std;
 
 class CMySingleton
 {
+private:
+	CMySingleton() = default;								// Private constructor defined
+	CMySingleton(const CMySingleton&) = delete;				// Prevent copy-construction, definition not required
+	CMySingleton(CMySingleton&&) = delete;					// Prevent move-construction, definition not required
+	CMySingleton& operator=(const CMySingleton&) = delete;	// Prevent copy assignment, definition not required
+	CMySingleton& operator=(CMySingleton&&) = delete;		// Prevent move assignment, definition not required
+
 public:
 	static CMySingleton& getInstance()
 	{
 		static CMySingleton singleton;
 		return singleton;
 	}
-
-	// Other non-static member functions
-private:
-	CMySingleton() {};                                 // Private constructor defined
-	CMySingleton(const CMySingleton&);                 // Prevent copy-construction, definition not required
-	CMySingleton& operator=(const CMySingleton&);      // Prevent assignment, definition not required
 };
 
 
@@ -53,6 +54,13 @@ private:
 
 class CMySingleton2
 {
+private:
+	static CMySingleton2* pInstance;
+
+	CMySingleton2() {};
+	CMySingleton2(const CMySingleton2&);
+	CMySingleton2& operator= (const CMySingleton2&);
+
 public:
 	static CMySingleton2* getInstance() {
 		if (pInstance == NULL) // is it the first call?
@@ -61,17 +69,9 @@ public:
 		}
 		return pInstance; // address of sole instance
 	}
-
-protected:
-	CMySingleton2() {};
-	CMySingleton2(const CMySingleton2&);
-	CMySingleton2& operator= (const CMySingleton2&);
-
-private:
-	static CMySingleton2* pInstance;
 };
 
-CMySingleton2* CMySingleton2::pInstance = NULL;// initialize static pointer
+CMySingleton2* CMySingleton2::pInstance = NULL;// Initialize static member
 
 
 //OR
@@ -80,6 +80,14 @@ CMySingleton2* CMySingleton2::pInstance = NULL;// initialize static pointer
 //Thread safe
 class CMySingleton3
 {
+private:
+	static CMySingleton3* pInstance;
+	static mutex mtx;
+
+	CMySingleton3() {};									// Private constructor defined
+	CMySingleton3(const CMySingleton3&);				// Prevent copy-construction, definition not required
+	CMySingleton3& operator= (const CMySingleton3&);	// Prevent assignment, definition not required
+
 public:
 	static CMySingleton3* getInstance() {
 		if (pInstance == NULL) //Double check to avoid locking if the object is already created
@@ -93,18 +101,10 @@ public:
 		}
 		return pInstance; // address of sole instance
 	}
-
-protected:
-	CMySingleton3() {};
-	CMySingleton3(const CMySingleton3&);
-	CMySingleton3& operator= (const CMySingleton3&);
-
-private:
-	static CMySingleton3* pInstance;
-	static mutex mtx;
 };
 
-CMySingleton3* CMySingleton3::pInstance = NULL;// initialize static pointer
+// Initialize static members
+CMySingleton3* CMySingleton3::pInstance = NULL;
 mutex CMySingleton3::mtx;
 
 

@@ -122,7 +122,7 @@ int main() {
 	p1->SetNextSlot(p2);
 	p2->SetNextSlot(p3);
 
-	p1->Run(3000);
+	p1->Run(1000);
 
 	return 0;
 }
