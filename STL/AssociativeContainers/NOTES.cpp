@@ -18,7 +18,7 @@ And if the insertions and deletions are less frequent and search is a more frequ
 
 Why set and map are used when unordered set and unordered are more efficient?
 
-Unordered map or unordered set doesn't allow user defined data types or pairs as keys. only allow integer and string.
+Unordered map or unordered set doesn't allow user defined data types or pairs as keys, they only allow integer and string.
 
 map and set allow every data types. Also keys are sorted in map and set.
 
