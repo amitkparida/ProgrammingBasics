@@ -78,5 +78,8 @@
     <ClCompile Include="emplace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AssociativeContainers\NOTES.cpp">
+      <Filter>Source Files\AssociativeContainer</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
