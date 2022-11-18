@@ -81,5 +81,8 @@
     <ClCompile Include="AssociativeContainers\NOTES.cpp">
       <Filter>Source Files\AssociativeContainer</Filter>
     </ClCompile>
+    <ClCompile Include="STL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

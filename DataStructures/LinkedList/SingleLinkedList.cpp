@@ -6,6 +6,21 @@
 // https://github.com/cppnuts-yt/CppNuts
 // https://github.com/coding-minutes/dsa-essentials-course
 
+
+/*
+ 
+ //In Leetcode Problems, Definition for singly-linked list.
+
+   struct ListNode {
+      int val;
+      ListNode *next;
+      ListNode() : val(0), next(nullptr) {}
+      ListNode(int x) : val(x), next(nullptr) {}
+      ListNode(int x, ListNode *next) : val(x), next(next) {}
+  };
+  */
+
+
 #include <iostream>
 #include <stack>
 using namespace std;

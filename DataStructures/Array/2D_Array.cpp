@@ -88,3 +88,9 @@ int main()
 */
 
 
+
+
+//// 2D array using vectors
+//vector<vector<int>> matrix; // create a matrix
+//vector<vector<int>> matrix(N, vector<int>(M, 0)); // create a N x M matrix and fill it with all 0
+
