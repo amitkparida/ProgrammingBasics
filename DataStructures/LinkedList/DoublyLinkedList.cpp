@@ -15,14 +15,17 @@
 #include <iostream>
 using namespace std;
 
+struct Node {
+	int data;
+	Node* next;
+	Node* prev;
+	Node() : data(0), next(NULL), prev(NULL) {}
+	Node(int x) : data(x), next(NULL), prev(NULL) {}
+	Node(int x, Node* next, Node* prev) : data(x), next(next), prev(prev) {}
+};
+
 class CDoublyLinkedList {
 private:
-	struct Node {
-		int data;
-		Node* next;
-		Node* prev;
-		Node(int newdata, Node* newnext = NULL, Node* newprev = NULL);
-	};
 	Node* head;
 
 public:
@@ -38,12 +41,6 @@ public:
 	void Reverse();
 	int Length();
 };
-
-CDoublyLinkedList::Node::Node(int newdata, Node* newnext, Node* newprev) {
-	data = newdata;
-	next = newnext;
-	prev = newprev;
-}
 
 CDoublyLinkedList::CDoublyLinkedList() {
 	head = NULL;

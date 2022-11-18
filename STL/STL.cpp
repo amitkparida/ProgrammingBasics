@@ -2,6 +2,14 @@
 
 /*
 
+https://abhiarrathore.medium.com/the-magic-of-c-stl-standard-template-library-e910f43379ea
+https://leetcode.com/discuss/study-guide/1327203/C%2B%2B-STL-Guide-or-STL-Operations-and-Time-Complexities
+https://leetcode.com/discuss/study-guide/1154632/C%2B%2B-STL-powerful-guide-or-Compiled-list-of-popular-STL-operations
+https://leetcode.com/discuss/study-guide/1387739/C%2B%2B-STL-Guide-or-Online-Coding-Rounds-or-Placements-2021-22
+https://leetcode.com/discuss/study-guide/1359115/All-C%2B%2B-STL-internal-implementation-oror-last_minute_notes-oror-2021
+https://leetcode.com/discuss/study-guide/1068545/HASH-TABLE-and-MAP-POWERFUL-GUIDE
+
+
 Standard Template Library (STL):
 ===============================
 

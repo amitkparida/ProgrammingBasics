@@ -15,21 +15,7 @@
 // 3. LEFT SKEWED BINARY TREE
 //    Every node should have only left children.
 // 4. RIGHT SKEWED BINARY TREE
-//    Every node should have only right children.
-
-
-/*
-//In Leetcode Problems, Definition for a binary tree node.
- struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- };
- */
- 
+//    Every node should have only right children. 
 
 
 // Watch this to understand the code: https://www.youtube.com/watch?v=5NiXlPrLslg&list=PLDzeHZWIZsTo87y1ytEAqp7wYlEP3nner
@@ -37,17 +23,14 @@
 #include<queue>
 using namespace std;
 
-class Node {
+struct Node {
 public:
     int data;
     Node* left;
     Node* right;
-
-    Node(int d) {
-        this->data = d;
-        this->left = NULL;
-        this->right = NULL;
-    }
+    Node() : data(0), left(NULL), right(NULL) {}
+    Node(int x) : data(x), left(NULL), right(NULL) {}
+    Node(int x, Node* left, Node* right) : data(x), left(left), right(right) {}
 };
 
 Node* buildTree(Node* root) {

@@ -6,32 +6,22 @@
 // https://github.com/cppnuts-yt/CppNuts
 // https://github.com/coding-minutes/dsa-essentials-course
 
-
-/*
- 
- //In Leetcode Problems, Definition for singly-linked list.
-
-   struct ListNode {
-      int val;
-      ListNode *next;
-      ListNode() : val(0), next(nullptr) {}
-      ListNode(int x) : val(x), next(nullptr) {}
-      ListNode(int x, ListNode *next) : val(x), next(next) {}
-  };
-  */
-
+// https://leetcode.com/problems/add-two-numbers/discuss/1340/a-summary-about-how-to-solve-linked-list-problem-c
 
 #include <iostream>
 #include <stack>
 using namespace std;
 
+struct Node {
+	int data;
+	Node* next;
+	Node() : data(0), next(NULL) {}
+	Node(int x) : data(x), next(NULL) {}
+	Node(int x, Node* next) : data(x), next(next) {}
+};
+
 class CLinkedList{
 private:
-	struct Node {
-		int data;
-		Node* next;
-		Node(int newdata, Node* newnext = NULL);
-	};
 	Node* head;
 
 public:
@@ -49,15 +39,11 @@ public:
 	void Reverse2();
 	void ReverseUsingStack();
 	void ReverseUsingRecursion();
+	void ReverseInBetween(int left, int right);
 
 private:
 	void ReverseRecUtil(Node* prevNode, Node* currentNode);
 };
-
-CLinkedList::Node::Node(int newdata, Node* newnext) {
-	data = newdata;
-	next = newnext;
-}
 
 CLinkedList::CLinkedList() {
 	head = NULL;
@@ -352,6 +338,36 @@ void CLinkedList::ReverseRecUtil(Node* prevNode, Node* currentNode)
 	}
 }
 
+//Reverse a linked list from position m to n, where 1 =< m =< n =< length
+//Do it in-place and in one-pass. 
+void CLinkedList::ReverseInBetween(int m, int n) {
+	Node* prevNode, * currNode, * nextNode;
+
+	Node preHead{}; // zero initialization
+	preHead.next = head;
+
+	currNode = head;
+	prevNode = &preHead;
+
+	int i = 1;
+	while (i < n) {
+		if (i < m) {
+			prevNode = currNode;
+			currNode = currNode->next;
+		}
+		else {
+			nextNode = currNode->next;
+			currNode->next = nextNode->next;
+			nextNode->next = prevNode->next;
+			prevNode->next = nextNode;
+		}
+
+		i++;
+	}
+
+	head = preHead.next;
+}
+
 int main() {
 	CLinkedList* mylist = new CLinkedList;
 
@@ -362,6 +378,7 @@ int main() {
 	mylist->PushBack(5);
 	mylist->PushBack(6);
 	mylist->Print();
+
 
 	mylist->InsertAtPosition(3, 100);
 	mylist->Print();
@@ -374,6 +391,9 @@ int main() {
 
 	//mylist->DeleteNode(200);
 	mylist->Reverse();
+	mylist->Print();
+
+	mylist->ReverseInBetween(2, 5);
 	mylist->Print();
 
 	//mylist->DeleteList();
