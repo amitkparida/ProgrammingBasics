@@ -19,6 +19,9 @@
     <Filter Include="Source Files\TypeCasting">
       <UniqueIdentifier>{d523d9a2-5cd9-4737-b7b4-91e408b74544}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Multithreading">
+      <UniqueIdentifier>{ba7e1719-f07a-4468-bdaa-b64d475ddcac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CopyConstructor.cpp">
@@ -59,6 +62,63 @@
     </ClCompile>
     <ClCompile Include="TypeCasting\const_cast.cpp">
       <Filter>Source Files\TypeCasting</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\1 IntroductionToThreads.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\2 CreatingThreads.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\3 join_detach .cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\4 mutex.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\5 mutex_try_lock.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\6 std_try_lock.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\7 timed_mutex.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\8 recursive_mutex.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\9 lock_guard.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\10 unique_lock.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\11 condition_variable.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\12 deadlock.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\13 ThreadSync.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\14 std_lock.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\15 std_promise_future.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\16 std_async.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\17 ProducerConsumer.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\18 PrintInSequence.cpp">
+      <Filter>Source Files\Multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithreading\19 fizzbuzz.cpp">
+      <Filter>Source Files\Multithreading</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
