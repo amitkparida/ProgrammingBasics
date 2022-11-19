@@ -13,34 +13,58 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Creational">
+      <UniqueIdentifier>{20ad3942-0a0d-4bfc-b849-db1b149a6ea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structural">
+      <UniqueIdentifier>{ece2b1a4-64bb-4ed8-8d9d-d2939000a7de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Behavioral">
+      <UniqueIdentifier>{4e65c424-a530-4285-b647-3ba371ff22ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Singleton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Builder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Factory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Observer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AbstractFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Introduction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Adapter.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Creational\Factory.cpp">
+      <Filter>Source Files\Creational</Filter>
     </ClCompile>
-    <ClCompile Include="FactoryMethod.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Creational\FactoryMethod.cpp">
+      <Filter>Source Files\Creational</Filter>
     </ClCompile>
-    <ClCompile Include="ChainOfResponsibility.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Creational\AbstractFactory.cpp">
+      <Filter>Source Files\Creational</Filter>
+    </ClCompile>
+    <ClCompile Include="Creational\Singleton.cpp">
+      <Filter>Source Files\Creational</Filter>
+    </ClCompile>
+    <ClCompile Include="Creational\Builder.cpp">
+      <Filter>Source Files\Creational</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavioral\ChainOfResponsibility.cpp">
+      <Filter>Source Files\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavioral\Command.cpp">
+      <Filter>Source Files\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavioral\Observer.cpp">
+      <Filter>Source Files\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavioral\Strategy.cpp">
+      <Filter>Source Files\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="Structural\Adapter.cpp">
+      <Filter>Source Files\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="Structural\Bridge.cpp">
+      <Filter>Source Files\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="Structural\Decorator.cpp">
+      <Filter>Source Files\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="Structural\Facade.cpp">
+      <Filter>Source Files\Structural</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
