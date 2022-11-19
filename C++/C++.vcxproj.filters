@@ -120,5 +120,8 @@
     <ClCompile Include="Multithreading\19 fizzbuzz.cpp">
       <Filter>Source Files\Multithreading</Filter>
     </ClCompile>
+    <ClCompile Include="Multithreading\Initialization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
