@@ -12,7 +12,7 @@
 //    You will have to explicitly write a default constructor, if you want to create objects like, ClassName obj.
 
 // 4. In C++11 and above, if we do not write our own, then compiler automatically creates 
-//    a default constructor, a copy constructor, an assignment operator and a destructor, a move constructor 
+//    a default constructor, a copy constructor, a copy assignment operator and a destructor, a move constructor 
 //    and a move assignment operator for every class.
 
 // 5. Rule of Three vs Rule of Five in C++: https://www.tutorialspoint.com/Rule-of-Three-vs-Rule-of-Five-in-Cplusplus
@@ -21,6 +21,7 @@
 
 // C++ program to demonstrate the Working of Copy constructor and Assignment Operator
 // For explanation, read https://www.codeproject.com/articles/23533/copy-constructors-and-assignment-operators-just-te
+
 
 #define _CRT_SECURE_NO_WARNINGS 
 #include <iostream>
@@ -36,7 +37,9 @@ public:
     CString(const char* inStr = NULL); // Default/Parameterized constructor
     ~CString() { delete[] str; } // Destructor
     CString(const CString&); // Copy constructor
-    CString& operator=(const CString&); //Assignment operator
+    CString& operator=(const CString&); //Copy Assignment operator
+    CString(CString&&); //Move constructor
+    CString& operator=(CString&&); //Move Assignment operator
 
     void print() { // Function to print string
         cout << str << endl;
@@ -44,8 +47,7 @@ public:
 };
 
 // In this the pointer returns the CHAR array in the same sequence of string object but with an additional null pointer '\0'
-CString::CString(const char* inStr)
-{
+CString::CString(const char* inStr) {
     if (inStr == NULL) {
         length = 0;
         str = NULL;
@@ -58,34 +60,66 @@ CString::CString(const char* inStr)
 }
 
 //Overload Copy Constructor
-CString::CString(const CString& rhs)
-{
+CString::CString(const CString& rhs) {
     length = rhs.length;
     str = new char[length + 1];
     strcpy(str, rhs.str);
 }
 
-//Overload Assignment operator. Delete the contents of the existing string before assigning the new string.
+//Overload Copy Assignment operator. 
+//Delete the contents of the existing string before assigning the new string.
 //Use tempStr as we should not delete str first, then call str = new char[]. 
 //Because if new throws exception, the object will be left in a bad state because str would have already been deleted.
 CString& CString::operator=(const CString& rhs) {
-    if (this != &rhs) { //handle self assignment
-        char* tempStr = new char[rhs.length + 1];
-        strcpy(tempStr, rhs.str);
-        delete[] str;
-        str = tempStr;
-        length = rhs.length;
+    if (this == &rhs) { //handle self assignment
+        return *this;
     }
 
+    char* tempStr = new char[rhs.length + 1];
+    strcpy(tempStr, rhs.str);
+    delete[] str;
+    str = tempStr;
+    length = rhs.length;
+
     return *this;
+}
+
+//Overload Move Constructor
+CString::CString(CString&& rhs) {
+    length = rhs.length;
+    str = rhs.str;
+    rhs.str = NULL; // Ownership of pointer transferred
+}
+
+//Overload Move Assignment operator. 
+CString& CString::operator=(CString&& rhs) {
+    if (this == &rhs) { //handle self assignment
+        return *this;
+    }
+
+    delete[] str;
+    str = rhs.str;
+    rhs.str = NULL; // Ownership of pointer transferred
+    length = rhs.length;
+
+    return *this;
+}
+
+
+CString CreateString() {
+    return *(new CString("Amit"));
 }
 
 int main()
 {
     CString str1("Amit Kumar Parida");
-    CString str2 = str1; //Copy constructor will be called
+    CString str2 = str1; //Copy constructor will be called. If the compiler does Copy Elision for optimization, it won't be called.
     CString str3;
     str3 = str1; //Assignment operator will be called (when you assign one object to another existing object)
+
+    CString str4{ CreateString() }; //Move constructor will be called when you try to copy temporary object. If the compiler does Move Elision for optimization, it won't be called.
+    CString str5;
+    str5 = CreateString(); // Move Assignment operator will be called (when you assign one object to another existing object)
 
     //When main goes out of scope, the destructors of all the above objects will be called.
     //If we don't overload copy constructor or assignment operator, then it will cause multiple times delete of same underlying str array
@@ -93,11 +127,13 @@ int main()
 }
 
 
+
+
 //============================================================================================
 
 
 /*
-//Copy constructor and Assignment operator
+//Another Example
 
 #include <iostream>
 using namespace std;
@@ -113,23 +149,50 @@ public:
     //} 
 
     //Overloading Copy Constructor
-    CArray(const CArray& other) :size(other.size), data(new int[other.size]){
-        copy(other.data, other.data + other.size, data);
+    CArray(const CArray& rhs) :size(rhs.size), data(new int[rhs.size]){
+        copy(rhs.data, rhs.data + rhs.size, data);
     }
 
     //Overloading Assignment Operator
-    CArray& operator=(const CArray& other){
-        if (this != &other) {
-            int* newdata = new int[other.size];
-            copy(other.data, other.data + other.size, newdata);
-            delete[] data;
-            data = newdata;
-            size = other.size;
+    CArray& operator=(const CArray& rhs){
+        if (this == &rhs) { //handle self assignment
+            return *this;
         }
+
+        int* tempData = new int[rhs.size];
+        copy(rhs.data, rhs.data + rhs.size, tempData);
+        delete[] data;
+        data = tempData;
+        size = rhs.size;
+
+        return *this;
+    }
+
+    //Overloading Move Constructor
+    CArray(CArray&& rhs) :size(rhs.size), data(rhs.data) {
+        rhs.data = NULL; //Transfer of pointer ownership
+    }
+
+    //Overloading Assignment Operator
+    CArray& operator=(CArray&& rhs) {
+        if (this == &rhs) { //handle self assignment
+            return *this;
+        }
+
+        delete[] data;
+        data = rhs.data;
+        rhs.data = NULL;
+        size = rhs.size;
+
+        return *this;
     }
 };
-*/
 
+int main() {
+
+}
+
+*/
 
 //===========================================================================================
 
