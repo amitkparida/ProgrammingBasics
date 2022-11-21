@@ -18,10 +18,11 @@
 // 5. If you implement any of the above constructors (including default, copy constructor, copy assignment operator or destuctor),
 //    the compiler won't synthesize the move constructor and move assignment operator. You will have to implement them as well.
 
-// 6. If you implement any move operation (move constructor and move assignment operator), the compiler won't synthesize the copy constructor,
-//    copy assignment operator. You will have to implement them as well.
+// 6. If you implement any move operation (move constructor and move assignment operator), the compiler won't synthesize 
+//    the default constructor, copy constructor or copy assignment operator. 
+//    You will have to implement them as well (You can use "default" keyword for their default implementations).
 
-// 6. Rule of Three vs Rule of Five in C++: https://www.tutorialspoint.com/Rule-of-Three-vs-Rule-of-Five-in-Cplusplus
+// 7. Rule of Three vs Rule of Five in C++: https://www.tutorialspoint.com/Rule-of-Three-vs-Rule-of-Five-in-Cplusplus
 
 
 
@@ -119,11 +120,14 @@ CString CreateString() {
 int main()
 {
     CString str1("Amit Kumar Parida");
-    CString str2 = str1; //Copy constructor will be called. If the compiler does Copy Elision for optimization, it won't be called.
+    CString str2 = str1; //Copy constructor will be called.
     CString str3;
     str3 = str1; //Assignment operator will be called (when you assign one object to another existing object)
 
-    CString str4{ CreateString() }; //Move constructor will be called when you try to copy temporary object. If the compiler does Move Elision for optimization, it won't be called.
+    CString str4{ CreateString() }; //Move constructor will be called when you try to copy/move temporary object. 
+                                    //For optimization, most Modern compilers use Move/Copy Elision to omit calls
+                                    //to Move/Copy constructors when you move/copy temporary object.
+ 
     CString str5;
     str5 = CreateString(); // Move Assignment operator will be called (when you assign one object to another existing object)
 

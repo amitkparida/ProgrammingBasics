@@ -21,7 +21,7 @@ using namespace std;
 class Foo {
     int x;
 public:
-    explicit Foo(int x) : x{ x } {}
+    explicit Foo(int x) : x{ x }{}
     int getX() { return x; }
     ~Foo() { cout << "Foo Destructor" << endl; }
 };
@@ -31,8 +31,23 @@ int main() {
     // Foo *f = new Foo(10);
     // cout << f->getX() << endl;
 
-    std::unique_ptr<Foo> p(new Foo(10));
-    cout << p->getX() << endl;
+    // std::unique_ptr<Foo> p(new Foo(10));
+    // cout << p->getX() << endl;
+
+    std::unique_ptr<Foo> p1(new Foo(10));
+    std::unique_ptr<Foo> p2 = make_unique<Foo>(20);//make_unique is exception safe
+
+    std::cout << p1->getX() << endl << (*p2).getX() << endl;
+
+    //unique_ptr<Foo> p3 = p1; //FAIL: This will fail because you can not copy ownership
+    unique_ptr<Foo> p3 = std::move(p1); //SUCCESS: Because moving ownership is allowed. After move, p1's pointer member will be NULL.
+
+    Foo* pObj = p3.get();
+    Foo* pObj2 = p3.release(); //p3's pointer member will be copied to pObj2 and then becomes NULL
+
+    p2.reset(pObj2);
+
+    cout << p2->getX() << endl;
 
     return 0;
 }
