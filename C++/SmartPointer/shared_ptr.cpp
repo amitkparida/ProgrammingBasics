@@ -8,7 +8,7 @@
 // 3. shared_ptr is threads safe and not thread safe. [what is this??]
 //    a. control block is thread safe
 //    b. managed object is not
-// 4. There are three ways shared_ptr will destroyed managed object.
+// 4. There are three ways shared_ptr will destroy managed object.
 //    a. If the last shared_ptr goes out of scope.
 //    b. If you initialize shared_ptr with some other shared_ptr.
 //    c. If you reset shared_ptr.
@@ -38,7 +38,14 @@ void fun(std::shared_ptr<Foo> sp, int count) {
 int main() {
 
     std::shared_ptr<Foo> sp(new Foo(100));
-    cout << "main before: " << sp.use_count() << endl;
+    cout << sp->getX() << endl;
+    cout << "Before: " << sp.use_count() << endl;
+    //std::shared_ptr<Foo> sp1 = sp; //Reference count incremented
+    ////std::shared_ptr<Foo>& sp1 = sp; //Reference count not incremented
+    ////std::shared_ptr<Foo>* sp1 = &sp; // //Reference count not incremented
+    //cout << "After: " << sp.use_count() << endl;
+    //cout << "After: " << sp1.use_count() << endl;
+
     thread t1(fun, sp, 1), t2(fun, sp, 2), t3(fun, sp, 3);
     t1.join(); t2.join(); t3.join();
     return 0;
