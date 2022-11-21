@@ -15,7 +15,13 @@
 //    a default constructor, a copy constructor, a copy assignment operator and a destructor, a move constructor 
 //    and a move assignment operator for every class.
 
-// 5. Rule of Three vs Rule of Five in C++: https://www.tutorialspoint.com/Rule-of-Three-vs-Rule-of-Five-in-Cplusplus
+// 5. If you implement any of the above constructors (including default, copy constructor, copy assignment operator or destuctor),
+//    the compiler won't synthesize the move constructor and move assignment operator. You will have to implement them as well.
+
+// 6. If you implement any move operation (move constructor and move assignment operator), the compiler won't synthesize the copy constructor,
+//    copy assignment operator. You will have to implement them as well.
+
+// 6. Rule of Three vs Rule of Five in C++: https://www.tutorialspoint.com/Rule-of-Three-vs-Rule-of-Five-in-Cplusplus
 
 
 

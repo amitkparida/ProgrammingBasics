@@ -24,7 +24,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CopyConstructor.cpp">
+    <ClCompile Include="CopyAndMove.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SmartPointer\SmartPointer.cpp">
