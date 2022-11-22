@@ -35,7 +35,8 @@ int main() {
     // cout << p->getX() << endl;
 
     std::unique_ptr<Foo> p1(new Foo(10));
-    std::unique_ptr<Foo> p2 = make_unique<Foo>(20);//make_unique is exception safe
+    std::unique_ptr<Foo> p2 = make_unique<Foo>(20);//Another way of declaration. make_unique is exception safe
+    //auto p2 = make_unique<Foo>(20);
 
     std::cout << p1->getX() << endl << (*p2).getX() << endl;
 

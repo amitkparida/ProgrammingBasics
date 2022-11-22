@@ -36,8 +36,10 @@ void fun(std::shared_ptr<Foo> sp, int count) {
 }
 
 int main() {
-
     std::shared_ptr<Foo> sp(new Foo(100));
+    //std::shared_ptr<Foo> sp = make_shared<Foo>(100);
+    //auto sp = make_shared<Foo>(100);
+
     cout << sp->getX() << endl;
     cout << "Before: " << sp.use_count() << endl;
     //std::shared_ptr<Foo> sp1 = sp; //Reference count incremented
