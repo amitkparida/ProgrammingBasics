@@ -57,4 +57,8 @@ Container adaptors provide a different interface for sequential containers.
 
 
 
+Important STL Algorithms:
+
+All of, for_each, max_element, min_element, find, copy, sort, Transform,
+
 */
