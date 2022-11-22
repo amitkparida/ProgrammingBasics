@@ -21,17 +21,14 @@
 #include <iostream>
 using namespace std;
 
-class Node
-{
+struct Node {
 public:
 	int data;
 	Node* left;
 	Node* right;
-
-	Node(int d) {
-		this->data = d;
-		left = right = NULL;
-	}
+	Node() : data(0), left(NULL), right(NULL) {}
+	Node(int x) : data(x), left(NULL), right(NULL) {}
+	Node(int x, Node* left, Node* right) : data(x), left(left), right(right) {}
 };
 
 Node* insert(Node* root, int data) {
@@ -49,6 +46,7 @@ Node* insert(Node* root, int data) {
 	return root;
 
 }
+
 //O(H)
 bool search(Node* root, int data) {
 	if (root == NULL) {
@@ -62,7 +60,6 @@ bool search(Node* root, int data) {
 	}
 	return search(root->right, data);
 }
-
 
 void printInOrder(Node* root) {
 	if (root == NULL) {
@@ -123,6 +120,7 @@ Node* remove(Node* root, int key) {
 	return root;
 
 }
+
 //Challenge : Print all elements of BST which lie in the range k1 and k2
 void printRange(Node* root, int k1, int k2) {
 	if (root == NULL) {
@@ -154,13 +152,14 @@ int main() {
 		root = insert(root, x);
 	}
 	printInOrder(root);
+	cout << endl;
 
 	//int key;
 	//cin>>key;
 	//root = remove(root,key);
 	//cout<<search(root,key) <<endl;
 	//printInOrder(root);
-	cout << "Range is " << endl;
+	cout << "Range is: " << endl;
 	printRange(root, 5, 12);
 
 

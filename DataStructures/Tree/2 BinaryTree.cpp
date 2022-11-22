@@ -38,11 +38,12 @@ Node* buildTree(Node* root) {
     cout << "Enter the data: " << endl;
     int data;
     cin >> data;
-    root = new Node(data);
 
     if (data == -1) {
         return NULL;
     }
+
+    root = new Node(data);
 
     cout << "Enter data for inserting in left of " << data << endl;
     root->left = buildTree(root->left);
@@ -57,16 +58,16 @@ void levelOrderTraversal(Node* root) {
     q.push(root);
 
     while (!q.empty()) {
-        Node* temp = q.front();
-        cout << temp->data << " ";
+        root = q.front();
+        cout << root->data << " ";
         q.pop();
 
-        if (temp->left) {
-            q.push(temp->left);
+        if (root->left != NULL) {
+            q.push(root->left);
         }
 
-        if (temp->right) {
-            q.push(temp->right);
+        if (root->right != NULL) {
+            q.push(root->right);
         }
     }
 }
@@ -80,7 +81,6 @@ void inorder(Node* root) {
     inorder(root->left);
     cout << root->data << " ";
     inorder(root->right);
-
 }
 
 void preorder(Node* root) {
@@ -92,7 +92,6 @@ void preorder(Node* root) {
     cout << root->data << " ";
     preorder(root->left);
     preorder(root->right);
-
 }
 
 void postorder(Node* root) {
@@ -104,7 +103,6 @@ void postorder(Node* root) {
     postorder(root->left);
     postorder(root->right);
     cout << root->data << " ";
-
 }
 
 void buildFromLevelOrder(Node*& root) {
@@ -142,29 +140,85 @@ void buildFromLevelOrder(Node*& root) {
 }
 
 
+//Returns the count of leaf nodes in a binary tree
+void traverse(Node* root, int& count) {
+    if (root == NULL) {
+        return;
+    }
+
+    if (root->left == NULL && root->right == NULL) {
+        cout << root->data << " "; //prints the leaf nodes
+        count++;
+    }
+
+    traverse(root->left, count);
+    traverse(root->right, count);
+}
+
+int countLeafNodes(Node* root) {
+    int count = 0;
+
+    //Doing inorder traversal. You can do any traversal
+    traverse(root, count);
+    return count;
+}
+
+
+//Another approach to return the count of leaf nodes in a binary tree
+int countLeafNodes1(Node* root) {
+    if (root == NULL) {
+        return 0;
+    }
+
+    //Check for leaf node
+    if (root->left == NULL && root->right == NULL) {
+        cout << root->data << " "; //prints the leaf node
+        return 1;
+    }
+
+    //For internal nodes, return the sum of leaf nodes in left and right sub-tree 
+    return countLeafNodes1(root->left) + countLeafNodes1(root->right);
+}
+
+
 int main() {
+
+//            1
+//
+//        3        5
+//
+//     7   11   17
+
 
     Node* root = NULL;
 
-    buildFromLevelOrder(root);
-    levelOrderTraversal(root);
-    // 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
-
-    /*
     //creating a Tree
-    root = buildTree(root);
-    //1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
-    //level order
-    cout << "Printing the level order tracersal output " << endl;
-    levelOrderTraversal(root);
-    cout << "inorder traversal is:  ";
-    inorder(root);
-    cout << endl << "preorder traversal is:  ";
-    preorder(root);
-    cout << endl << "postorder traversal is:  ";
-    postorder(root);
-    */
+    root = buildTree(root); // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
 
+    cout << "\nLevel order traversal is: ";
+    levelOrderTraversal(root); // 1 3 5 7 11 17
+    cout << endl;
 
+    cout << "In order traversal is: ";
+    inorder(root); // 7 3 11 1 17 5
+    cout << endl;
+
+    cout << "Pre order traversal is: ";
+    preorder(root); // 1 3 7 11 5 17
+    cout << endl;
+
+    cout << "Post order traversal is: ";
+    postorder(root); // 7 11 3 17 5 1
+    cout << endl;
+
+    cout << "Leaf nodes are: ";
+    int count = countLeafNodes(root); // 7 11 17
+    cout << endl << "No of Leaf nodes: " << count << endl;
+
+    ////Build from Level Order Traversal
+    //Node* root1 = NULL; 
+    //buildFromLevelOrder(root1); //1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
+    //levelOrderTraversal(root1);
+    
     return 0;
 }

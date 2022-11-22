@@ -48,10 +48,10 @@
     <ClCompile Include="Graph\Graph.cpp">
       <Filter>Source Files\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\BinarySearchTree.cpp">
+    <ClCompile Include="Tree\3 BinarySearchTree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\BinaryTree.cpp">
+    <ClCompile Include="Tree\2 BinaryTree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
     <ClCompile Include="LinkedList\SingleLinkedList.cpp">
@@ -93,19 +93,19 @@
     <ClCompile Include="Queue\Queue.cpp">
       <Filter>Source Files\Queue</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\AVL_Tree.cpp">
+    <ClCompile Include="Tree\4 AVL_Tree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\RedBlackTree.cpp">
+    <ClCompile Include="Tree\6 RedBlackTree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\B-Tree.cpp">
+    <ClCompile Include="Tree\5 B-Tree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
     <ClCompile Include="LinkedList\CircularLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\Tree.cpp">
+    <ClCompile Include="Tree\1 Tree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
   </ItemGroup>
