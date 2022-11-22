@@ -123,7 +123,7 @@
     <ClCompile Include="Initialization.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="r-value.cpp">
+    <ClCompile Include="L-value.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
