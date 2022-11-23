@@ -37,8 +37,8 @@ class CMySingleton
 private:
 	CMySingleton() = default;								// Private constructor defined
 	CMySingleton(const CMySingleton&) = delete;				// Prevent copy-construction, definition not required
-	CMySingleton(CMySingleton&&) = delete;					// Prevent move-construction, definition not required
 	CMySingleton& operator=(const CMySingleton&) = delete;	// Prevent copy assignment, definition not required
+	CMySingleton(CMySingleton&&) = delete;					// Prevent move-construction, definition not required
 	CMySingleton& operator=(CMySingleton&&) = delete;		// Prevent move assignment, definition not required
 
 public:
