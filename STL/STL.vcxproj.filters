@@ -123,5 +123,8 @@
     <ClCompile Include="Algorithms\12 max_element and min_element.cpp">
       <Filter>Source Files\Algorithms</Filter>
     </ClCompile>
+    <ClCompile Include="Algorithms\13 move.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

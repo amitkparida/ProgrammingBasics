@@ -379,7 +379,6 @@ int main() {
 	mylist->PushBack(6);
 	mylist->Print();
 
-
 	mylist->InsertAtPosition(3, 100);
 	mylist->Print();
 

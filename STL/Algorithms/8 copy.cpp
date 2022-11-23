@@ -14,6 +14,7 @@
 using namespace std;
 
 void print(vector<int>& vec) {
+    //Another way of printing elements of a vector
     copy(vec.begin(), vec.end(), ostream_iterator<int>(cout, " "));
     cout << endl;
 }
