@@ -139,6 +139,25 @@ void buildFromLevelOrder(Node*& root) {
     }
 }
 
+//Find height/depth of tree
+int getHeight(Node* root) {
+    if (root == NULL) {
+        return 0;
+    }
+
+    int leftHeight = getHeight(root->left);
+    int rightHeight = getHeight(root->right);
+
+    //return std::max(leftHeight, rightHeight) + 1;
+
+    if (leftHeight > rightHeight) {
+        return leftHeight + 1;
+    }
+    else {
+        return rightHeight + 1;
+    }
+}
+
 
 //Returns the count of leaf nodes in a binary tree
 void traverse(Node* root, int& count) {

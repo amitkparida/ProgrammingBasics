@@ -72,12 +72,25 @@ void printInOrder(Node* root) {
 }
 
 Node* findMin(Node* root) {
+	if (root == NULL) {
+		return NULL;
+	}
 
 	while (root->left != NULL) {
 		root = root->left;
 	}
 	return root;
+}
 
+Node* findMax(Node* root) {
+	if (root == NULL) {
+		return NULL;
+	}
+
+	while (root->right != NULL) {
+		root = root->right;
+	}
+	return root;
 }
 
 //BST Deletion
@@ -120,6 +133,38 @@ Node* remove(Node* root, int key) {
 	return root;
 
 }
+
+bool isBSTUtil(Node* root, int min, int max) {
+	if (root == NULL) {
+		return true;
+	}
+
+	if (root->data < min || root->data > max) {
+		return false;
+	}
+
+	return isBSTUtil(root->left, min, root->data) && isBSTUtil(root->right, root->data, max);
+}
+
+bool isBST(Node* root) {
+	return (isBSTUtil(root, INT_MIN, INT_MAX));
+}
+
+
+//Another approach
+bool isBST2(Node* root) {
+	if (root == nullptr) {
+		return true;
+	}
+
+	if ((root->left != nullptr && findMax(root->left)->data > root->data) ||
+	    (root->right != nullptr && findMin(root->right)->data <= root->data)) 
+	{
+		return false;
+	}
+	return (isBST2(root->left) && isBST2(root->left));
+}
+
 
 //Challenge : Print all elements of BST which lie in the range k1 and k2
 void printRange(Node* root, int k1, int k2) {

@@ -170,7 +170,7 @@ int main() {
 
 
 /*
-//Adjacent Matrix representation using arrray
+//Adjacent Matrix representation using array
 #include <iostream>
 #include <vector>
 using namespace std;
