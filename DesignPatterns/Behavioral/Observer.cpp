@@ -1,8 +1,10 @@
 //Subject-Observer. Also called Publisher-Subscriber
 
 // Observer Design Pattern:
-// It defines a one-to-may dependency between objects so that when one object changes state, 
+// 1. It defines a one-to-may dependency between objects so that when one object changes state, 
 // all its dependents are notified and updated automatically.
+// 2. The observer pattern is a pattern in which an object, called the subject, maintains a list of its dependents, called observers,
+// and notifies them automatically of any state changes, usually by calling one of their methods.
 
 
 #include <iostream>

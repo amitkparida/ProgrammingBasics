@@ -3,13 +3,16 @@
 #include <iostream>
 using namespace std;
 
+struct Node {
+	int data;
+	Node* next;
+	Node() : data(0), next(NULL) {}
+	Node(int x) : data(x), next(NULL) {}
+	Node(int x, Node* next) : data(x), next(next) {}
+};
+
 class CQueue {
 private:
-	struct Node {
-		int data;
-		struct Node* next;
-		Node(int newdata, Node* newnext = NULL);
-	};
 	Node* front, * rear; 
 
 public:
@@ -21,11 +24,6 @@ public:
 	int Front();
 	int Back();
 };
-
-CQueue::Node::Node(int newdata, Node* newnext) {
-	data = newdata;
-	next = newnext;
-}
 
 CQueue::CQueue() {
 	front = NULL;

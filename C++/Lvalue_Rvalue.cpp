@@ -3,6 +3,20 @@
 //Lvalue: If you can take address of the expression then it is Lvalue, and they last extended period of time.
 //Rvalue: Rvalues are such expression which you cannot take address of. They are temporary and don't exist after one line.
 
+
+//In C++ there are two types of references -
+//
+// lvalue reference :
+// 1. An lvalue is an expression that will appear on the left - hand side or on the right - hand side of an assignment.
+// 2. Simply, a variable or object that has a name and memory address.
+// 3. It uses one ampersand(&).
+//
+// rvalue reference :
+// 1. An rvalue is an expression that will appear only on the right - hand side of an assignment.
+// 2. A variable or object has only a memory address(temporary objects).
+// 3. It uses two ampersands(&&).
+
+
 #include <iostream>
 
 //Returns r-value

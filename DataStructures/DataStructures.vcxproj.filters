@@ -54,10 +54,10 @@
     <ClCompile Include="Tree\2 BinaryTree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\SingleLinkedList.cpp">
+    <ClCompile Include="LinkedList\1 SingleLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\DoublyLinkedList.cpp">
+    <ClCompile Include="LinkedList\2 DoublyLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
     <ClCompile Include="Sorting\SelectionSort.cpp">
@@ -102,13 +102,19 @@
     <ClCompile Include="Tree\5 B-Tree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\CircularLinkedList.cpp">
+    <ClCompile Include="LinkedList\3 CircularLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
     <ClCompile Include="Tree\1 Tree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
     <ClCompile Include="Graph\IsTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList\4 CircularDoublyLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList\5 XorLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

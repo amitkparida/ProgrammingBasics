@@ -4,13 +4,16 @@
 #include <iostream>
 using namespace std;
 
+struct Node {
+	int data;
+	Node* next;
+	Node() : data(0), next(NULL) {}
+	Node(int x) : data(x), next(NULL) {}
+	Node(int x, Node* next) : data(x), next(next) {}
+};
+
 class CStack {
 private:
-	struct Node {
-		int data;
-		struct Node* next;
-		Node(int newdata, Node* newnext = NULL);
-	};
 	Node* top;
 
 public:
@@ -23,11 +26,6 @@ public:
 	void InsertAtBottom(int newdata);
 	void Reverse();
 };
-
-CStack::Node::Node(int newdata, Node* newnext) {
-	data = newdata;
-	next = newnext;
-}
 
 CStack::CStack() {
 	top = NULL;
@@ -137,7 +135,6 @@ void CStack::InsertAtBottom(int newdata) {
 
 
 int main() {
-
 	CStack st;
 
 	st.Push(1);

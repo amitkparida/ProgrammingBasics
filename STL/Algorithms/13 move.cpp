@@ -43,15 +43,13 @@ int main()
 
 
 
-//Another usage of std::move()
-//std::move produces an xvalue expression that identifies its argument t. 
-//It is exactly equivalent to a static_cast to an rvalue reference type.
+// Another usage of std::move():
+// It is used to convert an lvalue reference into the rvalue reference.
+// Used to move the resources from a source object i.e. for efficient transfer of resources from one object to another.
 
 #include <iomanip>
 #include <iostream>
-#include <utility>
 #include <vector>
-#include <string>
 
 int main()
 {
@@ -60,13 +58,12 @@ int main()
 
     // Uses the push_back(const T&) overload, which means we'll incur the cost of copying str
     v.push_back(str);
-    std::cout << "After copy, str is: " << str << std::endl;
+    std::cout << "After copy, str is: " << str << '\n';
 
     // Uses the rvalue reference push_back(T&&) overload, which means no strings will be copied; 
     // instead, the contents of str will be moved into the vector. This is less expensive, but also means str might now be empty.
     v.push_back(std::move(str));
-    std::cout << "After move, str is: " << str << std::endl;
+    std::cout << "After move, str is: " << str << '\n';
 
-    std::cout << "The contents of the vector are { " << std::quoted(v[0])
-        << ", " << std::quoted(v[1]) << " }\n";
+    std::cout << "The contents of the vector are { " << std::quoted(v[0]) << ", " << std::quoted(v[1]) << " }\n";
 }

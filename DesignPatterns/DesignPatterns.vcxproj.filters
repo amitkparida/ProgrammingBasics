@@ -66,5 +66,8 @@
     <ClCompile Include="Structural\Facade.cpp">
       <Filter>Source Files\Structural</Filter>
     </ClCompile>
+    <ClCompile Include="Creational\Prototype.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

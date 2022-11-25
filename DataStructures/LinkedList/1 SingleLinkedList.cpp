@@ -1,3 +1,27 @@
+// Linked List
+
+// NOTES:
+// 1. This is a sequencial data structure and is used to store data.
+// 2. Linked list is special data structure in which data elements are linked to one another.
+// 3. The pictorial look of a linked list is:
+
+// OPERATIONS:
+// Insertion, Deletion, Traversing.
+
+// PROS
+// 1. Linked list is dynamic data structure, it can grow and shrink at run time.
+// 2. It is used to efficiently utilize memory
+// 3. Insertion and Deletion is very easy at any position.
+
+// CONS
+// 1. More memory is required if list is too big.
+// 2. Accessing elements is time consuming.
+
+// TYPES OF LINKED LIST:
+// 1. Singly Linked List
+// 2. Doubly Linked List
+// 3. Circular Linked List
+// 4. Doubly Circular Linked List
 
 
 // You can read more problems here 
@@ -5,8 +29,8 @@
 // https://github.com/Hemant-Jain-Author/Problem-Solving-in-Data-Structures-and-Algorithms-using-Cpp/blob/master/LinkedList/LinkedList.cpp
 // https://github.com/cppnuts-yt/CppNuts
 // https://github.com/coding-minutes/dsa-essentials-course
-
 // https://leetcode.com/problems/add-two-numbers/discuss/1340/a-summary-about-how-to-solve-linked-list-problem-c
+
 
 #include <iostream>
 #include <stack>
