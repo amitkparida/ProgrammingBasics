@@ -5,7 +5,6 @@
 // 1. We can go forward and reverse in XOR Linked List.
 // 1. It is memory efficient doubly linked list.
 // 2. Instead of storing address of next node, it stores XOR of previous and next address
-// 3.
 
 // General Linked List
 //      A   ->  B   ->  C   ->  D   ->  NULL
