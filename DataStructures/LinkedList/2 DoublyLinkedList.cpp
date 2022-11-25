@@ -239,13 +239,13 @@ void CDoublyLinkedList::InsertAtPosition(int position, int newdata) {
 
 
 void CDoublyLinkedList::DeleteList() {
-	Node* temp = head;
+	Node* temp = NULL;
 
 	while (head)
 	{
+		temp = head;
 		head = head->next;
 		delete temp;
-		temp = head;
 	}
 }
 

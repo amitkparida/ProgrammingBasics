@@ -75,13 +75,21 @@ CLinkedList::CLinkedList() {
 
 CLinkedList::~CLinkedList()
 {
-	Node* temp = head;
+	Node* temp = NULL;
 	while (head)
 	{
+		temp = head;
 		head = head->next;
 		delete temp;
-		temp = head;
 	}
+
+	//Node* temp = head;
+	//while (head)
+	//{
+	//	head = head->next;
+	//	delete temp;
+	//	temp = head;
+	//}
 }
 
 //InsertAtTail
@@ -273,13 +281,13 @@ int CLinkedList::Length()
 
 
 void CLinkedList::DeleteList() {
-	Node* temp = head;
+	Node* temp = NULL;
 
 	while (head)
 	{
+		temp = head;
 		head = head->next;
 		delete temp;
-		temp = head;
 	}
 }
 
@@ -420,6 +428,7 @@ int main() {
 	mylist->Print();
 
 	//mylist->DeleteList();
+
 	delete mylist;
 
 	return 0;

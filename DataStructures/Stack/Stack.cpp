@@ -32,11 +32,11 @@ CStack::CStack() {
 }
 
 CStack::~CStack() {
-	Node* temp = top;
+	Node* temp = NULL;
 	while (top) {
+		temp = top;
 		top = top->next;
 		delete temp;
-		temp = top;
 	}
 }
 

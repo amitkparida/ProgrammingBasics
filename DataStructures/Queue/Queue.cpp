@@ -31,11 +31,11 @@ CQueue::CQueue() {
 }
 
 CQueue::~CQueue() {
-	Node* temp = front;
+	Node* temp = NULL;
 	while (front) {
+		temp = front;
 		front = front->next;
 		delete temp;
-		temp = front;
 	}
 }
 
