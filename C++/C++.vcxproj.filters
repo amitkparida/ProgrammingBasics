@@ -126,5 +126,8 @@
     <ClCompile Include="Lvalue_Rvalue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Multithreading\20 Semaphore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
