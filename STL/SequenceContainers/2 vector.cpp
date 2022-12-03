@@ -12,43 +12,74 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main() {
 
     // Declarations
-    std::vector<int> arr1;
-    std::vector<int> arr2(5, 20); // size = 5, value of each element = 20
-    std::vector<int> arr3 = { 1, 2, 3, 4, 5 }; // initializer list 
-    std::vector<int> arr4{ 1, 2, 3, 4, 5 };   // uniform initialization
+    std::vector<int> vec;
+    std::vector<int> vec1(5, 20); // size = 5, value of each element = 20
+    std::vector<int> vec2 = { 1, 2, 3, 4, 5 }; // initializer list 
+    std::vector<int> vec3{ 1, 2, 3, 4, 5 }; // uniform initialization
 
     // Accessing Elements
-    arr2[3] = 10; 
-    arr2.at(3) = 10;
+    vec1[3] = 10;
+    vec1.at(3) = 10;
 
-    for (int i = 0; i <= 10; ++i) { arr1.push_back(i); }
-    for (const auto& vec : arr1) { cout << vec << endl; }
+    //Initialize elements of vector vec
+    vec.reserve(11);
+    for (int i = 0; i <= 10; ++i) {
+        vec.push_back(i);
+    }
+
+    // Iterating vector by using For Loop
+    for (int i = 0; i < vec.size(); i++) {
+        cout << vec[i] << " ";
+    }
+    
+    cout << endl;
+
+    // Iterating vector by using Range-based For Loop
+    for (const auto& elem : vec) {
+        cout << elem << " ";
+    }
+
+    cout << endl;
+
+    // Iterating vector by using Iterator
+    for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it) {
+        cout << *it << " ";
+    }
+
+    cout << endl;
+
+    // Iterating vector by using for_each
+    for_each(vec.begin(), vec.end(),
+        [](const auto& elem) {
+            cout << elem << " ";
+        });
 
     return 0;
 }
 
-/*
+
 // TOPIC: Best way to use vector in C++
 
-#include <iostream>
-#include <vector>
-using namespace std;
+//#include <iostream>
+//#include <vector>
+//using namespace std;
+//
+//int main() {
+//    vector<int> Vec;
+//    Vec.reserve(32);
+//    for (int i = 0; i < 32; ++i) {
+//        Vec.push_back(i);
+//        cout << "Size:" << Vec.size() << "   Capacity:" << Vec.capacity() << endl;
+//    }
+//    return 0;
+//}
 
-int main() {
-    vector<int> Vec;
-    Vec.reserve(31);
-    for (int i = 0; i < 32; ++i) {
-        Vec.push_back(i);
-        cout << "Size:" << Vec.size() << "   Capacity:" << Vec.capacity() << endl;
-    }
-    return 0;
-}
-*/
 
 
 /*

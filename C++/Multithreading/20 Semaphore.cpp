@@ -28,13 +28,13 @@ public:
 private:
 	void down() {
 		headMutex.lock();
-		freeId = getFreeBufferId();
-		if (freeId == -1) {
-			// cv, mutex = nullptr
-		}
-		else {
-			// cv and mutex;
-		}
+		//freeId = getFreeBufferId();
+		//if (freeId == -1) {
+		//	// cv, mutex = nullptr
+		//}
+		//else {
+		//	// cv and mutex;
+		//}
 		headMutex.unlock();
 		// return cv and mutex;
 	}
