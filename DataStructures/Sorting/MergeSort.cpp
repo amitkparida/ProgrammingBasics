@@ -6,7 +6,7 @@ void Merge(int A[], int low, int mid, int high) {
     int i = low;
     int j = mid + 1;
     int k = low;
-    int B[100]; //Use a random big size like 100. You can write "int B[high + 1];" if the compiler supports Variable Length Arrays 
+    int B[100]{}; //Use a random big size like 100. You can write "int B[high + 1];" if the compiler supports Variable Length Arrays 
     while (i <= mid && j <= high) {
         if (A[i] < A[j]) {
             B[k++] = A[i++];

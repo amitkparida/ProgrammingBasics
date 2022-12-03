@@ -117,5 +117,8 @@
     <ClCompile Include="LinkedList\5 XorLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LinkedList\LinkedListProblems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

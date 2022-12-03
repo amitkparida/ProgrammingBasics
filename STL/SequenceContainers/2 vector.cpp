@@ -17,17 +17,29 @@ using namespace std;
 
 int main() {
 
-    // Declarations
-    std::vector<int> vec;
-    std::vector<int> vec1(5, 20); // size = 5, value of each element = 20
-    std::vector<int> vec2 = { 1, 2, 3, 4, 5 }; // initializer list 
-    std::vector<int> vec3{ 1, 2, 3, 4, 5 }; // uniform initialization
+    // Declarations/Initializations
+    vector<int> vec;
+    vector<int> vec1(5, 20); // size = 5, value of each element = 20
+    vector<int> vec2 = { 1, 2, 3, 4, 5 }; // initializer list 
+    vector<int> vec3{ 1, 2, 3, 4, 5 }; // uniform initialization
+    vector<int> vec4(vec3.begin(), vec3.end()); // initialize a vector from another vector.
+
+    //Initialize vector from an array.
+    int arr[] = { 10, 20, 30 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    vector<int> vec5(arr, arr + n);
+
+    //Initialize all elements with a particular value 
+    vector<int> vec6(10); //size  = 10
+    int value = 5;
+    fill(vec6.begin(), vec6.end(), value);
+
 
     // Accessing Elements
     vec1[3] = 10;
     vec1.at(3) = 10;
 
-    //Initialize elements of vector vec
+    //Initialize by pushing elements one by one
     vec.reserve(11);
     for (int i = 0; i <= 10; ++i) {
         vec.push_back(i);
