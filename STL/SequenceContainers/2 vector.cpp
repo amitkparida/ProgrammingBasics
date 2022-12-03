@@ -33,28 +33,28 @@ int main() {
         vec.push_back(i);
     }
 
-    // Iterating vector by using For Loop
+    // Iterating vector using For Loop
     for (int i = 0; i < vec.size(); i++) {
         cout << vec[i] << " ";
     }
     
     cout << endl;
 
-    // Iterating vector by using Range-based For Loop
+    // Iterating vector using Range-based For Loop
     for (const auto& elem : vec) {
         cout << elem << " ";
     }
 
     cout << endl;
 
-    // Iterating vector by using Iterator
+    // Iterating vector using Iterator
     for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it) {
         cout << *it << " ";
     }
 
     cout << endl;
 
-    // Iterating vector by using for_each
+    // Iterating vector using for_each
     for_each(vec.begin(), vec.end(),
         [](const auto& elem) {
             cout << elem << " ";
