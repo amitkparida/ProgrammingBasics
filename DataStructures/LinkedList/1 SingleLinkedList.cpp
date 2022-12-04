@@ -79,6 +79,7 @@ public:
 	void RemoveDuplicates();
 	Node* FindNthNodeFromEnd(int n);
 	void DeleteNthNodeFromEnd(int n);
+	Node* Sort();
 
 private:
 	void ReverseRecUtil(Node* prevNode, Node* currentNode);
@@ -481,10 +482,17 @@ Node* CLinkedList::MiddleNode2() {
 	Node* fast = head;
 	Node* slow = head;
 
+	//In case of even no of nodes, if you want to consider the 2nd of the 2 middle nodes as Mid.
 	while (fast != NULL && fast->next != NULL) {
 		slow = slow->next;
 		fast = fast->next->next;
 	}
+
+	//In case of even no of nodes, if you want to consider the 1st of the 2 middle nodes as Mid.
+	//while (fast->next != NULL && fast->next->next != NULL) {
+	//	slow = slow->next;
+	//	fast = fast->next->next;
+	//}
 
 	return slow;
 }
@@ -657,14 +665,14 @@ void CLinkedList::RemoveDuplicates() {
 
 Node* CLinkedList::FindNthNodeFromEnd(int n)
 {
-	// create two pointers currPtr and refPtr initially pointing to head.
-	Node* currPtr = head;
-	Node* refPtr = head;
-
 	if (head == NULL || n < 1) {
 		return NULL;
 	}
-
+	
+	// create two pointers currPtr and refPtr initially pointing to head.
+	Node* currPtr = head;
+	Node* refPtr = head;
+	
 	// move refPtr to the n-th node from beginning.
 	for (int i = 1; i <= n; i++) {
 		if (refPtr == NULL) {
@@ -683,33 +691,62 @@ Node* CLinkedList::FindNthNodeFromEnd(int n)
 	cout << "Node no. " << n << " from end is: " << currPtr->data << endl;
 
 	return currPtr;
+
+
+	////Alternate approach
+	////Create a dummy node before head. 
+	//Node* start = new Node;
+	//start->next = head;
+
+	//Node* fast = start;
+	//Node* slow = start;
+
+	//for (int i = 1; i <= n; i++) {
+	//	if (fast == NULL) {
+	//		cout << n << " is greater than no. of nodes in the list" << endl;
+	//		return NULL;
+	//	}
+
+	//	fast = fast->next;
+	//}
+
+	//while (fast->next != NULL) {
+	//	fast = fast->next;
+	//	slow = slow->next;
+	//}
+
+	//Node* result = slow->next;
+
+	//cout << "Node no. " << n << " from end is: " << result->data << endl;
+	//return result;
 }
 
 
 // Function to delete the nth node from the end.
 void CLinkedList::DeleteNthNodeFromEnd(int n)
 {
-	Node* refPtr = head;
-	Node* currPtr = head;
-
-	if (head == NULL) {
+	if (head == NULL || n < 1)
+	{
 		return;
 	}
+
+	//create a dummy node before head. 
+	Node* start = new Node;
+	start->next = head;
+
+	Node* fast = start;
+	Node* slow = start;
 
 	for (int i = 1; i <= n; i++) {
-		refPtr = refPtr->next;
+		fast = fast->next;
 	}
 
-	if (refPtr == NULL) {
-		head = head->next;
-		return;
+	while (fast->next != NULL) {
+		fast = fast->next;
+		slow = slow->next;
 	}
 
-	while (refPtr->next != NULL) {
-		refPtr = refPtr->next;
-		currPtr = currPtr->next;
-	}
-	currPtr->next = currPtr->next->next;
+	slow->next = slow->next->next;
 	return;
 }
 
@@ -766,8 +803,6 @@ Node* MergeTwoListsRecursion(Node* list1, Node* list2) {
 }
 
 
-
-
 //Find the intersection point of two linked list
 
 /* function to get the intersection point of two linked
@@ -807,13 +842,13 @@ Node* FindIntersection(Node* head1, Node* head2) {
 	int count2 = 0;
 
 	Node* temp = head1;
-	while (temp != nullptr) {
+	while (temp != NULL) {
 		count1++;
 		temp = temp->next;
 	}
 
 	temp = head2;
-	while (temp != nullptr) {
+	while (temp != NULL) {
 		count2++;
 		temp = temp->next;
 	}
@@ -829,6 +864,59 @@ Node* FindIntersection(Node* head1, Node* head2) {
 		diff = count2 - count1;
 		return FindIntersectionUtil(diff, head2, head1);
 	}
+}
+
+
+//Find the intersection point of two linked list. Another approach.
+Node* FindIntersection2(Node* headA, Node* headB) {
+	if (headA == NULL || headB == NULL) {
+		return NULL;
+	}
+
+	Node* a = headA;
+	Node* b = headB;
+
+	while (a != b) {
+		//At the end of one list, we just reset the pointer to the head of the other list
+		a = (a == NULL) ? headB : a->next;
+		b = (b == NULL) ? headA : b->next;
+
+		//if (a == NULL) { 
+		//	a = headB;
+		//}
+		//else {
+		//	a = a->next;
+		//}
+
+		//if (b == NULL) {
+		//	b = headA;
+		//}
+		//else {
+		//	b = b->next;
+		//}
+	}
+
+	return a;
+}
+
+
+//Find the intersection point of two linked list. Brute Force approach.
+Node* FindIntersection3(Node* headA, Node* headB) {
+	Node* temp;
+
+	while (headA) {
+		temp = headB;
+
+		while (temp) {
+			if (temp == headA) {
+				return headA;
+			}
+			temp = temp->next;
+		}
+
+		headA = headA->next;
+	}
+	return NULL;
 }
 
 
@@ -882,7 +970,8 @@ Node* FindMid(Node* head) {
 	Node* fast = head;
 	Node* slow = head;
 
-	while (fast != NULL && fast->next != NULL) {
+	//In case of even no of nodes, consider the 1st of the 2 middle nodes as Mid.
+	while (fast->next != NULL && fast->next->next != NULL) {
 		fast = fast->next->next;
 		slow = slow->next;
 	}
@@ -913,7 +1002,10 @@ Node* MergeSort(Node* head) {
 	return result;
 }
 
-
+Node* CLinkedList::Sort() {
+	head = MergeSort(head);
+	return head;
+}
 
 
 
@@ -946,8 +1038,12 @@ int main() {
 	mylist->Print();
 
 	cout << "Middle Node: " << mylist->MiddleNode()->data << endl;
-	mylist->FindNthNodeFromEnd(3);
-	mylist->DeleteNthNodeFromEnd(3);
+	mylist->FindNthNodeFromEnd(1);
+	mylist->DeleteNthNodeFromEnd(1);
+	mylist->Print();
+	
+	cout << "Sort the list: " << endl;
+	mylist->Sort();
 	mylist->Print();
 
 	//mylist->DeleteList();
