@@ -13,9 +13,9 @@
 // 6. Repeat this until we find the number or 
 
 // COMPLEXITY:
-// Worst Case Time:     O(log2(n))
+// Worst Case Time:     O(logN))
 // Best Case Time:      O(1)
-// Average Case Time:   O(log2(n))
+// Average Case Time:   O(logN)
 
 #include <algorithm>
 #include <iostream>

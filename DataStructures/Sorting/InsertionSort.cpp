@@ -26,7 +26,10 @@ int main() {
 	}
 }
 
-//Time Complexity = O(n^2) <- Average, Worst, O(n)<- Best
+//Time Complexity
+//O(n^2) <- Average, Worst, 
+//O(n) <- Best
+
 //Space Complexity = O(1)
 
 //The no. of comparisons and shifts/swaps in insertion sort is less in all practical scenarios than in Bubble sort and Selection sort.

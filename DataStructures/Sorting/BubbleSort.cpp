@@ -36,5 +36,8 @@ int main() {
 	}
 }
 
-//Time Complexity = O(n^2) <- Average, Worst, O(n) <- Best 
+//Time Complexity
+// O(n^2) <- Average, Worst, 
+// O(n) <- Best 
+
 //Space Complexity = O(1)

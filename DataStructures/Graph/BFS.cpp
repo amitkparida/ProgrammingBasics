@@ -6,10 +6,10 @@ NOTES:
 3. BFS uses queue data structure in order to achieve level order traversal.
 4. Graph has cycle so we have to keep the track of visited nodes and we should not visit them again.
 5. Inorder to keep track of visited nodes we keep array of boolean where we initialize every element of array as false
-meaning non - visited, and as we visit some node we make this array element value true.
+   meaning non - visited, and as we visit some node we make this array element value true.
 
 SOME USAGE :
-1) Shortest Pathand Minimum Spanning Tree for unweighted graph
+1) Shortest Path and Minimum Spanning Tree for unweighted graph
 2) Social Networking Websites
 3) Broadcasting in Network
 4) Finding all nodes within one connected component 
@@ -19,7 +19,6 @@ STEPS:
 2. While QUEUE is not empty
 3. Pop out a node from QUEUE and Push all non-visited adjacent nodes of popped node in queue and mark them visited
 4. Go to Step 2
-
 */
 
 //  https://takeuforward.org/graph/breadth-first-search-bfs-level-order-traversal/
@@ -78,7 +77,7 @@ int main() {
 
 	// declare the adjacent list 
 	vector<vector<int>> adj;
-	adj.resize(V + 1); // size  = nodes + 1 if the input graph is 1 based. If the input graph starts at 0. then size = nodes.
+	adj.resize(V + 1); // size  = V + 1 if the input graph is 1 based. If the input graph starts at 0, then size = V.
 
 	// take edges as input and add edges in the undirected graph.
 	for (int i = 0; i < E; ++i)

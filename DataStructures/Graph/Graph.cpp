@@ -13,7 +13,7 @@ using namespace std;
 // A utility function to add an edge in an undirected graph.
 void addEdge(vector<vector<int>> &adj, int u, int v)
 {
-	//Add an edge from src to dest.  A new element is inserted to the adjacent list of src.
+	//Add an edge from src to dest. A new element is inserted to the adjacent list of src.
 	adj[u].push_back(v);
 
 	// Since graph is undirected, add an edge from dest to src also
@@ -31,10 +31,10 @@ void printGraph(vector<vector<int>> adj)
 		cout << endl;
 	}
 
-	//for (int v = 1; v <= V; ++v) {
+	//for (int v = 1; v <= adj.size(); ++v) {
 	//	cout << v << " -> ";
-	//	for (auto it : adj[v]) {
-	//		cout << it << " ";
+	//	for (auto elm : adj[v]) {
+	//		cout << elm << " ";
 	//	}
 	//	printf("\n");
 	//}
@@ -55,7 +55,9 @@ int main()
 	addEdge(adj, 2, 3);
 	addEdge(adj, 3, 6);
 	addEdge(adj, 4, 6);
+
 	printGraph(adj);
+	
 	return 0;
 }
 

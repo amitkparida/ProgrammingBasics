@@ -44,3 +44,63 @@ int main()
 
     return 0;
 }
+
+
+
+//Problems:
+//Two sum
+
+vector<int> twoSum(vector<int>& nums, int target)
+{
+    vector<int> ans;
+
+    for (int i = 0; i != nums.size(); i++)
+    {
+        for (int j = i + 1; j != nums.size(); j++)
+        {
+            if (nums[i] + nums[j] == target)
+            {
+                ans = { i, j };
+                return nums;
+            }
+        }
+    }
+
+    return ans;
+}
+
+vector<int> twoSum2(vector<int>& nums, int target)
+{
+    vector<int> ans;
+    unordered_map<int, int> umap;
+
+    for (int i = 0; i < nums.size(); i++) {
+        if (umap.find(target - nums[i]) != umap.end()) {
+            ans.push_back(umap[target - nums[i]]);
+            ans.push_back(i);
+            return ans;
+        }
+
+        umap[nums[i]] = i;
+    }
+
+    return ans;
+}
+
+
+// First Unique Character in a String
+int firstUniqChar(string s) {
+    unordered_map<char, int> umap;
+
+    for (int i = 0; i < s.length(); i++) {
+        umap[s[i]] = umap[s[i]] + 1;
+    }
+
+    for (int i = 0; i < s.length(); i++) {
+        if (umap[s[i]] == 1) {
+            return i;
+        }
+    }
+
+    return -1;
+}

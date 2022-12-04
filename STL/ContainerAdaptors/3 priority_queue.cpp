@@ -26,13 +26,17 @@ template<typename T> void print_queue(T& q) {
 int main() {
     {
         std::priority_queue<int> q;
-        for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) { q.push(elm); }
+        for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
+            q.push(elm); 
+        }
         print_queue(q);
     }
     
     {
         std::priority_queue<int, std::vector<int>, std::greater<int> > q2;
-        for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) { q2.push(elm); }
+        for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
+            q2.push(elm); 
+        }
         print_queue(q2);
     }
 
@@ -44,4 +48,30 @@ int main() {
         for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) { q3.push(elm); }
         print_queue(q3);
     }
+}
+
+
+
+//Problems: Sort characters in a string By frequency
+using namespace std;
+string frequencySort(string s) {
+    unordered_map<char, int> umap;
+
+    for (int i = 0; i < s.size(); i++) {
+        umap[s[i]]++;
+    }
+
+    priority_queue<pair<int, char>> pq;
+    for (auto j : umap) {
+        pq.push({ j.second,j.first });
+    }
+
+    string mystr = "";
+    while (!pq.empty()) {
+        for (int i = 0; i < pq.top().first; i++) {
+            mystr += pq.top().second;
+        }
+        pq.pop();
+    }
+    return mystr;
 }

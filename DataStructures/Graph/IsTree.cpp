@@ -39,7 +39,8 @@ bool isTree(int n, vector<vector<int>> adj) {
 	vector<bool> visited(n, false);
 
 	int startingNode = 0;
-	if (isCyclic(startingNode, -1, adj, visited)) return false;
+	if (isCyclic(startingNode, -1, adj, visited)) 
+		return false;
 
 	for (int u = 0; u < n; u++)
 		if (!visited[u])

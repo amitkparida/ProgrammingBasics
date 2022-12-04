@@ -54,7 +54,7 @@ int main()
         cout << "Element is present at index " << index << endl;
     }
 
-    //Sort the array as BinarySearch() takes sorted array (increasing) as input 
+    //Sort the array (increasing)
     sort(arr, arr + size); 
     //sort(arr, arr + size, greater<int>()); // For sorting in decreasing order
 

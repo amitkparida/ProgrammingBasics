@@ -11,30 +11,22 @@
 #include <vector>
 using namespace std;
 
-void print(std::pair<int, int>& obj) { cout << obj.first << " " << obj.second << endl; }
-
 int main()
 {
-    {
-        pair<int, int> obj(10, 20);
-        print(obj);
-    }
+    pair<int, int> obj(10, 20);
+    pair<int, int> obj1 = make_pair(10, 20);
+    pair<int, int> obj2 = { 10, 20 };
+    pair<int, int> obj3{ 10, 20 };
+  
+    cout << obj.first << " " << obj.second << endl;
 
-    {
-        pair<int, int> obj = make_pair(10, 20);
-        print(obj);
-    }
+    vector<pair<string, int>> list;
+    list.push_back(make_pair("Amit", 30));
+    list.push_back(pair<string, int>("Rohit", 22)); //Note the difference here
+    list.push_back({ "Rakesh", 26 });
 
-    {
-        vector<pair<string, int>> list;
-        list.push_back(make_pair("Rupesh", 30));
-        list.push_back(make_pair("Hitesh", 28));
-        list.push_back(pair<string, int>("Bhupendra", 22)); //Note the difference here
-        list.push_back(pair<string, int>("Sagar", 18));
-
-        for (auto& elm : list) {
-            cout << elm.first << " " << elm.second << endl;
-        }
+    for (auto& elm : list) {
+        cout << elm.first << " " << elm.second << endl;
     }
 
     return 0;

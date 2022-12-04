@@ -1,6 +1,6 @@
 
 //Idea behind Quick Sort :
-//An element is in sorted position if all the elements before it are smaller than itand all the elements after it are larger than it.
+//An element is in sorted position if all the elements before it are smaller than it and all the elements after it are larger than it.
 //Quick sort does not mean it is the fastest sort.
 
 //Worst case: If the input list is sorted in ascending/descending order and partitioning is always done at either left most element or right most element, 
@@ -11,7 +11,10 @@
 
 //Average case: O(nlogn)
 
-//Time Complexity = O(nlogn) <- Average, Best, O(n^2) <- Worst 
+//Time Complexity 
+//O(nlogn) <- Average, Best, 
+//O(n^2) <- Worst 
+
 //Space Complexity = O(logn)
 
 //In Selection sort, we select the position and find out an element for that position. But in Quick sort we select an element and find out a postion for that element.
@@ -22,10 +25,11 @@
 #include <iostream>
 using namespace std;
 
-void Print(int arr[], int n, string s) {
-    cout << s << ": [" << flush;
+void Print(int arr[], int n) {
+    cout << "[";
     for (int i = 0; i < n; i++) {
         cout << arr[i];
+
         if (i < n - 1) {
             cout << ", ";
         }
@@ -76,9 +80,14 @@ int main() {
     cout << "First Element as Pivot" << endl;
     int A[] = { 11, 13, 7, 12, 16, 9, 24, 5, 10, 3 };
     int n = sizeof(A) / sizeof(A[0]);
-    Print(A, n, "A");
+
+    cout << "A: ";
+    Print(A, n);
+    
     QuickSort(A, 0, n - 1);
-    Print(A, n, "Sorted A");
+
+    cout << "Sorted A: ";
+    Print(A, n);
 
     return 0;
 }
