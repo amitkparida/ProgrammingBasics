@@ -669,11 +669,11 @@ Node* CLinkedList::FindNthNodeFromEnd(int n)
 		return NULL;
 	}
 	
-	// create two pointers currPtr and refPtr initially pointing to head.
+	// create two pointers slow and fast initially pointing to head.
 	Node* slow = head;
 	Node* fast = head;
 	
-	// move refPtr to the n-th node from beginning.
+	// move fast to the n-th node from beginning.
 	for (int i = 1; i <= n; i++) {
 		if (fast == NULL) {
 			cout << n << " is greater than no. of nodes in the list" << endl;
@@ -683,7 +683,7 @@ Node* CLinkedList::FindNthNodeFromEnd(int n)
 		fast = fast->next;
 	}
 
-	// Move both refPtr and currPtr forward until refPtr reaches end of the list.
+	// Move both fast and slow forward until fast reaches end of the list.
 	while (fast != NULL) {
 		fast = fast->next;
 		slow = slow->next;
