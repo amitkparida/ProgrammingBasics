@@ -581,8 +581,8 @@ Node* CLinkedList::DetectStartOfLoop() {
 
 		// If slow == fast, then loop is present.
 		if (slow == fast) {
-			// Move the start/head node pointer and the slow pointer until they meet. The meeting point will be the start of the loop.
 			while (start != slow) {
+				//Move both pointers at the same pace, they will meet at loop starting node.
 				start = start->next;
 				slow = slow->next;
 			}
