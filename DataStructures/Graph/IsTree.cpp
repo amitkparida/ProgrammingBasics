@@ -28,9 +28,13 @@ bool isCyclic(int src, int prt, vector<vector<int>> adj, vector<bool> visited) {
 	visited[src] = true;
 	for (auto i : adj[src]) {
 		if (!visited[i]) {
-			if (isCyclic(i, src, adj, visited)) return true;
+			if (isCyclic(i, src, adj, visited)) {
+				return true;
+			}
 		}
-		else if (i != prt) return true;
+		else if (i != prt) {
+			return true;
+		}
 	}
 	return false;
 }

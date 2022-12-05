@@ -27,16 +27,16 @@
     <ClCompile Include="CopyAndMove.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SmartPointer\SmartPointer.cpp">
+    <ClCompile Include="SmartPointer\1 SmartPointer.cpp">
       <Filter>Source Files\SmartPointer</Filter>
     </ClCompile>
-    <ClCompile Include="SmartPointer\unique_ptr.cpp">
+    <ClCompile Include="SmartPointer\2 unique_ptr.cpp">
       <Filter>Source Files\SmartPointer</Filter>
     </ClCompile>
-    <ClCompile Include="SmartPointer\shared_ptr.cpp">
+    <ClCompile Include="SmartPointer\3 shared_ptr.cpp">
       <Filter>Source Files\SmartPointer</Filter>
     </ClCompile>
-    <ClCompile Include="SmartPointer\weak_ptr.cpp">
+    <ClCompile Include="SmartPointer\4 weak_ptr.cpp">
       <Filter>Source Files\SmartPointer</Filter>
     </ClCompile>
     <ClCompile Include="PureVirtualFunction.cpp">

@@ -10,11 +10,11 @@
 // 3. In-order to have sorted data in tree, tree should have above three properties.
 
 // BENEFITS:
-// 0. Instead of using sorted array if we use BST then complexity of Insert, Delete becomes log(n).
+// 0. Instead of using sorted array if we use BST then complexity of Insert, Delete becomes logN.
 // 1. As it maintains sorted elements you have all advantages of data being sorted.
 
 // COMPLEXITY:
-// 1. Search, Insert, Delete Complexity: log2(n)
+// 1. Search, Insert, Delete Complexity: O(logN)
 // 2. Space Complexity: O(n)
 
 
@@ -43,8 +43,8 @@ Node* insert(Node* root, int data) {
 	else {
 		root->right = insert(root->right, data);
 	}
-	return root;
 
+	return root;
 }
 
 //O(H)
@@ -153,12 +153,12 @@ bool isBST(Node* root) {
 
 //Another approach
 bool isBST2(Node* root) {
-	if (root == nullptr) {
+	if (root == NULL) {
 		return true;
 	}
 
-	if ((root->left != nullptr && findMax(root->left)->data > root->data) ||
-	    (root->right != nullptr && findMin(root->right)->data <= root->data)) 
+	if ((root->left != NULL && findMax(root->left)->data > root->data) ||
+	    (root->right != NULL && findMin(root->right)->data <= root->data))
 	{
 		return false;
 	}

@@ -35,7 +35,7 @@
 #include <iostream>
 #include <stack>
 #include <unordered_set>
-#include <map>
+#include <unordered_map>
 using namespace std;
 
 struct Node {
@@ -301,7 +301,7 @@ int CLinkedList::Length()
 void CLinkedList::SortedInsert(int newdata) {
 	Node* newnode = new Node(newdata);
 
-	if (head == NULL || head->data > newdata) {
+	if (head == NULL || newdata < head->data) {
 		newnode->next = head;
 		head = newnode;
 		return;
@@ -347,7 +347,7 @@ void CLinkedList::Reverse() {
 //From Abdul Bari (Udemy)
 void CLinkedList::Reverse2()
 {
-	Node * p, * q , * r;
+	Node* p, * q , * r;
 
 	p = head; //Current
 	q = NULL; //Previous of current
@@ -535,7 +535,7 @@ bool CLinkedList::DetectLoop() {
 }
 
 bool CLinkedList::DetectLoop2() {
-	map<Node*, bool> visited;
+	unordered_map<Node*, bool> visited;
 
 	Node* temp = head;
 	while (temp) {
@@ -608,7 +608,7 @@ void CLinkedList::RemoveLoop() {
 }
 
 void CLinkedList::RemoveLoop2() {
-	map<Node*, bool> visited;
+	unordered_map<Node*, bool> visited;
 	Node* prev = head;
 	Node* temp = head;
 	while (temp) {

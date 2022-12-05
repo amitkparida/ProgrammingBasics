@@ -47,11 +47,13 @@ CDoublyLinkedList::CDoublyLinkedList() {
 }
 
 CDoublyLinkedList::~CDoublyLinkedList() {
-	Node* temp = head;
-	while (head) {
+	Node* temp = NULL;
+
+	while (head)
+	{
+		temp = head;
 		head = head->next;
 		delete temp;
-		temp = head;
 	}
 }
 

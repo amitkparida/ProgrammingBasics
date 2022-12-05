@@ -1,7 +1,7 @@
 // TOPIC: std::deque In C++ !!   (Double Ended Queue)
 
 //NOTES:
-//0. std::deque is an indexed siquence container.
+//0. std::deque is an indexed sequence container.
 //1. It allows fast insertion at both beginning and end.
 //2. Unlike vector elements of deque are not stored contiguous.
 //3. it uses individual allocated fixed size array, with additional bookkeeping, meaning index based access to deque
