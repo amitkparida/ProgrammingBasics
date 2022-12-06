@@ -103,7 +103,7 @@ int Array::LinearSearch(int key)
 	{
 		if (key == A[i])
 		{
-			swap(&A[i], &A[0]);
+			//swap(&A[i], &A[0]);
 			return i;
 		}
 	}

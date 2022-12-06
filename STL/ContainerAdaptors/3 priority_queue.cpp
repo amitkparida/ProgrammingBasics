@@ -75,3 +75,42 @@ string frequencySort(string s) {
     }
     return mystr;
 }
+
+
+//In the SRE interview: Get k no. of more frequent elements 
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <queue>
+using namespace std;
+
+vector<int> GetMoreFrequentElements(const vector<int>& arr, int k) {
+    unordered_map<int, int> m;
+    vector<int> res{};
+
+    for (int i = 0; i < arr.size(); i++) {
+        m[arr[i]]++;
+    }
+
+    priority_queue<pair<int, int>> q;
+
+    for (auto ele : m) {
+        q.push({ ele.second, ele.first });
+    }
+
+    for (int i = 0; i < k; i++) {
+        res.push_back(q.top().second);
+        q.pop();
+    }
+
+    return res;
+}
+
+//int main() {
+//    vector<int> arr{ 1,1,1,2,2,3 };
+//
+//    for (auto ele : GetMoreFrequentElements(arr, 2))
+//        cout << ele << endl; //1, 2
+//
+//    return 0;
+//}

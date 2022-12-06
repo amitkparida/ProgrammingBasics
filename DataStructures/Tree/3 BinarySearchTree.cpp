@@ -67,7 +67,7 @@ void printInOrder(Node* root) {
 	}
 	//left, root, right
 	printInOrder(root->left);
-	cout << root->data << " ,";
+	cout << root->data << " ";
 	printInOrder(root->right);
 }
 
