@@ -275,20 +275,4 @@ int main()
 //===========================================================================================
 
 
-// string size test
-//#include <iostream>
-//using namespace std;
-//
-//int main() {
-//	int arr[] = {1, 2, 3, 4};
-//
-//	wchar_t str[] = { L'a', L'm', L'i', L't' };
-//	wchar_t str1[] = L"amit";
-//	wstring str2 = str1;
-//
-//	cout << sizeof(arr) << endl;
-//	cout << sizeof(str) << endl;
-//	cout << sizeof(str1) << endl;
-//	wcout << str2 << endl << str2.size() << endl << str2.length();
-//}
 

@@ -24,7 +24,7 @@ public:
 	}
 	~Array()
 	{
-		delete[]A;
+		delete[] A;
 	}
 	void Display();
 	void Append(int x);
@@ -48,6 +48,7 @@ public:
 	Array* Diff(Array arr2);
 	Array* Inter(Array arr2);
 };
+
 void Array::Display()
 {
 	int i;
@@ -55,12 +56,13 @@ void Array::Display()
 	for (i = 0; i < length; i++)
 		cout << A[i] << " ";
 }
+
 void Array::Append(int x)
 {
 	if (length < size)
 		A[length++] = x;
-
 }
+
 void Array::Insert(int index, int x)
 {
 	int i;
@@ -70,7 +72,6 @@ void Array::Insert(int index, int x)
 			A[i] = A[i - 1];
 		A[index] = x;
 		length++;
-
 	}
 }
 int Array::Delete(int index)
