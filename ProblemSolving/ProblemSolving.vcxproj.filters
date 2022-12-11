@@ -21,5 +21,8 @@
     <ClCompile Include="CountFrequency.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="itoa_atoi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

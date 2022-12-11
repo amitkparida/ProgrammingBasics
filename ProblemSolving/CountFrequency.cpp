@@ -5,7 +5,14 @@
 using namespace std;
 
 
-//Problems: Sort characters in a string By frequency
+
+
+
+
+
+
+
+//Sort characters in a string By frequency
 string frequencySort(string s) {
     unordered_map<char, int> umap;
 
@@ -30,7 +37,7 @@ string frequencySort(string s) {
 
 
 //In the SRE interview: Get k most frequent elements from an array
-vector<int> GetKFrequentElements(const vector<int>& arr, int k) {
+vector<int> topKFrequentElements(vector<int>& arr, int k) {
     unordered_map<int, int> m;
     vector<int> res{};
 
@@ -57,12 +64,53 @@ vector<int> GetKFrequentElements(const vector<int>& arr, int k) {
     return res;
 }
 
-int main() {
-    vector<int> arr{ 1,1,1,2,2,3 };
 
-    for (auto ele : GetKFrequentElements(arr, 2))
+vector<int> topKFrequentElements1(vector<int>& arr, int k) {
+    unordered_map<int, int> umap;
+    vector<int> res{};
+
+    for (auto i: arr) {
+        umap[arr[i]]++;
+    }
+
+    if (k > umap.size()) {
+        cout << "Invalid input" << endl;
+        return res;
+    }
+
+    // To prioritize w.r.t the pair.second, you need to define custom comparator function
+    
+    //auto cmp = [](pair<int, int> lhs, pair<int, int> rhs) { return lhs.second < rhs.second; };
+    //priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> q(cmp);
+
+    struct cmp {
+        bool operator()(pair<int, int> lhs, pair<int, int> rhs) {
+            return lhs.second < rhs.second;
+        }
+    };
+    priority_queue<pair<int, int>, vector<pair<int, int>>, cmp> q;
+
+    for (auto elm : umap) {
+        q.push(elm);
+    }
+
+    for (int i = 0; i < k; i++) {
+        res.push_back(q.top().first);
+        q.pop();
+    }
+
+    return res;
+}
+
+
+
+int main() {
+    vector<int> arr{ 1,1,1,3,3,5 };
+
+    for (auto ele : topKFrequentElements1(arr, 2))
         cout << ele << endl; //1, 2
 
     return 0;
 }
+
 
