@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Strings.cpp">
+    <ClCompile Include="RemoveDuplicate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CountFrequency.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

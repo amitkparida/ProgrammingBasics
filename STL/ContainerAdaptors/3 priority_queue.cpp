@@ -15,52 +15,52 @@
 #include <vector>
 #include <iostream>
 
-template<typename T> void print_queue(T& q) {
-    while (!q.empty()) {
-        std::cout << q.top() << " ";
-        q.pop();
-    }
-    std::cout << std::endl;
-}
-
-int main() {
-
-    std::priority_queue<int> q;
-    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
-        q.push(elm); 
-    }
-    while (!q.empty()) {
-        std::cout << q.top() << " ";
-        q.pop();
-    }
-    std::cout << std::endl;
-
-    
-    //Notice the 2 additional arguments below.
-    std::priority_queue<int, std::vector<int>, std::greater<int> > q2;
-    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
-        q2.push(elm); 
-    }
-    while (!q2.empty()) {
-        std::cout << q2.top() << " ";
-        q2.pop();
-    }
-    std::cout << std::endl;
-
-
-    // Using lambda to compare elements.
-    auto cmp = [](int left, int right) { return (left) < (right); };
-    std::priority_queue<int, std::vector<int>, decltype(cmp)> q3(cmp);
-    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) { 
-        q3.push(elm); 
-    }
-    while (!q3.empty()) {
-        std::cout << q3.top() << " ";
-        q3.pop();
-    }
-    std::cout << std::endl;
-
-}
+//template<typename T> void print_queue(T& q) {
+//    while (!q.empty()) {
+//        std::cout << q.top() << " ";
+//        q.pop();
+//    }
+//    std::cout << std::endl;
+//}
+//
+//int main() {
+//
+//    std::priority_queue<int> q;
+//    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
+//        q.push(elm); 
+//    }
+//    while (!q.empty()) {
+//        std::cout << q.top() << " ";
+//        q.pop();
+//    }
+//    std::cout << std::endl;
+//
+//    
+//    //Notice the 2 additional arguments below.
+//    std::priority_queue<int, std::vector<int>, std::greater<int> > q2;
+//    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
+//        q2.push(elm); 
+//    }
+//    while (!q2.empty()) {
+//        std::cout << q2.top() << " ";
+//        q2.pop();
+//    }
+//    std::cout << std::endl;
+//
+//
+//    // Using lambda to compare elements.
+//    auto cmp = [](int left, int right) { return (left) < (right); };
+//    std::priority_queue<int, std::vector<int>, decltype(cmp)> q3(cmp);
+//    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) { 
+//        q3.push(elm); 
+//    }
+//    while (!q3.empty()) {
+//        std::cout << q3.top() << " ";
+//        q3.pop();
+//    }
+//    std::cout << std::endl;
+//
+//}
 
 
 
@@ -89,7 +89,7 @@ string frequencySort(string s) {
 }
 
 
-//In the SRE interview: Get k no. of more frequent elements 
+//In the SRE interview: Get k most frequent elements 
 #include <iostream>
 #include <vector>
 #include <unordered_map>
@@ -102,6 +102,11 @@ vector<int> GetMoreFrequentElements(const vector<int>& arr, int k) {
 
     for (int i = 0; i < arr.size(); i++) {
         m[arr[i]]++;
+    }
+
+    if (k > m.size()) {
+        cout << "Invalid input" << endl;
+        return res;
     }
 
     priority_queue<pair<int, int>> q;
@@ -118,11 +123,11 @@ vector<int> GetMoreFrequentElements(const vector<int>& arr, int k) {
     return res;
 }
 
-//int main() {
-//    vector<int> arr{ 1,1,1,2,2,3 };
-//
-//    for (auto ele : GetMoreFrequentElements(arr, 2))
-//        cout << ele << endl; //1, 2
-//
-//    return 0;
-//}
+int main() {
+    vector<int> arr{ 1,1,1,2,2,3 };
+
+    for (auto ele : GetMoreFrequentElements(arr, 2))
+        cout << ele << endl; //1, 2
+
+    return 0;
+}

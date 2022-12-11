@@ -93,7 +93,7 @@ int firstUniqChar(string s) {
     unordered_map<char, int> umap;
 
     for (int i = 0; i < s.length(); i++) {
-        umap[s[i]] = umap[s[i]] + 1;
+        umap[s[i]]++;
     }
 
     for (int i = 0; i < s.length(); i++) {
