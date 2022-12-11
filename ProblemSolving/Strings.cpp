@@ -1,4 +1,4 @@
-//Remove Duplicates from an unsorted string
+//Remove Duplicates from an unsorted array (of characters)
 
 #include <iostream>
 #include <unordered_set>
@@ -59,3 +59,7 @@ int main()
     cout << removeDuplicate1(str, n);
     return 0;
 }
+
+
+//Remove Duplicates from an unsorted string
+
