@@ -18,10 +18,22 @@
     <ClCompile Include="RemoveDuplicate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CountFrequency.cpp">
+    <ClCompile Include="CountFrequencyInArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="itoa_atoi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Anagram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="searching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FindAnagramSubstrings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StrStr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

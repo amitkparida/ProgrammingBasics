@@ -17,6 +17,7 @@
 // Best Case Time:      O(1)
 // Average Case Time:   O(logN)
 
+
 #include <algorithm>
 #include <iostream>
 using namespace std;
@@ -97,4 +98,6 @@ int main()
     }
 }
 
-//Time Complexity of Binary Search: O(logN)
+
+// Some problems
+// https://www.geeksforgeeks.org/search-almost-sorted-array/

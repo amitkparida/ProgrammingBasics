@@ -112,7 +112,7 @@ string frequencySort(string s) {
     }
 
     string mystr = "";
-    while (!pq.empty()) {
+    while (!pq.empty()) {  //while (pq.size() > 0) {
         for (int i = 0; i < pq.top().first; i++) {
             mystr += pq.top().second;
         }
@@ -123,6 +123,7 @@ string frequencySort(string s) {
 
 
 //In the SRE interview: Get k most frequent elements from an array
+//Using map and heap
 //Time Complexity : O(K log D + D log D), where D is the count of distinct elements in the array.
 // - To remove the top of the priority queue O(log D) time is required, so if k elements are removed then O(k log D) time is required
 // - To construct a priority queue with D elements, O(D log D) time is required.
@@ -172,28 +173,53 @@ vector<int> topKFrequentElements1(vector<int>& arr, int k) {
 
     // To prioritize w.r.t the pair.second, you need to define custom comparator function
     
-    //auto cmp = [](pair<int, int> lhs, pair<int, int> rhs) { return lhs.second < rhs.second; };
-    //priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> q(cmp);
+    //auto compare = [](pair<int, int> lhs, pair<int, int> rhs) { return lhs.second < rhs.second; };
+    //priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(compare)> q(compare);
 
-    struct cmp {
+    struct compare {
         bool operator()(pair<int, int> lhs, pair<int, int> rhs) {
-            return lhs.second < rhs.second;
+            return lhs.second < rhs.second; //increasing order
         }
     };
-    priority_queue<pair<int, int>, vector<pair<int, int>>, cmp> q;
+    priority_queue<pair<int, int>, vector<pair<int, int>>, compare> q;
 
     for (auto elm : umap) {
         q.push(elm);
     }
 
-    for (int i = 0; i < k; i++) {
+    while (k > 0) {
         res.push_back(q.top().first);
         q.pop();
+        k--;
     }
 
     return res;
 }
 
+//Using map and vector
+bool compare(pair<int, int> p1, pair<int, int> p2)
+{
+    // If frequencies of two elements are same then the larger number should come first
+    if (p1.second == p2.second)
+        return p1.first > p2.first;
+
+    // Sort on the basis of decreasing order of frequencies
+    return p1.second > p2.second;
+}
+void topKFrequentElements2(int arr[], int N, int K)
+{
+    unordered_map<int, int> mp;
+    for (int i = 0; i < N; i++)
+        mp[arr[i]]++;
+
+    vector<pair<int, int> > vec(mp.begin(), mp.end());
+
+    // Sort the vector in decreasing order of frequencies
+    sort(vec.begin(), vec.end(), compare);
+
+    for (int i = 0; i < K; i++)
+        cout << vec[i].first << " ";
+}
 
 
 int main() {
