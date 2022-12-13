@@ -1,10 +1,10 @@
-//Remove Duplicates from an unsorted array (of characters)
-
 #include <iostream>
 #include <algorithm>
 #include <unordered_set>
 #include <unordered_map>
 using namespace std;
+
+//Remove Duplicates from an unsorted array (of characters)
 
 // Simple method
 // Time Complexity : O(n * n), Auxiliary Space : O(1)
@@ -221,7 +221,7 @@ int removeDuplicatesSortedInteger1(int arr[], int n)
     return index; // return new size of modified array.
 }
 
-//Another way of using separate index
+//Better way of using separate index
 //Time Complexity : O(n)
 //Auxiliary Space : O(1)
 int removeDuplicatesSortedInteger2(int arr[], int n)
@@ -244,20 +244,40 @@ int removeDuplicatesSortedInteger2(int arr[], int n)
 }
 
 
+// Using unordered_set. 
+// Time Complexity : O(nLogn), Auxiliary Space : O(n)
+int removeDuplicatesSortedInteger3(int arr[], int n)
+{
+    unordered_set<int> s(arr, arr + n);
+
+    //unordered_set<int> s;
+    //for (int i = 0; i < n; i++) {
+    //    s.insert(arr[i]);
+    //}
+
+    int i = 0;
+    for (auto x : s) {
+        arr[i++] = x;
+    }
+
+    return s.size();
+}
 
 
+#include<windows.h>
 int main()
 {
     char str[] = "aaaamitkummaar";
     int n = sizeof(str) / sizeof(str[0]);
-    cout << removeDuplicate(str, n);
+    cout << removeDuplicate(str, n) << endl << endl;
 
-    std::sort(str, str + n - 1);
-    cout << removeDuplicateSorted(str, n) << endl << endl;
+    char str1[] = "aaaamitkummaar";
+    std::sort(str1, str1 + n - 1);
+    cout << removeDuplicateSorted(str1, n) << endl << endl;
 
     int arr[] = { 1, 2, 2, 3, 4, 4, 4, 5 };
     n = sizeof(arr) / sizeof(arr[0]);
-    n = removeDuplicatesSortedInteger1(arr, n);
+    n = removeDuplicatesSortedInteger3(arr, n);
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
 
