@@ -65,19 +65,19 @@ using namespace std;
 
 // 3. sort using a function pointer
  
-bool customLess(pair<int, int> a, pair<int, int> b) {
-    return (a.second != b.second) ? (a.second < b.second) : (a.first < b.first);
-}
-
-int main() {
-    std::vector<pair<int, int>> Vec{ {5, 4}, {6, 9}, {3, 2}, {8, 7}, {1, 4} };
-
-    std::sort(Vec.begin(), Vec.end(), customLess);
-    for (auto elm : Vec) {
-        cout << "{" << elm.first << ", " << elm.second << "}" << " ";
-    }
-    return 0;
-}
+//bool customLess(pair<int, int> a, pair<int, int> b) {
+//    return (a.second != b.second) ? (a.second < b.second) : (a.first < b.first);
+//}
+//
+//int main() {
+//    std::vector<pair<int, int>> Vec{ {5, 4}, {6, 9}, {3, 2}, {8, 7}, {1, 4} };
+//
+//    std::sort(Vec.begin(), Vec.end(), customLess);
+//    for (auto elm : Vec) {
+//        cout << "{" << elm.first << ", " << elm.second << "}" << " ";
+//    }
+//    return 0;
+//}
 
 
 // 4. sort using a function object
@@ -101,17 +101,22 @@ int main() {
 
 
 
-//// 5. sort using lambda expression
-//
-//int main() {
-//    std::vector<int> Vec{ 5,4,6,7,3,2,8,9,1 };
-//
-//    //std::sort(Vec.begin(), Vec.end(), std::greater<int>()); //Descending 
-//    //std::sort(Vec.begin(), Vec.end(), std::less<int>()); //Ascending
-//    std::sort(Vec.begin(), Vec.end(), [](int a, int b) { return a < b; }); //Ascending
-//
-//    for (auto elm : Vec) {
-//        cout << elm << " ";
-//    }
-//    return 0;
-//}
+// 5. sort using lambda expression
+
+int main() {
+    std::vector<int> Vec{ 5,4,6,7,3,2,8,9,1 };
+
+    //std::sort(Vec.begin(), Vec.end(), std::greater<int>()); //Descending 
+    //std::sort(Vec.begin(), Vec.end(), std::less<int>()); //Ascending
+    std::sort(Vec.begin(), Vec.end(), [](int a, int b) { return a < b; }); //Ascending
+
+    for (auto elm : Vec) {
+        cout << elm << " ";
+    }
+    return 0;
+}
+
+
+//Note: greater<>() is used in case of sort(). But greater<> is used in case of others
+// sort(Vec.begin(), Vec.end(), greater<int>()); 
+// priority_queue<int, vector<int>, greater<int>> minheap; 
