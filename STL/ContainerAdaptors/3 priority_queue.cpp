@@ -14,53 +14,82 @@
 #include <queue>
 #include <vector>
 #include <iostream>
+#include <unordered_map>
+using namespace std;
 
-//template<typename T> void print_queue(T& q) {
-//    while (!q.empty()) {
-//        std::cout << q.top() << " ";
-//        q.pop();
-//    }
-//    std::cout << std::endl;
-//}
-//
-//int main() {
-//
-//    std::priority_queue<int> q;
-//    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
-//        q.push(elm); 
-//    }
-//    while (!q.empty()) {
-//        std::cout << q.top() << " ";
-//        q.pop();
-//    }
-//    std::cout << std::endl;
-//
-//    
-//    //Notice the 2 additional arguments below.
-//    std::priority_queue<int, std::vector<int>, std::greater<int> > q2;
-//    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
-//        q2.push(elm); 
-//    }
-//    while (!q2.empty()) {
-//        std::cout << q2.top() << " ";
-//        q2.pop();
-//    }
-//    std::cout << std::endl;
-//
-//
-//    // Using lambda to compare elements.
-//    auto cmp = [](int left, int right) { return (left) < (right); };
-//    std::priority_queue<int, std::vector<int>, decltype(cmp)> q3(cmp);
-//    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) { 
-//        q3.push(elm); 
-//    }
-//    while (!q3.empty()) {
-//        std::cout << q3.top() << " ";
-//        q3.pop();
-//    }
-//    std::cout << std::endl;
-//
-//}
+bool compare(int lhs, int rhs) {
+    return lhs < rhs;
+}
+int main() {
+
+    //push: ascending, pop: descending
+    std::priority_queue<int> q;
+    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
+        q.push(elm); 
+    }
+    while (!q.empty()) {
+        std::cout << q.top() << " ";
+        q.pop();
+    }
+    std::cout << std::endl;
+
+    
+    //push: descending, pop: ascending
+    //Notice the 2 additional arguments below.
+    std::priority_queue<int, std::vector<int>, std::greater<int> > q2;
+    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
+        q2.push(elm); 
+    }
+    while (!q2.empty()) {
+        std::cout << q2.top() << " ";
+        q2.pop();
+    }
+    std::cout << std::endl;
+
+
+    //Using lambda to compare elements.
+    //push: ascending, pop: descending
+    auto cmp = [](int left, int right) { return left < right; };
+    std::priority_queue<int, std::vector<int>, decltype(cmp)> q3(cmp);
+    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) { 
+        q3.push(elm); 
+    }
+    while (!q3.empty()) {
+        std::cout << q3.top() << " ";
+        q3.pop();
+    }
+    std::cout << std::endl;
+
+
+    //Using function pointer to compare elements.
+    //push: ascending, pop: descending
+    std::priority_queue<int, vector<int>, decltype(&compare)> q4(compare);
+    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
+        q4.push(elm);
+    }
+    while (!q4.empty()) {
+        std::cout << q4.top() << " ";
+        q4.pop();
+    }
+    std::cout << std::endl;
+
+    //Using function object to compare elements.
+    //push: ascending, pop: descending
+    struct compObj {
+        bool operator()(int lhs, int rhs) {
+            return lhs < rhs;
+        }
+    };
+    std::priority_queue<int, vector<int>, compObj> q5;
+    for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
+        q5.push(elm);
+    }
+    while (!q5.empty()) {
+        std::cout << q5.top() << " ";
+        q5.pop();
+    }
+    std::cout << std::endl;
+}
 
 
 
@@ -90,11 +119,6 @@ string frequencySort(string s) {
 
 
 //In the SRE interview: Get k most frequent elements 
-#include <iostream>
-#include <vector>
-#include <unordered_map>
-#include <queue>
-using namespace std;
 
 vector<int> GetMoreFrequentElements(const vector<int>& arr, int k) {
     unordered_map<int, int> m;
@@ -123,11 +147,11 @@ vector<int> GetMoreFrequentElements(const vector<int>& arr, int k) {
     return res;
 }
 
-int main() {
-    vector<int> arr{ 1,1,1,2,2,3 };
-
-    for (auto ele : GetMoreFrequentElements(arr, 2))
-        cout << ele << endl; //1, 2
-
-    return 0;
-}
+//int main() {
+//    vector<int> arr{ 1,1,1,2,2,3 };
+//
+//    for (auto ele : GetMoreFrequentElements(arr, 2))
+//        cout << ele << endl; //1, 2
+//
+//    return 0;
+//}

@@ -24,71 +24,84 @@ using namespace std;
 
 // 1. Sort with integral data types
 
+//int main() {
+//    std::vector<int> Vec{ 5,4,6,7,3,2,8,9,1 };
+//    
+//    //std::sort(std::execution::par, Vec.begin(), Vec.end());
+//    std::sort(Vec.begin(), Vec.end());
+//    for (auto elm : Vec) {
+//        cout << elm << " ";
+//    }
+//    return 0;
+//}
+
+
+// 2. Sort with user defined data types
+
+ //class Point {
+ //public:
+ //    int x;
+ //    int y;
+ //    
+ //    Point(int x = 0, int y = 0) :x{ x }, y{ y } {}
+
+ //    bool operator < (const Point& p1) {
+ //        return (x + y) < (p1.x + p1.y);
+ //    }
+ //};
+
+ //int main() {
+ //    std::vector<Point> Vec{ {1,2}, {3,1}, {0,1} };
+ //    
+ //    std::sort(Vec.begin(), Vec.end());
+
+ //    for (auto& e : Vec) {
+ //        cout << e.x << " " << e.y << endl;
+ //    }
+ //    return 0;
+ //}
+
+
+
+// 3. sort using a function pointer
+ 
+bool customLess(pair<int, int> a, pair<int, int> b) {
+    return (a.second != b.second) ? (a.second < b.second) : (a.first < b.first);
+}
+
 int main() {
-    std::vector<int> Vec{ 5,4,6,7,3,2,8,9,1 };
-    
-    //std::sort(std::execution::par, Vec.begin(), Vec.end());
-    std::sort(Vec.begin(), Vec.end());
+    std::vector<pair<int, int>> Vec{ {5, 4}, {6, 9}, {3, 2}, {8, 7}, {1, 4} };
+
+    std::sort(Vec.begin(), Vec.end(), customLess);
     for (auto elm : Vec) {
-        cout << elm << " ";
+        cout << "{" << elm.first << ", " << elm.second << "}" << " ";
     }
     return 0;
 }
 
 
-//// 2. Sort with user defined data types
-//
-// class Point {
-// public:
-//     int x;
-//     int y;
-//     
-//     Point(int x = 0, int y = 0) :x{ x }, y{ y } {}
-//
-//     bool operator < (const Point& p1) {
-//         return (x + y) < (p1.x + p1.y);
-//     }
-// };
-//
-// int main() {
-//     std::vector<Point> Vec{ {1,2}, {3,1}, {0,1} };
-//     
-//     std::sort(Vec.begin(), Vec.end());
-//
-//     for (auto& e : Vec) {
-//         cout << e.x << " " << e.y << endl;
-//     }
-//     return 0;
-// }
+// 4. sort using a function object
 
-
-
-//// 3. sort using a function object
-// 
-////int customLess(int a, int b) {
-////    return a < b;
-////}
-//
 //struct {
 //    bool operator()(int a, int b) const
 //    {   
 //        return a < b;
 //    }   
 //} customLess;
-//
-// int main() {
-//     std::vector<int> Vec{ 5,4,6,7,3,2,8,9,1 };
-//     
-//     std::sort(Vec.begin(), Vec.end(), customLess);
-//     for (auto elm : Vec) {
-//         cout << elm << " ";
-//     }
-//     return 0;
-// }
+
+ //int main() {
+ //    std::vector<int> Vec{ 5,4,6,7,3,2,8,9,1 };
+ //    
+ //    std::sort(Vec.begin(), Vec.end(), customLess);
+ //    for (auto elm : Vec) {
+ //        cout << elm << " ";
+ //    }
+ //    return 0;
+ //}
 
 
 
-//// 4. sort using lambda expression
+//// 5. sort using lambda expression
 //
 //int main() {
 //    std::vector<int> Vec{ 5,4,6,7,3,2,8,9,1 };

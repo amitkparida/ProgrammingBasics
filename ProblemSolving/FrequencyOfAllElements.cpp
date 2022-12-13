@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <vector>
 #include <unordered_map>
@@ -133,8 +134,7 @@ vector<int> frequencySort1(vector<int>& nums) {
         umap[x]++;
     }
 
-    sort(nums.begin(), nums.end(), [&](int a, int b) 
-        {return umap[a] != umap[b] ? umap[a] < umap[b] : a > b; }); //if frequencies of 2 integers are same, then bigger int first
+    sort(nums.begin(), nums.end(), [&](int a, int b) {return umap[a] != umap[b] ? umap[a] < umap[b] : a > b; }); //if frequencies of 2 integers are same, then bigger int first
 
     return nums;
 }
@@ -176,13 +176,20 @@ vector<int> topKFrequentElements(vector<int>& arr, int k) {
 }
 
 
+bool compare(pair<int, int> lhs, pair<int, int> rhs) {
+    return lhs.second < rhs.second;
+}
 vector<int> topKFrequentElements1(vector<int>& arr, int k) {
     unordered_map<int, int> umap;
     vector<int> res{};
 
-    for (auto i: arr) {
-        umap[arr[i]]++;
+    for (auto e: arr) {
+        umap[e]++;
     }
+
+    //for (int i = 0; i < arr.size(); i++) {
+    //    umap[arr[i]]++;
+    //}
 
     if (k > umap.size()) {
         cout << "Invalid input" << endl;
@@ -190,16 +197,18 @@ vector<int> topKFrequentElements1(vector<int>& arr, int k) {
     }
 
     // To prioritize w.r.t the pair.second, you need to define custom comparator function
+
+    priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(&compare)> q(compare);
     
     //auto compare = [](pair<int, int> lhs, pair<int, int> rhs) { return lhs.second < rhs.second; };
     //priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(compare)> q(compare);
 
-    struct compare {
-        bool operator()(pair<int, int> lhs, pair<int, int> rhs) {
-            return lhs.second < rhs.second; //increasing order
-        }
-    };
-    priority_queue<pair<int, int>, vector<pair<int, int>>, compare> q;
+    //struct compare {
+    //    bool operator()(pair<int, int> lhs, pair<int, int> rhs) {
+    //        return lhs.second < rhs.second; //increasing order
+    //    }
+    //};
+    //priority_queue<pair<int, int>, vector<pair<int, int>>, compare> q;
 
     for (auto elm : umap) {
         q.push(elm);
@@ -215,7 +224,7 @@ vector<int> topKFrequentElements1(vector<int>& arr, int k) {
 }
 
 //Using map and vector
-bool compare(pair<int, int> p1, pair<int, int> p2)
+bool compare1(pair<int, int> p1, pair<int, int> p2)
 {
     // If frequencies of two elements are same then the larger number should come first
     if (p1.second == p2.second)
@@ -224,19 +233,24 @@ bool compare(pair<int, int> p1, pair<int, int> p2)
     // Sort on the basis of decreasing order of frequencies
     return p1.second > p2.second;
 }
-void topKFrequentElements2(int arr[], int N, int K)
+vector<int> topKFrequentElements2(vector<int>& arr, int k)
 {
     unordered_map<int, int> mp;
-    for (int i = 0; i < N; i++)
+    vector<int> ans;
+        
+    for (int i = 0; i < arr.size(); i++) {
         mp[arr[i]]++;
+    }
 
     vector<pair<int, int> > vec(mp.begin(), mp.end());
 
     // Sort the vector in decreasing order of frequencies
-    sort(vec.begin(), vec.end(), compare);
+    sort(vec.begin(), vec.end(), compare1);
 
-    for (int i = 0; i < K; i++)
-        cout << vec[i].first << " ";
+    for (int i = 0; i < k; i++){
+        ans.push_back(vec[i].first);
+    }
+    return ans;
 }
 
 
@@ -246,18 +260,18 @@ int main() {
     cout << frequencySort(str) << endl;
 
     vector<int> arr{ 1,1,1,3,3,5,2,2 };
-
     for (auto ele : frequencySort1(arr))
         cout << ele << " ";
 
     cout << endl;
 
-    for (auto ele : topKFrequentElements1(arr, 2))
-        cout << ele << endl; //1, 2
+    vector<int> arr1{ 1,1,1,3,3,5,2,2,2,2 };
+    for (auto ele : topKFrequentElements1(arr1, 2))
+        cout << ele << endl; //2, 1
 
-    int arr1[] = { 10, 20, 20, 10, 10, 20, 5, 20, 40 };
-    int n = sizeof(arr1) / sizeof(arr1[0]);
-    countFrequency3(arr1, n);
+    int arr2[] = { 10, 20, 20, 10, 10, 20, 5, 20, 40 };
+    int n = sizeof(arr2) / sizeof(arr2[0]);
+    countFrequency3(arr2, n);
 
     return 0;
 }
