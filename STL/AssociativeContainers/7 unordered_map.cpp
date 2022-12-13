@@ -14,6 +14,7 @@
 // PROGRAM:
 #include <iostream>
 #include <unordered_map>
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -103,4 +104,26 @@ int firstUniqChar(string s) {
     }
 
     return -1;
+}
+
+
+// Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+// Input: strs = ["eat","tea","tan","ate","nat","bat"]
+// Output: [["bat"], ["nat", "tan"], ["ate", "eat", "te
+// https://leetcode.com/problems/group-anagrams/
+vector<vector<string>> groupAnagrams(vector<string>& strs) {
+    vector<vector<string>> ans{};
+    unordered_map<string, vector<string>> umap;
+
+    for (auto x : strs) {
+        string sorted = x;
+        sort(sorted.begin(), sorted.end());
+        umap[sorted].push_back(x);
+    }
+
+    for (auto x : umap) {
+        ans.push_back(x.second);
+    }
+
+    return ans;
 }

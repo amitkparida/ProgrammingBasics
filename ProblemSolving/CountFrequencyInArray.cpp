@@ -89,7 +89,7 @@ void countFrequency3(int arr[], int n)
 
 
 
-//Sort characters in a string By frequency
+//Sort characters in a string By decreasing frequency
 // Time Complexity: O(N + N * Log N + N * Log N) = O(N * Log N)
 // Reason:
 //  1 insertion in heap takes O(Log N), For N insertions O(N* LogN). (HEAP = Priority Queue)
@@ -106,6 +106,10 @@ string frequencySort(string s) {
         umap[s[i]]++;
     }
 
+    //for (auto x : s) {
+    //    umap[x]++;
+    //}
+
     priority_queue<pair<int, char>> pq;
     for (auto j : umap) {
         pq.push({ j.second,j.first });
@@ -119,6 +123,20 @@ string frequencySort(string s) {
         pq.pop();
     }
     return mystr;
+}
+
+//Sort int array by increasing frequency. You can use above method as well.
+vector<int> frequencySort1(vector<int>& nums) {
+    unordered_map<int, int> umap;
+
+    for (auto x : nums) {
+        umap[x]++;
+    }
+
+    sort(nums.begin(), nums.end(), [&](int a, int b) 
+        {return umap[a] != umap[b] ? umap[a] < umap[b] : a > b; }); //if frequencies of 2 integers are same, then bigger int first
+
+    return nums;
 }
 
 
@@ -223,7 +241,16 @@ void topKFrequentElements2(int arr[], int N, int K)
 
 
 int main() {
-    vector<int> arr{ 1,1,1,3,3,5 };
+
+    string str{ "njkajakara" };
+    cout << frequencySort(str) << endl;
+
+    vector<int> arr{ 1,1,1,3,3,5,2,2 };
+
+    for (auto ele : frequencySort1(arr))
+        cout << ele << " ";
+
+    cout << endl;
 
     for (auto ele : topKFrequentElements1(arr, 2))
         cout << ele << endl; //1, 2
