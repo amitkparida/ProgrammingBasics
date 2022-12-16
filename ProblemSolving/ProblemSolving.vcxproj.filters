@@ -42,7 +42,7 @@
     <ClCompile Include="FrequencyOfOneElement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Hashing_Snippets.cpp">
+    <ClCompile Include="1 Hashing_Snippets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SlidingWindowMax.cpp">
