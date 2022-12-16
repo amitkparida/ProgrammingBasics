@@ -16,6 +16,14 @@
 // 4. Sort using lambda expression
 
 
+//Note: greater<>() is used in case of sort(). But greater<> is used in case of others
+// 
+// sort(Vec.begin(), Vec.end(), greater<int>()); 
+// 
+// priority_queue<int, vector<int>, greater<int>> minheap; 
+
+
+
 #include <iostream>
 #include <algorithm>
 #include <execution>
@@ -117,8 +125,4 @@ int main() {
 }
 
 
-//Note: greater<>() is used in case of sort(). But greater<> is used in case of others
-// 
-// sort(Vec.begin(), Vec.end(), greater<int>()); 
-// 
-// priority_queue<int, vector<int>, greater<int>> minheap; 
+

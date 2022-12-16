@@ -45,5 +45,8 @@
     <ClCompile Include="Hashing_Snippets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SlidingWindowMax.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
