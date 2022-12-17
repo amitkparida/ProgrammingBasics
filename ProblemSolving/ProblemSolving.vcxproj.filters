@@ -24,7 +24,7 @@
     <ClCompile Include="FrequencyOfAllElements.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="itoa_atoi.cpp">
+    <ClCompile Include="atoi_itoa.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Anagram_Check.cpp">
@@ -54,12 +54,12 @@
     <ClCompile Include="SmallestDistinctWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList.cpp">
+    <ClCompile Include="LinkedList\LinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LinkedList.h">
+    <ClInclude Include="LinkedList\LinkedList.h">
       <Filter>Source Files\LinkedList</Filter>
     </ClInclude>
   </ItemGroup>

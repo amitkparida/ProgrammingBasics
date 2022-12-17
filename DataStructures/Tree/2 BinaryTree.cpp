@@ -200,6 +200,17 @@ int countLeafNodes1(Node* root) {
     return countLeafNodes1(root->left) + countLeafNodes1(root->right);
 }
 
+//Check if 2 trees are identical or not
+bool isSameTree(Node* p, Node* q) {
+    if (p == NULL || q == NULL) {
+        return (p == q);
+    }
+
+    return (p->data == q->data) 
+        && isSameTree(p->left, q->left) 
+        && isSameTree(p->right, q->right);
+}
+
 
 // Zig Zag Level Order Traversal 
 // Striver: https://takeuforward.org/data-structure/zig-zag-traversal-of-binary-tree/
@@ -299,50 +310,11 @@ void zigZagTraversal1(Node* root) {
     }
 }
 
-// We can use deque also instead of using two stacks
-void zigZagTraversal2(Node* root) {
-    deque<Node*> Q;
-    Q.push_back(root);
-    Q.push_back(NULL);
-    bool leftToRight = true;
-    while (Q.size() > 1) {
-        if (leftToRight) {
-            Node* node = Q.front();
-            if (node) {
-                std::cout << node->data << " ";
-                if (node->left)
-                    Q.push_back(node->left);
-                if (node->right)
-                    Q.push_back(node->right);
-                Q.pop_front();
-            }
-            else { 
-                leftToRight = !leftToRight; 
-            }
-        }
-        else {
-            Node* node = Q.back();
-            if (node) {
-                std::cout << node->data << " ";
-                if (node->right)
-                    Q.push_front(node->right);
-                if (node->left)
-                    Q.push_front(node->left);
-                Q.pop_back();
-            }
-            else { 
-                leftToRight = !leftToRight; 
-            }
-        }
-    }
-}
-
-
 // For the above solution, you can just perform the simple level order traversal.Considering 1 based indexing
 //If level is odd then then just print the elements.
 //If level is even just use a stack and push the elements into it and once level is traversed start popping and print the values. You will get values in reverse order because of LIFO nature of Stack.
 //And finally check at the end if stack still contains elements, empty the stack and print the element.
-vector<int> zigZagTraversal3(Node* root) {
+vector<int> zigZagTraversal2(Node* root) {
     queue<Node*> q;
     stack<int> st;
     vector<int> ans;
@@ -438,7 +410,7 @@ int main() {
     cout << endl;
 
     cout << "Zig Zag traversal is: ";
-    for (auto e : zigZagTraversal3(root)) {
+    for (auto e : zigZagTraversal2(root)) {
             cout << e << " ";
     }
     cout << endl;
