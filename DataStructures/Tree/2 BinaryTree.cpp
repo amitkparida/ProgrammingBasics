@@ -200,8 +200,63 @@ int countLeafNodes1(Node* root) {
     return countLeafNodes1(root->left) + countLeafNodes1(root->right);
 }
 
+
+// Zig Zag Level Order Traversal 
+// Striver: https://takeuforward.org/data-structure/zig-zag-traversal-of-binary-tree/
+// Time Complexity: O(N)   
+// Space Complexity : O(N)
+
+vector <vector<int>> zigZagTraversal(Node* root) {
+    vector<vector<int>> result;
+    if (root == NULL) {
+        return result;
+    }
+
+    queue<Node*> q;
+    q.push(root);
+    bool leftToRight = true;
+
+    while (!q.empty()) {
+        int size = q.size();
+        vector <int> row(size); //Notice, the vector needs a size here
+
+        for (int i = 0; i < size; i++) {
+            Node* node = q.front();
+            q.pop();
+
+            // find position to fill node's value
+            //int index = (leftToRight) ? i : (size - 1 - i);
+            //row[index] = node->data;
+
+            if (leftToRight == true) {
+                row[i] = node->data;
+            }
+            else {
+                row[size - 1 - i] = node->data;
+            }
+
+            if (node->left) {
+                q.push(node->left);
+            }
+            if (node->right) {
+                q.push(node->right);
+            }
+        }
+        // after this level
+        leftToRight = !leftToRight;
+        result.push_back(row);
+    }
+    return result;
+}
+
+
+
 // https://www.youtube.com/watch?v=xtuhK-a18is
-void zigZagTraversal(Node* root) {
+// https://www.geeksforgeeks.org/zigzag-tree-traversal/
+//Time Complexity: O(n) 
+//Space Complexity : O(n) + (n) = O(n)
+
+void zigZagTraversal1(Node* root) {
     if (root == NULL) 
         return;
 
@@ -245,135 +300,101 @@ void zigZagTraversal(Node* root) {
 }
 
 // We can use deque also instead of using two stacks
-void zigZagTraversal1(Node* root) {
+void zigZagTraversal2(Node* root) {
     deque<Node*> Q;
     Q.push_back(root);
     Q.push_back(NULL);
-    bool ltr = true;
+    bool leftToRight = true;
     while (Q.size() > 1) {
-        if (ltr) {
-            Node* n = Q.front();
-            if (n) {
-                std::cout << n->data << " ";
-                if (n->left)Q.push_back(n->left);
-                if (n->right)Q.push_back(n->right);
+        if (leftToRight) {
+            Node* node = Q.front();
+            if (node) {
+                std::cout << node->data << " ";
+                if (node->left)
+                    Q.push_back(node->left);
+                if (node->right)
+                    Q.push_back(node->right);
                 Q.pop_front();
             }
-            else { ltr = !ltr; }
+            else { 
+                leftToRight = !leftToRight; 
+            }
         }
         else {
-            Node* n = Q.back();
-            if (n) {
-                std::cout << n->data << " ";
-                if (n->right)Q.push_front(n->right);
-                if (n->left)Q.push_front(n->left);
+            Node* node = Q.back();
+            if (node) {
+                std::cout << node->data << " ";
+                if (node->right)
+                    Q.push_front(node->right);
+                if (node->left)
+                    Q.push_front(node->left);
                 Q.pop_back();
             }
-            else { ltr = !ltr; }
+            else { 
+                leftToRight = !leftToRight; 
+            }
         }
     }
 }
 
 
 // For the above solution, you can just perform the simple level order traversal.Considering 1 based indexing
-// If level is odd then then just print the elements.
+//If level is odd then then just print the elements.
 //If level is even just use a stack and push the elements into it and once level is traversed start popping and print the values. You will get values in reverse order because of LIFO nature of Stack.
 //And finally check at the end if stack still contains elements, empty the stack and print the element.
-vector<int> zigZagTraversal2(Node* root)
-{
+vector<int> zigZagTraversal3(Node* root) {
     queue<Node*> q;
     stack<int> st;
     vector<int> ans;
     q.push(root);
     q.push(NULL);
     int level = 1;
-    while (!q.empty())
-    {
+
+    while (!q.empty()) {
         Node* temp = q.front();
         q.pop();
-        if (temp != NULL)
-        {
-            if (level % 2 == 1)
-            {
+
+        if (temp != NULL) {
+            if (level % 2 == 1) {
                 ans.push_back(temp->data);
             }
-            else
-            {
+            else {
                 st.push(temp->data);
             }
 
-            if (temp->left)
-            {
+            if (temp->left) {
                 q.push(temp->left);
             }
-            if (temp->right)
-            {
+            if (temp->right) {
                 q.push(temp->right);
             }
         }
-        else if (!q.empty())
-        {
+        else if (!q.empty()) {
             q.push(NULL);
-            while (!st.empty())
-            {
+            while (!st.empty()) {
                 ans.push_back(st.top());
                 st.pop();
             }
             level++;
         }
     }
-    while (!st.empty())
-    {
+
+    while (!st.empty()) {
         ans.push_back(st.top());
         st.pop();
     }
+
     return ans;
 }
 
 
-//Striver: https://takeuforward.org/data-structure/zig-zag-traversal-of-binary-tree/
-vector <vector<int>> zigZagTraversal3(Node* root) {
-    vector<vector<int>> result;
-    if (root == NULL) {
-        return result;
-    }
-
-    queue < Node* > q;
-    q.push(root);
-    bool leftToRight = true;
-
-    while (!q.empty()) {
-        int size = q.size();
-        vector < int > row(size);
-        for (int i = 0; i < size; i++) {
-            Node* node = q.front();
-            q.pop();
-
-            // find position to fill node's value
-            int index = (leftToRight) ? i : (size - 1 - i);
-
-            row[index] = node->data;
-            if (node->left) {
-                q.push(node->left);
-            }
-            if (node->right) {
-                q.push(node->right);
-            }
-        }
-        // after this level
-        leftToRight = !leftToRight;
-        result.push_back(row);
-    }
-    return result;
-}
-
 int main() {
 
-//            1
+//             1
 //
-//        3        5
+//        3         5
 //
-//     7   11   17
+//     7    11   17
 
 
     //creating a Tree
@@ -387,7 +408,6 @@ int main() {
     root->left->left = new Node(7);
     root->left->right = new Node(11);
     root->right->right = new Node(17);
-
 
     cout << "\nLevel order traversal is: ";
     levelOrderTraversal(root); // 1 3 5 7 11 17
@@ -405,23 +425,25 @@ int main() {
     postorder(root); // 7 11 3 17 5 1
     cout << endl;
 
+    cout << "Zig Zag traversal is: " << endl;
+    for (auto vec : zigZagTraversal(root)) {
+        for (auto e : vec) {
+            cout << e << " ";
+        }
+        cout << endl;
+    }
+
     cout << "Zig Zag traversal is: ";
     zigZagTraversal1(root); // 1 5 3 7 11 17
     cout << endl;
 
     cout << "Zig Zag traversal is: ";
-    for (auto e : zigZagTraversal2(root)) {
+    for (auto e : zigZagTraversal3(root)) {
             cout << e << " ";
     }
     cout << endl;
 
-    cout << "Zig Zag traversal is: " << endl;
-    for (auto vec: zigZagTraversal3(root)) {
-        for (auto e: vec) {
-            cout << e << " ";
-        }
-        cout << endl;
-    }
+
 
     cout << "Leaf nodes are: ";
     int count = countLeafNodes(root); // 7 11 17
