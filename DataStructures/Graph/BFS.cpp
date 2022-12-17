@@ -29,7 +29,7 @@ STEPS:
 #include <queue>
 using namespace std;
 
-
+/*
 //BFS using Adjacency List representation of graph
 vector<int> BFS(int node, vector<vector<int>> adj) {
 	vector <int> result;
@@ -108,12 +108,12 @@ int main() {
 //2 3
 //3 6
 //4 6
-
+*/
 
 //===========================================================================================================
 
 
-/*
+
 //BFS using Adjacency Matrix representation of graph
 #include <iostream>
 #include <queue>
@@ -149,7 +149,7 @@ int main() {
 
 	cin >> V >> E;
 
-	//2D vector as adj[V+1][V+1].  Size = V + 1 if the input graph is 1 based. If the input graph starts at 0, then size will be V.
+	//2D vector as adjmat[V+1][V+1].  Size = V + 1 if the input graph is 1 based. If the input graph starts at 0, then size will be V.
 	vector<vector<int>> adjmat(V + 1, vector<int>(V + 1));
 
 	// take edges as input
@@ -159,9 +159,23 @@ int main() {
 		adjmat[v][u] = 1;
 	}
 
-	//Print graph
+	/* OR, you can give input like below 2D vector: (0th row and 0th column is ignored for 1 based graph)
+	
+	vector<vector<int>> adjmat
+	{
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 1, 0, 1, 0, 0},
+		{0, 1, 0, 1, 1, 0, 0},
+		{0, 0, 1, 0, 0, 0, 1},
+		{0, 1, 1, 0, 0, 1, 1},
+		{0, 0, 0, 0, 1, 0, 0},
+		{0, 0, 0, 1, 1, 0, 0}
+	};
+	*/
+
+	//Print graph (Adjacency Matrix)
 	cout << endl << "The Graph (Adjacent Matrix) is: " << endl;
-	for (int i = 1; i < adjmat.size(); ++i) { // Initially i = 1, j = 1 since graph is 1 based. i = 0, j = 0 if graph starts at 0, not 1.
+	for (int i = 1; i < adjmat.size(); ++i) { // Initialize i = 1, j = 1 since graph is 1 based. i = 0, j = 0 if graph starts at 0, not 1.
 		for (int j = 1; j < adjmat[i].size(); j++) {
 			cout << adjmat[i][j] << " ";
 		}
@@ -190,65 +204,6 @@ int main() {
 //3 6
 //4 6
 
-*/
 
-
-
-
-
-
-/*
-// From Udemy Abdul Bari course : https://www.udemy.com/course/datastructurescncpp/learn/lecture/13193650#overview
-//BFS for Adjacency matrix representation of graph
-#include <iostream>
-#include <queue>
-
-using namespace std;
-
-void BFS(int vtx, int A[][8], int n) {
-	queue<int> Q;
-	int visited[8]{ 0 };
-
-	// Initial
-	cout << vtx << ", " << flush;  // Visit vertex
-	visited[vtx] = 1;
-	Q.emplace(vtx);
-
-	// Explore
-	while (!Q.empty()) {
-		int u = Q.front();  // Vertex u for exploring
-		Q.pop();
-		for (int v = 1; v <= n; v++) {  // Adjacent vertices of vertex u
-			if (A[u][v] == 1 && visited[v] == 0) {  // Adjacent vertex and not visited
-				cout << v << ", " << flush;  // Visit vertex
-				visited[v] = 1;
-				Q.emplace(v);
-			}
-		}
-	}
-	cout << endl;
-}
-
-int main() {
-
-	int A[8][8] = { {0, 0, 0, 0, 0, 0, 0, 0},
-				   {0, 0, 1, 1, 1, 0, 0, 0},
-				   {0, 1, 0, 1, 0, 0, 0, 0},
-				   {0, 1, 1, 0, 1, 1, 0, 0},
-				   {0, 1, 0, 1, 0, 1, 0, 0},
-				   {0, 0, 0, 1, 1, 0, 1, 1},
-				   {0, 0, 0, 0, 0, 1, 0, 0},
-				   {0, 0, 0, 0, 0, 1, 0, 0} };
-
-	cout << "Vertex: 1 -> " << flush;
-	BFS(1, A, 8);
-
-	cout << "Vertex: 4 -> " << flush;
-	BFS(4, A, 8);
-
-
-	return 0;
-}
-*/
 
 
