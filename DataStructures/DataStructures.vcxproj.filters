@@ -39,13 +39,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Graph\BFS.cpp">
+    <ClCompile Include="Graph\4 BFS.cpp">
       <Filter>Source Files\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="Graph\DFS.cpp">
-      <Filter>Source Files\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="Graph\Graph.cpp">
+    <ClCompile Include="Graph\5 DFS.cpp">
       <Filter>Source Files\Graph</Filter>
     </ClCompile>
     <ClCompile Include="Tree\3 BinarySearchTree.cpp">
@@ -108,13 +105,22 @@
     <ClCompile Include="Tree\1 Tree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="Graph\IsTree.cpp">
+    <ClCompile Include="Graph\6 IsTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LinkedList\4 CircularDoublyLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LinkedList\5 XorLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph\2 AdjacencyList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph\3 AdjacencyMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph\1 Graph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

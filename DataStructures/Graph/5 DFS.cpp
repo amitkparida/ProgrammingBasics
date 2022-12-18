@@ -3,7 +3,8 @@ NOTES:
 0. Depth - first search(DFS) is an algorithm(or technique) for traversing a tree / graph.
 2. DFS uses stack OR we can use recursive approach.
 
-APPLICATIONS OF DFS
+APPLICATIONS OF DFS:
+https://www.geeksforgeeks.org/applications-of-depth-first-search/
 0. To find minimum spanning tree and all pair shortest path tree.
 1. Detecting cycle in a graph
 2. Path finding

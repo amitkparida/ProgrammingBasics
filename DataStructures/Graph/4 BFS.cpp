@@ -8,7 +8,8 @@ NOTES:
 5. Inorder to keep track of visited nodes we keep array of boolean where we initialize every element of array as false
    meaning non - visited, and as we visit some node we make this array element value true.
 
-SOME USAGE :
+APPLICATIONS OF BFS:
+https://www.geeksforgeeks.org/applications-of-breadth-first-traversal/
 1) Shortest Path and Minimum Spanning Tree for unweighted graph
 2) Social Networking Websites
 3) Broadcasting in Network
