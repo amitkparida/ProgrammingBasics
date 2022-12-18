@@ -20,12 +20,14 @@ STEPS:
 4. Go to Step 2
 */
 
-
+/*
 #include <iostream>
 #include <stack>
 #include <vector>
 using namespace std;
 
+
+//DFS using Adjacency List representation of graph
 // Non-recursive
 vector<int> DFS(int node, const vector<vector<int>>& adj) {
 
@@ -75,10 +77,9 @@ void DFS_Recursive(int node, vector<vector<int>> adj, vector<bool>& visited, vec
 
     //for (int i = 0; i < adj[node].size(); ++i) {
     //    if (visited[adj[node][i]] == false)
-    //        DFS_Rec(adj[node][i], adj, visited, result);
+    //        DFS_Recursive(adj[node][i], adj, visited, result);
     //}
 }
-
 
 void addEdge(vector<vector<int>>& adj, int u, int v)
 {
@@ -107,6 +108,7 @@ int main() {
     addEdge(adj, 2, 4);
     addEdge(adj, 0, 1);
     addEdge(adj, 0, 3);
+    addEdge(adj, 1, 3);
 
     cout << "The graph is: \n";
     printGraph(adj);
@@ -137,93 +139,139 @@ int main() {
 }
 
 
+// Output: (Note that the order of traversal could be different)
+//
+// Following is Depth First Traversal starting from vertex 0 (Non-recursive) 
+// 0 3 1 2 4
+// Following is Depth First Traversal starting from vertex 0 using recursion
+// 0 2 4 1 3
+
+*/
 
 //===========================================================================================================
 
-/*
-// From Abdul Bari course https://www.udemy.com/course/datastructurescncpp/learn/lecture/13193676#overview
 
+
+
+//DFS using Adjacency Matrix representation of graph
 #include <iostream>
 #include <stack>
-
+#include <vector>
 using namespace std;
 
-// Based on Lecture
-void DFS(int u, int A[][8], int n) {
-    // Initialize visit tracking array and stack
-    int visited[8]{ 0 };
-    stack<int> stk;
-    stk.emplace(u);
+//Non-recursive
+vector<int> DFS(int node, const vector<vector<int>>& adjmat) {
+    vector<int> result;
 
-    // Visit start vertex u
-    cout << u << ", " << flush;
-    visited[u] = 1;  // Visited vertex u
+    vector<bool> visited(adjmat.size(), false);
 
-    // Initial Adjacent vertex
-    int v = 0;
+    stack<int> Stk;
+    Stk.push(node);
+    visited[node] = true;
 
-    while (!stk.empty()) {
-        while (v < n) {
-            if (A[u][v] == 1 && visited[v] == 0) {
-                stk.push(u); // Suspend exploring current vertex u
-                u = v;  // Update current vertex as the next adjacent vertex
+    while (!Stk.empty()) {
+        node = Stk.top();
+        Stk.pop();
 
-                // Visit current vertex u
-                cout << u << ", " << flush;
-                visited[u] = 1;
-                v = -1;  // Increment will make this 0
+        result.push_back(node);
+
+        for (int i = 0; i < adjmat.size(); i++) {
+            if (visited[i] == false && adjmat[node][i] == 1) {
+                Stk.push(i);
+                visited[i] = true;
             }
-            v++;
         }
-        v = u;  // Can set v = 0 but setting v = u is better
-        u = stk.top();  // Return to previous suspended vertex
-        stk.pop();
+
     }
+
+    return result;
 }
 
-// Simpler and adds elements to stack from end
-void dfs(int u, int A[][8], int n) {
-    int visited[8]{ 0 };
-    stack<int> stk;
-    stk.emplace(u);
 
-    while (!stk.empty()) {
-        u = stk.top();
-        stk.pop();
+void DFS_Recursive(int node, vector<vector<int>> adjmat, vector<bool>& visited, vector<int>& result) {
+    visited[node] = true;
+    result.push_back(node);
 
-        if (visited[u] != 1) {
-            cout << u << ", " << flush;
-            visited[u] = 1;
-
-            for (int v = n - 1; v >= 0; v--) {
-                if (A[u][v] == 1 && visited[v] == 0) {
-                    stk.emplace(v);
-                }
-            }
+    for (int i = 0; i < adjmat.size(); i++) {
+        if (visited[i] == false && adjmat[node][i] == 1) {
+            DFS_Recursive(i, adjmat, visited, result);
         }
     }
 }
 
 int main() {
+    int V, E, u, v; //V = no of vertices/nodes, E = no of edges, (u, v) are source and destination nodes that represent an edge
 
-    int A[8][8] = { {0, 0, 0, 0, 0, 0, 0, 0},
-                   {0, 0, 1, 1, 1, 0, 0, 0},
-                   {0, 1, 0, 1, 0, 0, 0, 0},
-                   {0, 1, 1, 0, 1, 1, 0, 0},
-                   {0, 1, 0, 1, 0, 1, 0, 0},
-                   {0, 0, 0, 1, 1, 0, 1, 1},
-                   {0, 0, 0, 0, 0, 1, 0, 0},
-                   {0, 0, 0, 0, 0, 1, 0, 0} };
+    cin >> V >> E;
 
-    int u = 5;
-    cout << "DFS Vertex: " << u << " -> " << flush;
-    DFS(u, A, 8);
+    //2D vector as adjmat[V][V].  Size = V if the input graph is 0 based. If the input graph starts at 1, then size will be V+1.
+    vector<vector<int>> adjmat(V, vector<int>(V));
+
+    // take edges as input
+    for (int i = 0; i < E; i++) {
+        cin >> u >> v;
+        adjmat[u][v] = 1;
+        adjmat[v][u] = 1;
+    }
+
+    /*
+     OR, you can give input like below 2D vector: (0th row and 0th column is ignored for 1 based graph)
+    
+    vector<vector<int>> adjmat
+    {
+        {0 1 1 1 0},
+        {1 0 0 1 0},
+        {1 0 0 0 1},
+        {1 1 0 0 0},
+        {0 0 1 0 0}
+    };
+    */
+    
+    //Print graph (Adjacency Matrix)
+    cout << endl << "The Graph (Adjacent Matrix) is: " << endl;
+    for (int i = 0; i < adjmat.size(); ++i) { // Initialize i = 0, j = 0 since graph is 0 based. i = 1, j = 1 if graph starts at 1, not 0.
+        for (int j = 0; j < adjmat[i].size(); j++) {
+            cout << adjmat[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+
+    cout << "Following is Depth First Traversal starting from vertex 0 (Non-recursive) \n";
+    vector<int> result = DFS(0, adjmat);
+
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i] << " ";
+    }
     cout << endl;
 
-    cout << "dfs Vertex: " << u << " -> " << flush;
-    dfs(u, A, 8);
+
+    cout << "Following is Depth First Traversal starting from vertex 0 using recursion \n";
+    vector<bool> visited(adjmat.size(), false);
+    result.clear();
+
+    DFS_Recursive(0, adjmat, visited, result);
+
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i] << " ";
+    }
     cout << endl;
 
     return 0;
 }
-*/
+
+//Input format
+//5 5    <------- 5 = No of nodes, 5 = no of edges
+//0 2
+//2 4
+//0 1
+//0 3
+//1 3
+
+
+//Output: (Note that the order of traversal could be different)
+// 
+// Following is Depth First Traversal starting from vertex 0 (Non - recursive)
+// 0 3 2 4 1
+// Following is Depth First Traversal starting from vertex 0 using recursion
+// 0 1 3 2 4
