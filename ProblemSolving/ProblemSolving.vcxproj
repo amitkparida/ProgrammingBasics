@@ -157,7 +157,19 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="LinkedList\2 MiddleNode.cpp" />
+    <ClCompile Include="LinkedList\1 Reverse.cpp" />
+    <ClCompile Include="LinkedList\DeleteNthNodeFromEnd.cpp" />
+    <ClCompile Include="LinkedList\DetectLoop.cpp" />
+    <ClCompile Include="LinkedList\DetectStartOfLoop.cpp" />
+    <ClCompile Include="LinkedList\FindIntersection.cpp" />
+    <ClCompile Include="LinkedList\MergeTwoLists.cpp" />
+    <ClCompile Include="LinkedList\NthNodeFromEnd.cpp" />
+    <ClCompile Include="LinkedList\IsCircularList.cpp" />
     <ClCompile Include="LinkedList\LinkedList.cpp" />
+    <ClCompile Include="LinkedList\MergeSort.cpp" />
+    <ClCompile Include="LinkedList\RemoveDuplicates.cpp" />
+    <ClCompile Include="LinkedList\RemoveLoop.cpp" />
     <ClCompile Include="SmallestDistinctWindow.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>

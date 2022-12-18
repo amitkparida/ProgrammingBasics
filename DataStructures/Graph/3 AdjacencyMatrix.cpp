@@ -13,7 +13,7 @@ int main() {
 	// declare the adjacent matrix
 	vector<vector<int>> adjmat;
 
-	//Resize the 2D vector as adj[V+1][V+1].  Size = V + 1 if the input graph is 1 based. If the input graph starts at 0, then size will be V.
+	//Resize the 2D vector as adj[V + 1][V + 1].  Size = V + 1 if the input graph is 1 based. If the input graph starts at 0, then size will be V.
 	adjmat.resize(V + 1, vector<int>(V + 1));
 
 	// take edges as input

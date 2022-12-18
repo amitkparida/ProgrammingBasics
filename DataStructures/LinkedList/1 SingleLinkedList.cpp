@@ -67,12 +67,12 @@ public:
 	void Reverse2();
 	void ReverseUsingStack();
 	void ReverseUsingRecursion();
-	void ReverseUsingRecursion2();
+	void ReverseUsingRecursion1();
 	void ReverseInBetween(int left, int right);
 
 private:
-	void ReverseRecUtil(Node* prevNode, Node* currentNode);
-	Node* ReverseRecUtil2(Node* head);
+	Node* ReverseRecUtil(Node* head);
+	void ReverseRecUtil1(Node* prevNode, Node* currentNode);
 };
 
 
@@ -394,38 +394,40 @@ void CLinkedList::ReverseUsingStack()
 
 
 //Using Recursion
-void CLinkedList::ReverseUsingRecursion() {
-	ReverseRecUtil(NULL, head);
+
+Node* CLinkedList::ReverseRecUtil(Node* head) {
+	if (head == NULL || head->next == NULL) {
+		return head;
+	}
+
+	Node* currNode = head;
+	Node* tempNode = ReverseRecUtil(head->next);
+	currNode->next->next = currNode;
+	currNode->next = NULL;
+
+	return tempNode;
 }
-void CLinkedList::ReverseRecUtil(Node* prevNode, Node* currentNode)
+void CLinkedList::ReverseUsingRecursion()
+{
+	head = ReverseRecUtil(head);
+}
+
+
+//Using Recursion
+void CLinkedList::ReverseUsingRecursion1() {
+	ReverseRecUtil1(NULL, head);
+}
+void CLinkedList::ReverseRecUtil1(Node* prevNode, Node* currentNode)
 {
 	if (currentNode)
 	{
-		ReverseRecUtil(currentNode, currentNode->next);
+		ReverseRecUtil1(currentNode, currentNode->next);
 		currentNode->next = prevNode;
 	}
 	else {
 		head = prevNode;
 	}
 }
-
-//Using Recursion, another approach
-void CLinkedList::ReverseUsingRecursion2() {
-	head = ReverseRecUtil2(head);
-}
-Node* CLinkedList::ReverseRecUtil2(Node* head) {
-	if (head == NULL || head->next == NULL) {
-		return head;
-	}
-
-	Node* currNode = head;
-	Node* tempNode = ReverseRecUtil2(head->next);
-	currNode->next->next = currNode;
-	currNode->next = NULL;
-
-	return tempNode;
-}
-
 
 //Reverse a linked list from position m to n, where 1 =< m =< n =< length
 //Do it in-place and in one-pass. 
@@ -480,7 +482,7 @@ int main() {
 	mylist->Print();
 
 	//mylist->DeleteNode(200);
-	mylist->Reverse();
+	mylist->ReverseUsingRecursion1();
 	mylist->Print();
 
 	mylist->ReverseInBetween(2, 5);

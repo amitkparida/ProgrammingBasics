@@ -36,28 +36,98 @@ Flattening of LL
 */
 
 int main() {
-	CLinkedList mylist;
 
-	mylist.PushBack(1);
-	mylist.PushBack(2);
-	mylist.PushBack(3);
-	mylist.PushBack(4);
-	mylist.PushBack(5);
-	mylist.PushBack(6);
-	mylist.Print();
+	Node* head = NULL;
+	PushBack(head, 1);
+	PushBack(head, 2);
+	PushBack(head, 3);
+	PushBack(head, 4);
+	PushBack(head, 5);
+	PushBack(head, 6);
+	Print(head);
 
 	//mylist->DeleteNode(200);
 
-	cout << "Middle Node: " << mylist.MiddleNode()->data << endl;
-	mylist.FindNthNodeFromEnd(1);
-	mylist.DeleteNthNodeFromEnd(1);
-	mylist.Print();
+	cout << "Middle Node: " << MiddleNode(head)->data << endl;
+	FindNthNodeFromEnd(head, 1);
+	DeleteNthNodeFromEnd(head, 1);
+	Print(head);
 
 	cout << "Sort the list: " << endl;
-	mylist.Sort();
-	mylist.Print();
+	MergeSort(head);
+	Print(head);
+	Print(ReverseUsingRecursion1(head));
 
-	//mylist->DeleteList();
+	DeleteList(head);
 
 	return 0;
 }
+
+
+//InsertAtTail
+Node* PushBack(Node*& head, int data) {
+	Node* newnode = NULL, * temp = NULL;
+
+	newnode = new Node(data);
+
+	if (head == NULL)
+	{
+		head = newnode;
+	}
+	else
+	{
+		temp = head;
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+
+		temp->next = newnode;
+	}
+
+	return head;
+}
+
+void Print(Node* head) {
+	Node* temp = head;
+
+	if (head == NULL)
+	{
+		cout << "List is empty" << endl;
+		return;
+	}
+
+	while (temp != NULL)
+	{
+		cout << temp->data << " ";
+		temp = temp->next;
+
+		if (temp != NULL) {
+			cout << " -> ";
+		}
+	}
+	cout << endl;
+}
+
+void DeleteList(Node* head) {
+	Node* temp = NULL;
+
+	while (head)
+	{
+		temp = head;
+		head = head->next;
+		delete temp;
+	}
+}
+
+void MakeLoop(Node* head) {
+	Node* temp = head;
+	while (temp != NULL) {
+		if (temp->next == NULL) {
+			temp->next = head;
+			return;
+		}
+		temp = temp->next;
+	}
+}
+
