@@ -188,6 +188,7 @@ vector<int> DFS(int node, const vector<vector<int>>& adjmat) {
 }
 
 
+//Recursive
 void DFS_Recursive(int node, vector<vector<int>> adjmat, vector<bool>& visited, vector<int>& result) {
     visited[node] = true;
     result.push_back(node);
