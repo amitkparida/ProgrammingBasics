@@ -60,34 +60,31 @@
     <ClCompile Include="LinkedList\2 MiddleNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\IsCircularList.cpp">
+    <ClCompile Include="LinkedList\6 IsCircularList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\DetectLoop.cpp">
+    <ClCompile Include="LinkedList\3 DetectLoop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\RemoveLoop.cpp">
+    <ClCompile Include="LinkedList\5 RemoveLoop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\RemoveDuplicates.cpp">
+    <ClCompile Include="LinkedList\9 RemoveDuplicates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\NthNodeFromEnd.cpp">
+    <ClCompile Include="LinkedList\7 NthNodeFromEnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\DeleteNthNodeFromEnd.cpp">
+    <ClCompile Include="LinkedList\11 MergeSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\MergeSort.cpp">
+    <ClCompile Include="LinkedList\4 DetectStartOfLoop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\DetectStartOfLoop.cpp">
+    <ClCompile Include="LinkedList\8 FindIntersection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\FindIntersection.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList\MergeTwoLists.cpp">
+    <ClCompile Include="LinkedList\10 MergeTwoLists.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LinkedList\1 Reverse.cpp">

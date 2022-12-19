@@ -28,7 +28,6 @@ bool DetectLoop2(Node* head) {
 
 		visited[temp] = true;
 		temp = temp->next;
-
 	}
 
 	return false;

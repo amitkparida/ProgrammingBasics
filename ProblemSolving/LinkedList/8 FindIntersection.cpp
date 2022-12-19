@@ -2,9 +2,7 @@
 
 //Find the intersection point of two linked list
 
-/* function to get the intersection point of two linked
-lists head1 and head2 where head1 has d more nodes than
-head2 */
+//function to get the intersection point of two linked lists head1 and head2 where head1 has d more nodes than head2
 Node* FindIntersectionUtil(int diff, Node* head1, Node* head2)
 {
 	// Stand at the starting of the bigger list
@@ -64,8 +62,8 @@ Node* FindIntersection(Node* head1, Node* head2) {
 }
 
 
-//Find the intersection point of two linked list. Another approach.
-Node* FindIntersection2(Node* headA, Node* headB) {
+//Find the intersection point of two linked list. Another approach. (Best one - Striver)
+Node* FindIntersection1(Node* headA, Node* headB) {
 	if (headA == NULL || headB == NULL) {
 		return NULL;
 	}
@@ -98,7 +96,7 @@ Node* FindIntersection2(Node* headA, Node* headB) {
 
 
 //Find the intersection point of two linked list. Brute Force approach.
-Node* FindIntersection3(Node* headA, Node* headB) {
+Node* FindIntersection2(Node* headA, Node* headB) {
 	Node* temp;
 
 	while (headA) {

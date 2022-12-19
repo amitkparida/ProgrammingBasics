@@ -11,7 +11,6 @@ bool IsCircularList(Node* head) {
 		if (temp->next == head) {
 			return true;
 		}
-
 		temp = temp->next;
 	}
 
