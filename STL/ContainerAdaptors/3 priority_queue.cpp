@@ -1,13 +1,20 @@
 // TOPIC: std::priority_queue In C++ (Priority Queue)
 
-// WHAT IS IT ??
-
-// NOTES:
-// 0. std::priority_queue is a container adaptor that provides constant time lookup of the 
-//    largest OR smallest element.
+// 0. std::priority_queue is a container adaptor that provides constant time lookup of the largest OR smallest element.
 // 1. By default std::vector is the container used inside.
 // 2. Cost of insertion and deletion is O(logN).
 // 3. std::priority_queue is implemented using std::make_heap, std::push_heap, std::pop_heap functions.
+
+// WHAT IS PRIORITY QUEUE??
+// It’s a heap based structure where we can sortand store elements in a min / max fashion so that every
+// time we need a new element->we just pop it off from the top instead of sorting and computing the whole thing again.
+
+// What is heap ? 
+// It’s a tree like structure with these conditions :
+// - Complete binary tree
+// - Min heap : Every node should be smaller than the ones below it.So the element at the top(root node) will be the min one.
+// - Max heap : Every node should be bigger than the ones below it.So the element at the top(root node) will be the max one.
+
 
 // PROGRAM
 #include <functional>
