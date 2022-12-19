@@ -62,13 +62,13 @@ public:
 	void InsertAtPosition(int position, int newdata);
 	void SortedInsert(int newdata);
 	int Length();
+	Node* GetHead();
 	void DeleteList();
 	void Reverse();
 	void Reverse2();
 	void ReverseUsingStack();
 	void ReverseUsingRecursion();
 	void ReverseUsingRecursion1();
-	void ReverseInBetween(int left, int right);
 
 private:
 	Node* ReverseRecUtil(Node* head);
@@ -286,19 +286,6 @@ void CLinkedList::InsertAtPosition(int position, int newdata) {
 	}
 }
 
-int CLinkedList::Length()
-{
-	Node* temp = head;
-	int len = 0;
-
-	while (temp)
-	{
-		len++;
-		temp = temp->next;
-	}
-	return len;
-}
-
 
 void CLinkedList::SortedInsert(int newdata) {
 	Node* newnode = new Node(newdata);
@@ -316,6 +303,25 @@ void CLinkedList::SortedInsert(int newdata) {
 
 	newnode->next = curr->next;
 	curr->next = newnode;
+}
+
+
+int CLinkedList::Length()
+{
+	Node* temp = head;
+	int len = 0;
+
+	while (temp)
+	{
+		len++;
+		temp = temp->next;
+	}
+	return len;
+}
+
+
+Node* CLinkedList::GetHead() {
+	return head;
 }
 
 
@@ -431,38 +437,6 @@ void CLinkedList::ReverseUsingRecursion1() {
 }
 
 
-//Reverse a linked list from position m to n, where 1 =< m =< n =< length
-//Do it in-place and in one-pass. 
-void CLinkedList::ReverseInBetween(int m, int n) {
-	Node* prevNode, * currNode, * nextNode;
-
-	Node preHead{}; // zero initialization
-	preHead.next = head;
-
-	currNode = head;
-	prevNode = &preHead;
-
-	int i = 1;
-	while (i < n) {
-		if (i < m) {
-			prevNode = currNode;
-			currNode = currNode->next;
-		}
-		else {
-			nextNode = currNode->next;
-			currNode->next = nextNode->next;
-			nextNode->next = prevNode->next;
-			prevNode->next = nextNode;
-		}
-
-		i++;
-	}
-
-	head = preHead.next;
-}
-
-
-
 int main() {
 	CLinkedList* mylist = new CLinkedList;
 
@@ -485,9 +459,6 @@ int main() {
 
 	//mylist->DeleteNode(200);
 	mylist->ReverseUsingRecursion1();
-	mylist->Print();
-
-	mylist->ReverseInBetween(2, 5);
 	mylist->Print();
 
 	//mylist->DeleteList();
