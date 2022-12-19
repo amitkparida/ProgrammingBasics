@@ -34,9 +34,6 @@
     <Filter Include="Source Files\Queue">
       <UniqueIdentifier>{fccc6569-223d-49dd-8e5c-71495e90a978}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Graph1">
-      <UniqueIdentifier>{387d595a-a50f-45cd-aff8-b36279d74e31}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Graph">
       <UniqueIdentifier>{06aba64e-08fe-485d-99ae-e047597be53a}</UniqueIdentifier>
     </Filter>
