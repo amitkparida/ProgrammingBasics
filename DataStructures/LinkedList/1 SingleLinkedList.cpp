@@ -394,7 +394,8 @@ void CLinkedList::ReverseUsingStack()
 
 
 //Using Recursion
-
+//The idea is to reach the last node of the linked list using recursion then start reversing the linked list.
+//https://www.geeksforgeeks.org/reverse-a-linked-list/
 Node* CLinkedList::ReverseRecUtil(Node* head) {
 	if (head == NULL || head->next == NULL) {
 		return head;
@@ -413,10 +414,7 @@ void CLinkedList::ReverseUsingRecursion()
 }
 
 
-//Using Recursion
-void CLinkedList::ReverseUsingRecursion1() {
-	ReverseRecUtil1(NULL, head);
-}
+//Using Recursion - Another approach
 void CLinkedList::ReverseRecUtil1(Node* prevNode, Node* currentNode)
 {
 	if (currentNode)
@@ -428,6 +426,10 @@ void CLinkedList::ReverseRecUtil1(Node* prevNode, Node* currentNode)
 		head = prevNode;
 	}
 }
+void CLinkedList::ReverseUsingRecursion1() {
+	ReverseRecUtil1(NULL, head);
+}
+
 
 //Reverse a linked list from position m to n, where 1 =< m =< n =< length
 //Do it in-place and in one-pass. 

@@ -75,6 +75,7 @@ Node* ReverseUsingRecursion(Node* head) {
 		return head;
 	}
 
+	//Reverse the rest list and put the first element at the end.
 	Node* currNode = head;
 	Node* tempNode = ReverseUsingRecursion(head->next);
 	currNode->next->next = currNode;
