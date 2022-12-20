@@ -76,5 +76,6 @@ vector<int> twoSumSorted1(vector<int>& numbers, int target) {
         
         sum = numbers[low] + numbers[high];
     }
+
     return vector<int> {low + 1, high + 1};
 }
