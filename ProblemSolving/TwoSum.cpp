@@ -68,6 +68,7 @@ vector<int> twoSumSorted1(vector<int>& numbers, int target) {
     int high = numbers.size() - 1;
     
     int sum = numbers[low] + numbers[high];
+
     while (sum != target) {
         if (sum < target) 
             low++;
