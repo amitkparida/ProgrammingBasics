@@ -15,7 +15,7 @@ vector<int> twoSum(vector<int>& nums, int target)
             if (nums[i] + nums[j] == target)
             {
                 ans = { i, j };
-                return nums;
+                return ans;
             }
         }
     }
@@ -23,7 +23,7 @@ vector<int> twoSum(vector<int>& nums, int target)
     return ans;
 }
 
-vector<int> twoSum2(vector<int>& nums, int target)
+vector<int> twoSum1(vector<int>& nums, int target)
 {
     vector<int> ans;
     unordered_map<int, int> umap;
@@ -41,6 +41,9 @@ vector<int> twoSum2(vector<int>& nums, int target)
     return ans;
 }
 
+// Sorted array: 
+// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, 
+// find two numbers such that they add up to a specific target number. 
 vector<int> twoSumSorted(vector<int>& numbers, int target) {
     //Two pointer approach
     int start = 0;
@@ -62,21 +65,11 @@ vector<int> twoSumSorted(vector<int>& numbers, int target) {
     return vector<int>{-1, -1};
 }
 
-//Not recommended
-vector<int> twoSumSorted1(vector<int>& numbers, int target) {
-    int low = 0;
-    int high = numbers.size() - 1;
-    
-    int sum = numbers[low] + numbers[high];
+int main() {
 
-    while (sum != target) {
-        if (sum < target) 
-            low++;
-        else 
-            high--;
-        
-        sum = numbers[low] + numbers[high];
+    vector<int> nums{ 2, 4, 6, 8, 9 };
+
+    for (auto i : twoSumSorted(nums, 20)) {
+        cout<< i << " "; 
     }
-
-    return vector<int> {low + 1, high + 1};
 }
