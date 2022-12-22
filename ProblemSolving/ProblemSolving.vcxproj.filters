@@ -57,41 +57,41 @@
     <ClCompile Include="LinkedList\LinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\2 MiddleNode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList\6 IsCircularList.cpp">
+    <ClCompile Include="TwoSum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LinkedList\3 DetectLoop.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList\5 RemoveLoop.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList\9 RemoveDuplicates.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList\7 NthNodeFromEnd.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList\11 MergeSort.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList\4 DetectStartOfLoop.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList\8 FindIntersection.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList\10 MergeTwoLists.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
     <ClCompile Include="LinkedList\1 Reverse.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
-    <ClCompile Include="TwoSum.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="LinkedList\2 MiddleNode.cpp">
+      <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList\4 DetectStartOfLoop.cpp">
+      <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList\5 RemoveLoop.cpp">
+      <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList\6 IsCircularList.cpp">
+      <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList\7 NthNodeFromEnd.cpp">
+      <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList\8 FindIntersection.cpp">
+      <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList\9 RemoveDuplicates.cpp">
+      <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList\10 MergeTwoLists.cpp">
+      <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList\11 MergeSort.cpp">
+      <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
