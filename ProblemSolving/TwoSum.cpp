@@ -58,8 +58,9 @@ vector<int> twoSumSorted(vector<int>& numbers, int target) {
         else if (sum < target) {
             start++;
         }
-        else
+        else {
             end--;
+        }
     }
 
     return vector<int>{-1, -1};

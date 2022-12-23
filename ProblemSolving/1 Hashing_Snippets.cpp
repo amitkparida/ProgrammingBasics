@@ -27,6 +27,24 @@ int findDuplicate(int arr[], int n)
 	return 0;
 }
 
+// Using hashing (map)
+int findDuplicate2(int arr[], int n) {
+	unordered_map<int, int> umap;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (umap[arr[i]] == 0)
+		{
+			umap[arr[i]]++;
+		}
+		else
+		{
+			return arr[i];
+		}
+	}
+	return 0;
+}
+
 void countFrequency(int arr[], int n)
 {
 	vector<bool> visited(n, false);
