@@ -5,31 +5,42 @@ using namespace std;
 // Implementation of atoi()
 int StringToInt(char* str)
 {
-	// Initialize result
-	int res = 0;
-
-	// Initialize sign as positive
+	int result = 0;
 	int sign = 1;
+	int i = 0; //Initialize index of first digit
 
-	// Initialize index of first digit
-	int i = 0;
-
-	// If number is negative, then update sign
 	if (str[0] == '-') {
-		sign = -1;
-
-		// Also update index of first digit
-		i++;
+		sign = -1; //Update the sign
+		i++;       //Update the index of first digit
 	}
 
-	// Iterate through all digits
-	// and update the result
-	for (; str[i] != '\0'; i++)
-		res = res * 10 + str[i] - '0';
+	// Iterate through all digits and update the result
+	for (; str[i] != '\0'; i++) {
+		result = result * 10 + str[i] - '0';
+	}
 
 	// Return result with sign
-	return sign * res;
+	return sign * result;
 }
+
+int StringToInt1(char* str)
+{
+	int result = 0;
+	bool isNegative = false;
+
+	int i = 0;     //Initialize index of first digit
+	if (str[0] == '-') {
+		isNegative = true; //Update the sign
+		i = 1;             //Update the index of first digit
+	}
+
+	for (; str[i] != '\0'; i++) {
+		result = result * 10 + str[i] - '0';
+	}
+
+	return isNegative? -result : result;
+}
+
 
 /* A utility function to reverse a string  */
 void reverse(char str[], int length)
@@ -43,7 +54,6 @@ void reverse(char str[], int length)
 		end--;
 	}
 }
-
 
 // Implementation of itoa()
 char* IntToString(int num, char* str, int base)
@@ -86,6 +96,52 @@ char* IntToString(int num, char* str, int base)
 	return str;
 }
 
+//Only Decimal
+char* IntToString1(int num, char* str, int base)
+{
+	int i = 0;
+	bool isNegative = false;
+
+	if (num < 0)
+	{
+		isNegative = true;
+		num = -num;
+	}
+
+	//Handle 0 explicitely, otherwise empty string is printed for 0. 
+	if (num == 0)
+	{
+		str[i++] = '0';
+		str[i] = '\0';
+		return str;
+	}
+
+	// Process individual digits
+	while (num != 0)
+	{
+		str[i++] = '0' + num % 10;
+		num = num / base;
+	}
+
+	//If you use do while loop, no need to handle (num == 0) condition explicity as above.
+	//do
+	//{
+	//	str[i++] = '0' + num % 10;
+	//	num = num / base;
+	//} while (num != 0);
+
+	if (isNegative)
+		str[i++] = '-';
+
+	str[i] = '\0'; // Append string terminator
+
+	// Reverse the string
+	reverse(str, i);
+
+	return str;
+}
+
+
 
 int main()
 {
@@ -94,9 +150,9 @@ int main()
 
 	printf("Enter a number: ");
 	scanf_s("%d", &num);
-	IntToString(num, str, 10);
+	IntToString1(num, str, 10);
 	printf("Number converted to string: %s\n", str);
-	result = StringToInt(str);
+	result = StringToInt1(str);
 	printf("String converted back to number: %d\n", result);
 
 	//char str[100];
