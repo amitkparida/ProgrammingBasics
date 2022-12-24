@@ -150,6 +150,69 @@ char* IntToString1(int num, char* str)
 }
 
 
+// For any positive integer X, the least significant digit in the decimal representation of X is (X % 10).
+// The remaining digits are X / 10.
+int SumOfDigits(int num) {
+	int digit;
+	int sum = 0;
+
+	if (num < 0) {
+		num = -num;
+	}
+
+	while (num) {
+		digit = num % 10;
+		sum = sum + digit;
+		num = num / 10;
+	}
+
+	return sum;
+}
+
+int ReverseDigits(int num) {
+	int digit;
+	int rev = 0;
+
+	while (num) {
+		digit = num % 10;
+		rev = rev * 10 + digit;
+		num = num / 10;
+	}
+
+	return rev;
+}
+
+int BinaryToDecimal(int num) {
+	int binary_digit = 0;
+	int result = 0;
+	int p = 1; //2^0;
+
+	while (num) {
+		binary_digit = num % 10;
+		result = result + binary_digit * p;
+		num = num / 10;
+		p = p * 2;
+	}
+
+	return result;
+}
+
+int DecimalToBinary(int num) {
+	int rem = 0;
+	int result = 0;
+	int p = 1; //10^0;
+
+	while (num) {
+		rem = num % 2;
+		result = result + rem * p;
+		num = num / 2;
+		p = p * 10;
+	}
+
+	return result;
+}
+
+
 
 int main()
 {
@@ -162,6 +225,9 @@ int main()
 	printf("Number converted to string: %s\n", str);
 	result = StringToInt1(str);
 	printf("String converted back to number: %d\n", result);
+
+	printf("Sum of Digits: %d\n", SumOfDigits(result));
+	printf("Reversed Digits: %d\n", ReverseDigits(result));
 
 	//char str[100];
 	//cout << "Base:10 " << IntToStr(1567, str, 10) << endl;
