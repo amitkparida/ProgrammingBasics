@@ -78,7 +78,7 @@
     <ClCompile Include="Array\2D_Array.cpp">
       <Filter>Source Files\Array</Filter>
     </ClCompile>
-    <ClCompile Include="Stack\Stack.cpp">
+    <ClCompile Include="Stack\2 Stack_LinkedList.cpp">
       <Filter>Source Files\Stack</Filter>
     </ClCompile>
     <ClCompile Include="Queue\1 Queue_Array.cpp">
@@ -136,6 +136,15 @@
       <Filter>Source Files\Queue</Filter>
     </ClCompile>
     <ClCompile Include="4 DoubleEndedQueue.cpp">
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="1 Stack_Array.cpp">
+      <Filter>Source Files\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="3 Stack_Queue.cpp">
+      <Filter>Source Files\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="5 Queue_Stack.cpp">
       <Filter>Source Files\Queue</Filter>
     </ClCompile>
   </ItemGroup>
