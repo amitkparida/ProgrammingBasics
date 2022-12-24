@@ -17,6 +17,9 @@
 // 3. Applications where you don't want to reset once you reach to last node.
 
 
+// For class representation see:
+// https://github.com/Hemant-Jain-Author/Problem-Solving-in-Data-Structures-and-Algorithms-using-Cpp/blob/master/LinkedList/CircularLinkedList.cpp
+
 #include <iostream>
 using namespace std;
 

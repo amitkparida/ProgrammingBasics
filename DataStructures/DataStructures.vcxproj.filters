@@ -81,7 +81,7 @@
     <ClCompile Include="Stack\Stack.cpp">
       <Filter>Source Files\Stack</Filter>
     </ClCompile>
-    <ClCompile Include="Queue\Queue.cpp">
+    <ClCompile Include="Queue\1 Queue_Array.cpp">
       <Filter>Source Files\Queue</Filter>
     </ClCompile>
     <ClCompile Include="Tree\4 AVL_Tree.cpp">
@@ -128,6 +128,15 @@
     </ClCompile>
     <ClCompile Include="LinkedList\5 XorLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="2 Queue_LinkedList.cpp">
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="3 CircularQueue.cpp">
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="4 DoubleEndedQueue.cpp">
+      <Filter>Source Files\Queue</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
