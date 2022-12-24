@@ -17,9 +17,6 @@
 // 3. Applications where you don't want to reset once you reach to last node.
 
 
-// For class representation see:
-// https://github.com/Hemant-Jain-Author/Problem-Solving-in-Data-Structures-and-Algorithms-using-Cpp/blob/master/LinkedList/CircularLinkedList.cpp
-
 #include <iostream>
 using namespace std;
 
@@ -31,7 +28,42 @@ struct Node {
     Node(int x, Node* next) : data(x), next(next) {}
 };
 
-Node* addToEmpty(Node* tail, int data) {
+class CircularLinkedList {
+private:
+    Node* tail;
+
+public:
+    CircularLinkedList();
+    ~CircularLinkedList();
+
+    Node* addToEmpty(int data);
+    Node* addHead(int data);
+    Node* addTail(int data);
+    Node* addAfter(int data, int key);
+    void deleteNode(int key);
+    void deteteList();
+    void print();
+};
+
+CircularLinkedList::CircularLinkedList() {
+    tail = NULL;
+}
+
+CircularLinkedList::~CircularLinkedList() {
+    if (tail != NULL) {
+        Node* head = tail->next;
+        Node* temp;
+        while (head != tail) {
+            temp = head;
+            head = head->next;
+            delete temp;
+        }
+        delete tail;
+        tail = NULL;
+    }
+}
+
+Node* CircularLinkedList::addToEmpty(int data) {
     if (tail != NULL) {
         return tail;
     }
@@ -44,7 +76,7 @@ Node* addToEmpty(Node* tail, int data) {
 }
 
 // add node to the start
-Node* addHead(Node* tail, int data) {
+Node* CircularLinkedList::addHead(int data) {
     Node* newnode = new Node(data);
 
     if (tail == NULL) {
@@ -60,7 +92,7 @@ Node* addHead(Node* tail, int data) {
 }
 
 // add node to the end
-Node* addTail(Node* tail, int data) {
+Node* CircularLinkedList::addTail(int data) {
     Node* newnode = new Node(data);
 
     if (tail == NULL) {
@@ -77,7 +109,7 @@ Node* addTail(Node* tail, int data) {
 }
 
 // insert node after a specific node
-Node* addAfter(Node* tail, int data, int key) {
+Node* CircularLinkedList::addAfter(int data, int key) {
     if (tail == NULL) {
         return NULL;
     }
@@ -108,7 +140,7 @@ Node* addAfter(Node* tail, int data, int key) {
 }
 
 // delete a node. Note that Node* is passed as a reference.
-void deleteNode(Node*& tail, int key) {
+void CircularLinkedList::deleteNode(int key) {
     if (tail == NULL) {
         return;
     }
@@ -148,7 +180,7 @@ void deleteNode(Node*& tail, int key) {
     }
 }
 
-void deteteList(Node* tail) {
+void CircularLinkedList::deteteList() {
     if (tail == NULL) {
         return;
     }
@@ -174,7 +206,7 @@ void deteteList(Node* tail) {
     //tail = NULL;
 }
 
-void print(Node* tail) {
+void CircularLinkedList::print() {
     if (tail == NULL) {
         cout << "The list is empty" << endl;
         return;
@@ -198,17 +230,17 @@ void print(Node* tail) {
 
 
 int main() {
-    Node* tail = NULL;
-
-    tail = addToEmpty(tail, 6);
-    tail = addTail(tail, 8);
-    tail = addHead(tail, 2);
-    tail = addAfter(tail, 10, 2);
-    print(tail);
+    CircularLinkedList ll;
+    ll.addToEmpty(6);
+    ll.addTail(8);
+    ll.addHead(2);
+    ll.addAfter(10, 2);
+    ll.addAfter(9, 8);
+    ll.print();
     cout << endl;
 
-    deleteNode(tail, 8);
-    print(tail);
+    ll.deleteNode(8);
+    ll.print();
 
     return 0;
 }
