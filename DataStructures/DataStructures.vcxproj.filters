@@ -129,22 +129,22 @@
     <ClCompile Include="LinkedList\5 XorLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
-    <ClCompile Include="2 Queue_LinkedList.cpp">
+    <ClCompile Include="Queue\2 Queue_LinkedList.cpp">
       <Filter>Source Files\Queue</Filter>
     </ClCompile>
-    <ClCompile Include="3 CircularQueue.cpp">
+    <ClCompile Include="Queue\3 CircularQueue.cpp">
       <Filter>Source Files\Queue</Filter>
     </ClCompile>
-    <ClCompile Include="4 DoubleEndedQueue.cpp">
+    <ClCompile Include="Queue\4 DoubleEndedQueue.cpp">
       <Filter>Source Files\Queue</Filter>
     </ClCompile>
-    <ClCompile Include="1 Stack_Array.cpp">
+    <ClCompile Include="Stack\1 Stack_Array.cpp">
       <Filter>Source Files\Stack</Filter>
     </ClCompile>
-    <ClCompile Include="3 Stack_Queue.cpp">
+    <ClCompile Include="Stack\3 Stack_Queue.cpp">
       <Filter>Source Files\Stack</Filter>
     </ClCompile>
-    <ClCompile Include="5 Queue_Stack.cpp">
+    <ClCompile Include="Queue\5 Queue_Stack.cpp">
       <Filter>Source Files\Queue</Filter>
     </ClCompile>
   </ItemGroup>
