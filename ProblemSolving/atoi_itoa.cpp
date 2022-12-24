@@ -1,4 +1,6 @@
 
+
+
 #include <iostream>
 using namespace std;
 
@@ -56,6 +58,10 @@ void reverse(char str[], int length)
 }
 
 // Implementation of itoa()
+
+// For any positive integer X, the least significant digit in the decimal representation of X is (X % 10).
+// The remaining digits are X / 10.
+
 char* IntToString(int num, char* str, int base)
 {
 	int i = 0;
@@ -96,8 +102,10 @@ char* IntToString(int num, char* str, int base)
 	return str;
 }
 
-//Only Decimal
-char* IntToString1(int num, char* str, int base)
+// Only Decimal
+// For any positive integer X, the least significant digit in the decimal representation of X is (X % 10).
+// The remaining digits are X / 10.
+char* IntToString1(int num, char* str)
 {
 	int i = 0;
 	bool isNegative = false;
@@ -120,14 +128,14 @@ char* IntToString1(int num, char* str, int base)
 	while (num != 0)
 	{
 		str[i++] = '0' + num % 10;
-		num = num / base;
+		num = num / 10;
 	}
 
 	//If you use do while loop, no need to handle (num == 0) condition explicity as above.
 	//do
 	//{
 	//	str[i++] = '0' + num % 10;
-	//	num = num / base;
+	//	num = num / 10;
 	//} while (num != 0);
 
 	if (isNegative)
@@ -150,7 +158,7 @@ int main()
 
 	printf("Enter a number: ");
 	scanf_s("%d", &num);
-	IntToString1(num, str, 10);
+	IntToString(num, str, 10);
 	printf("Number converted to string: %s\n", str);
 	result = StringToInt1(str);
 	printf("String converted back to number: %d\n", result);
