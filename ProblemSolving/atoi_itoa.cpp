@@ -185,13 +185,13 @@ int ReverseDigits(int num) {
 int BinaryToDecimal(int num) {
 	int binary_digit = 0;
 	int result = 0;
-	int p = 1; //2^0;
+	int base = 1; //2^0;
 
 	while (num) {
 		binary_digit = num % 10;
-		result = result + binary_digit * p;
+		result = result + binary_digit * base;
 		num = num / 10;
-		p = p * 2;
+		base = base * 2;
 	}
 
 	return result;
@@ -200,13 +200,13 @@ int BinaryToDecimal(int num) {
 int DecimalToBinary(int num) {
 	int rem = 0;
 	int result = 0;
-	int p = 1; //10^0;
+	int base = 1; //10^0;
 
 	while (num) {
 		rem = num % 2;
-		result = result + rem * p;
+		result = result + rem * base;
 		num = num / 2;
-		p = p * 10;
+		base = base * 10;
 	}
 
 	return result;
@@ -228,6 +228,9 @@ int main()
 
 	printf("Sum of Digits: %d\n", SumOfDigits(result));
 	printf("Reversed Digits: %d\n", ReverseDigits(result));
+
+	printf("Binary to Decimal: %d\n", BinaryToDecimal(111));
+	printf("Decimal to Binary: %d\n", DecimalToBinary(7));
 
 	//char str[100];
 	//cout << "Base:10 " << IntToStr(1567, str, 10) << endl;
