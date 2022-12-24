@@ -1,13 +1,13 @@
 //Implement Stack using Queue
 
-#include <string>
-#include <queue>
 #include <iostream>
+#include <queue>
+using namespace std;
 
 class Stack {
 private:
-    std::queue<int>* que1 = new std::queue<int>();
-    std::queue<int>* que2 = new std::queue<int>();
+    queue<int>* que1 = new std::queue<int>();
+    queue<int>* que2 = new std::queue<int>();
     int size = 0;
 
 public:
@@ -31,7 +31,7 @@ int Stack::pop() {
             que2->push(value);
         s--;
     }
-    std::queue<int>* temp = que1;
+    queue<int>* temp = que1;
     que1 = que2;
     que2 = temp;
     size -= 1;
@@ -57,7 +57,7 @@ int main() {
     stk.push(1);
     stk.push(2);
     stk.push(3);
-    std::cout << "Stack pop : " << stk.pop2() << std::endl;
-    std::cout << "Stack pop : " << stk.pop2() << std::endl;
+    cout << "Stack pop : " << stk.pop2() << endl;
+    cout << "Stack pop : " << stk.pop2() << endl;
     return 0;
 }

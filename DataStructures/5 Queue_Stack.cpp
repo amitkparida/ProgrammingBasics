@@ -1,8 +1,7 @@
 //Implementation of Queue using Stack
 
-#include <string>
-#include <stack>
 #include <iostream>
+#include <stack>
 using namespace std;
 
 class QueueUsingStack {
