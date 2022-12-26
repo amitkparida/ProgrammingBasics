@@ -6,14 +6,20 @@
 // 3. std::priority_queue is implemented using std::make_heap, std::push_heap, std::pop_heap functions.
 
 // WHAT IS PRIORITY QUEUE??
-// It’s a heap based structure where we can sortand store elements in a min / max fashion so that every
-// time we need a new element->we just pop it off from the top instead of sorting and computing the whole thing again.
+// It’s a binary heap based structure where we can sort and store elements in max/min fashion so that every time we need 
+// the largest/smallest element, we just pop it off from the top instead of sorting and computing the whole thing again.
 
-// What is heap ? 
+// What is heap (binary heap)? 
 // It’s a tree like structure with these conditions :
 // - Complete binary tree
 // - Min heap : Every node should be smaller than the ones below it.So the element at the top(root node) will be the min one.
 // - Max heap : Every node should be bigger than the ones below it.So the element at the top(root node) will be the max one.
+
+// Relationship between array indexes and tree element in Heap / Complete Binary Tree:
+// - An array can be used to store the nodes of a Heap in the following way.
+// - If the index of any element in the array is i, the element in the index 2i + 1 will become the left child 
+//   and element in 2i + 2 index will become the right child.
+// - Also, the parent of any element at index i is given by the lower bound of (i - 1) / 2.
 
 
 // PROGRAM
