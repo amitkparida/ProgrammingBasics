@@ -166,6 +166,15 @@ int Less(int a, int b) {
 	return a < b;
 }
 
+void heapSort(std::vector<int>& array, bool inc) {
+	// min heap for decreasing and max heap for increasing.
+	Heap hp = Heap(array, (inc) ? Less : Greater);
+	int length = array.size();
+	for (int i = length - 1; i >= 0; i--)
+		array[i] = hp.remove();
+}
+
+
 // Testing code.
 int main1() {
 	Heap hp = Heap(Greater);
@@ -217,15 +226,6 @@ int main3() {
 Heap :: 5 4 3 1 0 2
 5 4 3 2 1 0
  */
-
-
-void heapSort(std::vector<int>& array, bool inc) {
-	// min heap for decreasing and max heap for increasing.
-	Heap hp = Heap(array, (inc) ? Less : Greater);
-	int length = array.size();
-	for (int i = length - 1; i >= 0; i--)
-		array[i] = hp.remove();
-}
 
 // Testing code.
 int main4() {
