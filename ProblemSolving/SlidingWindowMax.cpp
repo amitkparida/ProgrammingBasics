@@ -40,7 +40,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 // https://www.youtube.com/watch?v=m-Dqu7csdJk
 /*
 We create a Deque DQ of capacity k, that stores only useful elements of current window of k elements.
-An element is useful if it is in the current windowand is greater than all other elements on the left 
+An element is useful if it is in the current window and is greater than all other elements on the left 
 side of it in the current window.We process all array elements one by one and maintain DQ to contain 
 useful elements of the current windowand these useful elements are maintained in sorted order.
 The element at front of the DQ is the largestand the element at the rear of DQ is the smallest of the current window.
