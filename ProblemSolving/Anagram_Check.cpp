@@ -110,10 +110,7 @@ int main()
     string str2 = "armag";
 
     if (isAnagram(str1, str2))
-        cout << "The two strings are anagram of each other"
-        << endl;
+        cout << "The two strings are anagram of each other" << endl;
     else
-        cout << "The two strings are not anagram of each "
-        "other"
-        << endl;
+        cout << "The two strings are not anagram of each other" << endl;
 }

@@ -41,7 +41,7 @@ vector<int> twoSum1(vector<int>& nums, int target)
     return ans;
 }
 
-// Sorted array: 
+// Sorted array: (Use Two Pointer technique)
 // Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, 
 // find two numbers such that they add up to a specific target number. 
 vector<int> twoSumSorted(vector<int>& numbers, int target) {
