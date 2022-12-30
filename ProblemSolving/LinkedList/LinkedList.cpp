@@ -1,8 +1,3 @@
-
-#include "LinkedList.h"
-
-
-
 /*
  To Implement:
 
@@ -18,7 +13,7 @@
 16. Reverse Nodes in K-group
 
 Kapil:
-======
+=======
 6. Convert Binary Number in a Linked List to Integer
 21. Split Linked List in Parts
 22. Merge k Sorted Lists
@@ -35,15 +30,27 @@ Flattening of LL
 
 */
 
-int main() {
 
+#include "LinkedList.h"
+
+int main() 
+{
 	Node* head = NULL;
-	PushBack(head, 1);
-	PushBack(head, 2);
-	PushBack(head, 3);
-	PushBack(head, 4);
-	PushBack(head, 5);
-	PushBack(head, 6);
+	 
+	//PushBack(head, 1);
+	//PushBack(head, 2);
+	//PushBack(head, 3);
+	//PushBack(head, 4);
+	//PushBack(head, 5);
+	//PushBack(head, 6);
+
+	head = new Node(1);
+	head->next = new Node(2);
+	head->next->next = new Node(3);
+	head->next->next->next = new Node(4);
+	head->next->next->next->next = new Node(5);
+	head->next->next->next->next->next = new Node(6);
+
 	Print(head);
 
 	//mylist->DeleteNode(200);

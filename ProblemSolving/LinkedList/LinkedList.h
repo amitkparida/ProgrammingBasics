@@ -14,6 +14,7 @@ struct Node {
 	Node(int x, Node* next) : data(x), next(next) {}
 };
 
+
 Node* PushBack(Node*& head, int data); //InsertAtTail
 void Print(Node* head);
 void DeleteList(Node* head);
@@ -43,4 +44,5 @@ Node* RemoveDuplicates(Node* head);
 Node* RemoveDuplicates1(Node* head);
 Node* MergeTwoLists(Node* list1, Node* list2);
 Node* MergeSort(Node* head);
+
 
