@@ -75,7 +75,7 @@
     <ClCompile Include="Behavioral\Iterator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Behavioral\Visistor.cpp">
+    <ClCompile Include="Behavioral\Visitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
