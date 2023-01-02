@@ -1,4 +1,6 @@
 
+// https://www.educative.io/courses/software-design-patterns-best-practices
+
 // For folks, who are rushing through the course for an upcoming interview, 
 // I would suggest going through all the creational design patterns, decorator, proxy, iterator, observerand visitor patterns.
 

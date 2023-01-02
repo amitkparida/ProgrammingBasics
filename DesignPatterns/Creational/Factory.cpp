@@ -23,29 +23,32 @@
 //    but the instantiation logic will be delegated to subclass inheriting the factory.
 //
 // 3. Abstract Factory is not at all responsible for instantiating instead it will create
-//    another concrete factoryand force it to have the creation of at least those object
+//    another concrete factory and force it to have the creation of at least those object
 //    which is mentioned in the abstract factory class.
 
 
 #include <iostream>
 using namespace std;
 
+//Product
 class Vehicle {
 public:
-	virtual void printVehicle() = 0;
+	virtual void drive() = 0;
 };
 
+//Concrete Product 1
 class Car : public Vehicle {
 public:
-	void printVehicle() {
-		cout << "I am a Car" << endl;
+	void drive() {
+		cout << "Driving a Car" << endl;
 	}
 };
 
+//Concrete Product 2
 class Bike :public Vehicle {
 public:
-	void printVehicle() {
-		cout << "I am a Bike" << endl;
+	void drive() {
+		cout << "Riding a Bike" << endl;
 	}
 };
 
@@ -53,7 +56,7 @@ public:
 //Change is required only in this function to create a new object type
 class VehicleFactory {
 public:
-	static Vehicle* getVehicle(string vehicleType) {
+	static Vehicle* createVehicle(string vehicleType) {
 		Vehicle* pVehicle = nullptr;
 
 		if (vehicleType == "car") {
@@ -75,8 +78,8 @@ int main() {
 	cout << "Enter Vehicle Type : ";
 	cin >> vehicleType;
 
-	Vehicle* pVehicle = VehicleFactory::getVehicle(vehicleType);
-	pVehicle->printVehicle();
+	Vehicle* pVehicle = VehicleFactory::createVehicle(vehicleType);
+	pVehicle->drive();
 }
 
 

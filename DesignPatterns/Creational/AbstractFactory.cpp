@@ -10,74 +10,81 @@
 // 2. Show interface, not implementation
 // 3. System need to be configured with one of the multiple family of objects.
 
+
 #include <iostream>
 using namespace std;
 
+//Abstract Product A
 class ICar {
 public:
-	virtual void printCar() = 0;
+	virtual void drive() = 0;
 };
 
+//Concrete Product A1
 class TataCar :public ICar {
 public:
-	void printCar() {
-		cout << "Tata Car" << endl;
+	void drive() {
+		cout << "Driving Tata Car" << endl;
 	}
 };
 
+//Concrete Product A2
 class HondaCar :public ICar {
 public:
-	void printCar() {
-		cout << "Honda Car" << endl;
+	void drive() {
+		cout << "Driving Honda Car" << endl;
 	}
 };
 
+//Abstract Product B
 class IBike {
 public:
-	virtual void printBike() = 0;
+	virtual void drive() = 0;
 };
 
+//Concrete Product B1
 class TataBike :public IBike {
 public:
-	void printBike() {
-		cout << "Tata Bike" << endl;
+	void drive() {
+		cout << "Riding Tata Bike" << endl;
 	}
 };
 
+//Concrete Product B2
 class HondaBike :public IBike {
 public:
-	void printBike() {
-		cout << "Honda Bike" << endl;
+	void drive() {
+		cout << "Riding Honda Bike" << endl;
 	}
 };
 
-//This is abstract factory which will return factory of similar objects
-//Example Tata, Honda etc
+//Abstract factory 
 class IVehicleFactory {
 public:
-	virtual ICar* getCar() = 0;
-	virtual IBike* getBike() = 0;
+	virtual ICar* createCar() = 0;
+	virtual IBike* createBike() = 0;
 };
 
-//This is a factory of similar object which will actually create the objects
+//Concrete Factory 1 : This is factory of Tata which will actually create the objects/products
 class TataFactory :public IVehicleFactory {
 public:
-	virtual ICar* getCar() {
+	virtual ICar* createCar() {
 		return new TataCar;
 	}
 
-	virtual IBike* getBike() {
+	virtual IBike* createBike() {
 		return new TataBike;
 	}
 };
 
+//Concrete Factory 2 : This is factory of Honda which will actually create the objects/products
 class HondaFactory :public IVehicleFactory {
 public:
-	ICar* getCar() {
+	ICar* createCar() {
 		return new HondaCar;
 	}
 
-	IBike* getBike() {
+	IBike* createBike() {
 		return new HondaBike;
 	}
 };
@@ -85,10 +92,10 @@ public:
 class VehicleAbstractFactory {
 public:
 	static IVehicleFactory* CreateFactory(string vehicleBrand) {
-		if (vehicleBrand == "Tata") {
+		if (vehicleBrand == "tata") {
 			return new TataFactory;
 		}
-		else if (vehicleBrand == "Honda") {
+		else if (vehicleBrand == "honda") {
 			return new HondaFactory;
 		}
 		else {
@@ -99,15 +106,21 @@ public:
 };
 
 int main() {
-	cout << "Enter vehicle brand name (Tata/Honda): ";
+	cout << "Enter vehicle brand name (tata/honda): ";
 	string vehicleCompany;
 	cin >> vehicleCompany;
 
 	IVehicleFactory* factory = VehicleAbstractFactory::CreateFactory(vehicleCompany);
 
-	ICar* car = factory->getCar();
-	car->printCar();
+	ICar* car = factory->createCar();
+	car->drive();
 
-	IBike* bike = factory->getBike();
-	bike->printBike();
+	IBike* bike = factory->createBike();
+	bike->drive();
 }
+
+
+
+
+
+
