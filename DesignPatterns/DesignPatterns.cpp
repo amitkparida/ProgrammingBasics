@@ -1,4 +1,8 @@
 
+// For folks, who are rushing through the course for an upcoming interview, 
+// I would suggest going through all the creational design patterns, decorator, proxy, iterator, observerand visitor patterns.
+
+
 // What is Design Pattern?
 // - In software Industries, a design pattern is a general repeatable solution to a commonly occurring problem in software design.
 // - They give the developer a selection of triedand tested solutions to work with.

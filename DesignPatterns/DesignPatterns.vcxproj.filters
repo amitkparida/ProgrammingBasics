@@ -69,5 +69,14 @@
     <ClCompile Include="Creational\Prototype.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Structural\Proxy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavioral\Iterator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavioral\Visistor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
