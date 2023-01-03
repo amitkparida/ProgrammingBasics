@@ -17,7 +17,7 @@ public:
     virtual void notify(string msg) = 0;
 };
 
-//Concrete Observers
+//Concrete Observer
 class User : public ISubscriber {
     int userId;
 
@@ -32,7 +32,16 @@ public:
 };
 
 //Subject or Publisher
-class Group {
+class IPublisher {
+public:
+    virtual void subscribe(ISubscriber* user) = 0;      // Subscribe or Add or Register
+    virtual void unsubscribe(ISubscriber* user) = 0;    // Unsubscribe or Remove or Unregister
+    virtual void notify(string msg) = 0;                // Notify or Update
+};
+
+
+//Concrete Subject
+class Group : public IPublisher {
     list<ISubscriber*> users;
 
 public:
@@ -67,3 +76,4 @@ int main()
     group->unsubscribe(user1);
     group->notify("Second message");
 }
+

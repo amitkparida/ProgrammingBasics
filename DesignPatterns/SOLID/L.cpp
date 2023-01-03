@@ -2,80 +2,6 @@
 // The "L" in SOLID stands for the Liskov Substitution Principle, which states that objects of a subclass 
 // should be able to be used in the same way as objects of the superclass.
 
-// Here is an example of how this principle can be applied in C++:
-
-#include <iostream>
-#include <string>
-#include <vector>
-
-// The base class
-class Animal
-{
-public:
-    virtual std::string speak() = 0;
-};
-
-// A derived class
-class Dog : public Animal
-{
-public:
-    std::string speak() { return "Woof!"; }
-};
-
-// A derived class
-class Cat : public Animal
-{
-public:
-    std::string speak() { return "Meow!"; }
-};
-
-// A class that makes a collection of animals speak
-class AnimalSpeaker
-{
-private:
-    std::vector<Animal*> animals;
-
-public:
-    void add_animal(Animal* animal) { animals.push_back(animal); }
-
-    void make_animals_speak()
-    {
-        for (auto animal : animals)
-        {
-            std::cout << animal->speak() << std::endl;
-        }
-    }
-};
-
-int main()
-{
-    // Create some animals and add them to the speaker
-    Dog d;
-    Cat c;
-    AnimalSpeaker speaker;
-    speaker.add_animal(&d);
-    speaker.add_animal(&c);
-
-    // Make the animals speak
-    speaker.make_animals_speak();
-
-    return 0;
-}
-
-/*
-In this example, the Animal class is the base class and it defines a pure virtual method speak that must be implemented by derived classes. 
-The Dog and Cat classes are derived from Animal and they each implement the speak method.
-
-The AnimalSpeaker class has a list of Animal pointers and a method make_animals_speak that makes all the animals speak. 
-The AnimalSpeaker class can be used with any class derived from Animal, because the derived classes are substitutable for the base class. 
-This allows the AnimalSpeaker class to be used with any number of animals, without the need for modification.
-*/
-
-
-
-
-
-/*
 // Here is another example of how the Liskov Substitution Principle can be applied in a C++ program that uses the Shape class :
 
 #include <iostream>
@@ -148,7 +74,7 @@ int main()
 
     return 0;
 }
-*/
+
 
 /*
 In this example, the Shape class is the base class and it defines a pure virtual method area that must be implemented by derived classes. 

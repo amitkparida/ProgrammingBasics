@@ -6,105 +6,6 @@
 // and implemented by child classes, or implemented in a base class and optionally overriden by derived classes
 // rather than by calling a constructor.
 
-/*
-#include <iostream>
-using namespace std;
-
-//Product
-class IVehicle {
-public:
-	virtual void drive() = 0;
-};
-
-//Concrete Product
-class TataCar : public IVehicle {
-public:
-	void drive() {
-		cout << "Driving Tata Car" << endl;
-	}
-};
-
-class TataBike :public IVehicle {
-public:
-	void drive() {
-		cout << "Riding Tata Bike" << endl;
-	}
-};
-
-class HondaCar : public IVehicle {
-public:
-	void drive() {
-		cout << "Driving Honda Car" << endl;
-	}
-};
-
-class HondaBike :public IVehicle {
-public:
-	void drive() {
-		cout << "Riding Honda Bike" << endl;
-	}
-};
-
-//Creator
-class IVehicleFactory {
-public:
-	virtual IVehicle* createVehicle(string vehicleType) = 0;
-};
-
-//Concrete creator
-class TataFactory :public IVehicleFactory {
-public:
-	//This is the factory method
-	virtual IVehicle* createVehicle(string vehicleType) {
-		if (vehicleType == "car") {
-			return new TataCar;
-		}
-		else {
-			return new TataBike;
-		}
-	}
-};
-
-//Concrete creator
-class HondaFactory :public IVehicleFactory {
-public:
-
-	//This is the factory method
-	virtual IVehicle* createVehicle(string vehicleType) {
-		if (vehicleType == "car") {
-			return new HondaCar;
-		}
-		else {
-			return new HondaBike;
-		}
-	}
-};
-
-int main() {
-	IVehicleFactory* tatafactory = new TataFactory;
-	
-	IVehicle* tatacar = tatafactory->createVehicle("car");
-	tatacar->drive();
-	
-	IVehicle* tatabike = tatafactory->createVehicle("bike");
-	tatabike->drive();
-
-	
-	IVehicleFactory* hondafactory = new HondaFactory;
-	
-	IVehicle* hondacar = hondafactory->createVehicle("car");
-	hondacar->drive();
-
-	IVehicle* hondabike = hondafactory->createVehicle("bike");
-	hondabike->drive();
-}
-*/
-
-
-
-
-
-// From ChatGPT
 
 #include <iostream>
 #include <string>
@@ -209,7 +110,7 @@ making it easy to add new types of vehicles to the program without modifying exi
 
 
 /*
-// From ChatGPT, using Smart Pointers
+// Using Smart Pointers
 
 #include <iostream>
 #include <memory>
@@ -270,3 +171,104 @@ int main() {
 	return 0;
 }
 */
+
+
+
+
+
+/*
+#include <iostream>
+using namespace std;
+
+//Product
+class IVehicle {
+public:
+	virtual void drive() = 0;
+};
+
+//Concrete Product
+class TataCar : public IVehicle {
+public:
+	void drive() {
+		cout << "Driving Tata Car" << endl;
+	}
+};
+
+class TataBike :public IVehicle {
+public:
+	void drive() {
+		cout << "Riding Tata Bike" << endl;
+	}
+};
+
+class HondaCar : public IVehicle {
+public:
+	void drive() {
+		cout << "Driving Honda Car" << endl;
+	}
+};
+
+class HondaBike :public IVehicle {
+public:
+	void drive() {
+		cout << "Riding Honda Bike" << endl;
+	}
+};
+
+//Creator
+class IVehicleFactory {
+public:
+	virtual IVehicle* createVehicle(string vehicleType) = 0;
+};
+
+//Concrete creator
+class TataFactory :public IVehicleFactory {
+public:
+	//This is the factory method
+	virtual IVehicle* createVehicle(string vehicleType) {
+		if (vehicleType == "car") {
+			return new TataCar;
+		}
+		else {
+			return new TataBike;
+		}
+	}
+};
+
+//Concrete creator
+class HondaFactory :public IVehicleFactory {
+public:
+
+	//This is the factory method
+	virtual IVehicle* createVehicle(string vehicleType) {
+		if (vehicleType == "car") {
+			return new HondaCar;
+		}
+		else {
+			return new HondaBike;
+		}
+	}
+};
+
+int main() {
+	IVehicleFactory* tatafactory = new TataFactory;
+
+	IVehicle* tatacar = tatafactory->createVehicle("car");
+	tatacar->drive();
+
+	IVehicle* tatabike = tatafactory->createVehicle("bike");
+	tatabike->drive();
+
+
+	IVehicleFactory* hondafactory = new HondaFactory;
+
+	IVehicle* hondacar = hondafactory->createVehicle("car");
+	hondacar->drive();
+
+	IVehicle* hondabike = hondafactory->createVehicle("bike");
+	hondabike->drive();
+}
+*/
+
+
+
