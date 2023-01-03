@@ -22,6 +22,9 @@
     <Filter Include="Source Files\Behavioral">
       <UniqueIdentifier>{4e65c424-a530-4285-b647-3ba371ff22ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SOLID">
+      <UniqueIdentifier>{bb3837ed-5e8e-4f76-8527-dedee790f793}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesignPatterns.cpp">
@@ -66,35 +69,35 @@
     <ClCompile Include="Structural\Facade.cpp">
       <Filter>Source Files\Structural</Filter>
     </ClCompile>
-    <ClCompile Include="Creational\Prototype.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Structural\Proxy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Behavioral\Iterator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Behavioral\Visitor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SOLID\S.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\SOLID</Filter>
     </ClCompile>
     <ClCompile Include="SOLID\O.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\SOLID</Filter>
     </ClCompile>
     <ClCompile Include="SOLID\L.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\SOLID</Filter>
     </ClCompile>
     <ClCompile Include="SOLID\I.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\SOLID</Filter>
     </ClCompile>
     <ClCompile Include="SOLID\D.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavioral\Visitor.cpp">
+      <Filter>Source Files\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="Structural\Proxy.cpp">
+      <Filter>Source Files\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="Creational\Prototype.cpp">
+      <Filter>Source Files\Creational</Filter>
     </ClCompile>
     <ClCompile Include="Structural\Composite.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavioral\Iterator.cpp">
+      <Filter>Source Files\Behavioral</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
