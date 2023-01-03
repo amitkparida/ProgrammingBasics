@@ -93,5 +93,8 @@
     <ClCompile Include="SOLID\D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Structural\Composite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
