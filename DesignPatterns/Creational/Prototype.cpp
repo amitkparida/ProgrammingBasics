@@ -1,6 +1,6 @@
 // Prototype or Clone Design Pattern:
 
-// https://www.educative.io/courses/software-design-patterns-best-practices/gxpWJ3ZKYwl
+// https://www.educative.io/courses/software-design-patterns-best-practices/gxMYYB1w3Kr
 
 // Definition: A prototype pattern is used when the type of objects to create is determined by a prototypical instance, 
 // which is cloned to produce new objects.
@@ -66,6 +66,31 @@ public:
         cout << "F16 flying" << endl;
     }
 };
+
+
+//Concrete Prototype 2
+//class Boeing747 : public IAircraftPrototype {
+//    // default engine
+//    Boeing747Engine* boeing747Engine = nullptr;
+//
+//public:
+//    IAircraftPrototype* clone() {
+//        // Deep copy/clone self and return the product
+//        return new Boeing747();
+//
+//        // Shallow copy/clone
+//        //return this;
+//    }
+//
+//    void setEngine(Boeing747Engine* boeing747Engine) {
+//        this->boeing747Engine = boeing747Engine;
+//    }
+//
+//    void fly() {
+//        boeing747Engine->start();
+//        cout << "Boeing747 flying" << endl;
+//    }
+//};
 
 
 //Client
