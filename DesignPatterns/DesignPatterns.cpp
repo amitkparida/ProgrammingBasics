@@ -76,3 +76,7 @@ int main() { }
 // AGGREGATION - By reference
 // COMPOSITION - Foo contains Bar
 
+// Aggregation Versus Association
+// An aggregation is a complex object composed of other objects.An association is used when
+// one object wants another object to perform a service for it.
+
