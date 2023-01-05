@@ -14,9 +14,9 @@
 
 // TYPES:
 // There are 3 types of design patterns.
-// 1. Creational Design Pattern[Further 6 types]
-// 2. Structural Design Pattern[Further 8 types]
-// 3. Behavioral Design Pattern[Further 12 types]
+// 1. Creational Design Pattern [Further 6 types]
+// 2. Structural Design Pattern [Further 8 types]
+// 3. Behavioral Design Pattern [Further 12 types]
 
 //1.Creational Design Patterns :
 //The first thing that we do while designing any system is, to create classesand instantiate them.How do we do that ?
