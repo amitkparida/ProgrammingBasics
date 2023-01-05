@@ -1,4 +1,5 @@
-
+// Composite Pattern
+// https://www.educative.io/courses/software-design-patterns-best-practices/gxnRy9wKQ8G
 
 // From ChatGPT
 
