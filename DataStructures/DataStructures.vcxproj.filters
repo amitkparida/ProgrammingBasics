@@ -148,7 +148,7 @@
       <Filter>Source Files\Queue</Filter>
     </ClCompile>
     <ClCompile Include="Tree\7 Heap.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Tree</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
