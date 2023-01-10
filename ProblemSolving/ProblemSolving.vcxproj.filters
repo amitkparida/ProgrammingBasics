@@ -16,6 +16,9 @@
     <Filter Include="Source Files\LinkedList">
       <UniqueIdentifier>{ff1584c4-8f19-4caf-b8b1-790787f54c99}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\PatternPrograms">
+      <UniqueIdentifier>{962633ea-a733-493a-aeb7-92198500c6e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RemoveDuplicate.cpp">
@@ -100,70 +103,70 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\1.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\2.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\3.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\4.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\5.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\6.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\7.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\8.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\9.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\10.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\11.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\12.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\13.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\14.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\15.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\16.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\17.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\18.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\19.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\20.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\21.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
     <ClCompile Include="PatternPrograms\22.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
