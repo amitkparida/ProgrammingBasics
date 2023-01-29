@@ -124,7 +124,7 @@
       <Filter>Source Files\Algorithms</Filter>
     </ClCompile>
     <ClCompile Include="Algorithms\13 move.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Algorithms</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
