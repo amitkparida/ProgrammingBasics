@@ -23,7 +23,7 @@
 
 
 
-/* C++ Implementation of Memory efficient Doubly Linked List */
+// C++ Implementation of Memory efficient Doubly Linked List 
 #include <iostream>
 using namespace std;
 
@@ -74,7 +74,6 @@ void printList(Node* head)
     }
 }
 
-// Driver code
 int main()
 {
     Node* head = NULL;
@@ -83,7 +82,6 @@ int main()
     insert(&head, 30);
     insert(&head, 40);
 
-    // print the created list
     printList(head);
 
     return (0);
