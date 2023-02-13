@@ -1,5 +1,7 @@
 // TOPIC: Introduction To Virtual Function
 
+// https://leetcode.com/discuss/study-guide/2827055/virtual-function-in-c/
+
 // NOTES:
 // 1. WHY to use virtual function?
 //    a. To achieve dynamic polymorphism. Which is the ability to call Derived class function using Base class pointer or reference.
