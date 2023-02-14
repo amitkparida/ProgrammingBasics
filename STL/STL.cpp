@@ -21,7 +21,7 @@ Iterators - Iterators are used to step through the elements of collections of ob
 Function objects (Functors) - The STL includes classes that overload the function call operator. Instances of such classes are called function objects or functors. 
 Functors allow the working of the associated function to be customized with the help of parameters to be passed.
 
-STL Containers:
+STL Containers: 
 --------------
 
 1. Sequence containers:
