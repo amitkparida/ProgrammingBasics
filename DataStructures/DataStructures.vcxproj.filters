@@ -45,7 +45,7 @@
     <ClCompile Include="Tree\2 BinaryTree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList\1 SingleLinkedList.cpp">
+    <ClCompile Include="LinkedList\1 SinglyLinkedList.cpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClCompile>
     <ClCompile Include="LinkedList\2 DoublyLinkedList.cpp">
