@@ -27,9 +27,9 @@ using namespace std;
 
 int divide(int i, int j) {
 	// Throw C++ Software Exception if j == 0. 
-	// If you don't check and throw here, you will get DevideByZero Hardware Exception when i/j is computed by CPU.
+	// If you don't check and throw here, you will get DivideByZero Hardware Exception when i/j is computed by CPU.
 	if (j == 0) {
-		throw std::invalid_argument("2nd argument can't be 0 as we can't devide by 0");
+		throw std::invalid_argument("2nd argument can't be 0 as we can't divide by 0");
 	}
 
 	return i / j;
@@ -97,7 +97,7 @@ int main()
 	//}
 
 
-	//devide(10, 0);
+	//divide(10, 0);
 
 	try {
 		divide(10, 0);
