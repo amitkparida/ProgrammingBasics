@@ -25,7 +25,7 @@
 #include <iostream>
 using namespace std;
 
-int devide(int i, int j) {
+int divide(int i, int j) {
 	// Throw C++ Software Exception if j == 0. 
 	// If you don't check and throw here, you will get DevideByZero Hardware Exception when i/j is computed by CPU.
 	if (j == 0) {
@@ -35,10 +35,10 @@ int devide(int i, int j) {
 	return i / j;
 }
 
-void devide_nested() {
+void divide_nested() {
 	try {
 		for (int i = 100; i > 0; i--) {
-			devide(i, i / 10);
+			divide(i, i / 10);
 		}
 	}
 	catch (std::invalid_argument& e) {
@@ -100,7 +100,7 @@ int main()
 	//devide(10, 0);
 
 	try {
-		devide(10, 0);
+		divide(10, 0);
 	}
 	catch (std::exception& e) {
 		cout << "Message: " << e.what() << endl;
@@ -111,7 +111,7 @@ int main()
 
 	////Nested
 	//try {
-	//	devide_nested();
+	//	divide_nested();
 	//}
 	//catch (std::exception& e) {
 	//	cout << "Message: " << e.what() << endl;
