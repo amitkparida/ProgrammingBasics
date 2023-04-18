@@ -27,7 +27,6 @@ public:
 };
 
 int main() {
-
     // Foo *f = new Foo(10);
     // cout << f->getX() << endl;
 

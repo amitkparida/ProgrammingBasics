@@ -362,6 +362,28 @@ vector<int> zigZagTraversal2(Node* root) {
     return ans;
 }
 
+// Right/Left View of Binary Tree
+// https://www.youtube.com/watch?v=KV4mRzTjlAk
+void recursion(Node* root, int level, vector<int>& res)
+{
+	if (root == NULL) return;
+	if (level > res.size()) res.push_back(root->data);
+
+    //For rightSideView
+	recursion(root->right, level + 1, res);
+	recursion(root->left, level + 1, res);
+
+    //For leftSideView
+    //recursion(root->left, level + 1, res);
+    //recursion(root->right, level + 1, res);
+}
+
+vector<int> rightSideView(Node* root) {
+	vector<int> res;
+	recursion(root, 1, res);
+	return res;
+}
+
 
 int main() {
 

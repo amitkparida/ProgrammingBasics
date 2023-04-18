@@ -68,6 +68,35 @@ int main() {
 
 
 
-
+////Implementation of int Smart Pointer
+//#include<iostream>
+//using namespace std;
+//
+//class smart_ptr {
+//	int* ptr;
+//
+//public:
+//	explicit smart_ptr(int* p = NULL) :ptr(p) {
+//		cout << "smart_ptr created" << endl;
+//
+//	}
+//
+//	~smart_ptr() {
+//		cout << "smart_ptr destroyed" << endl;
+//		delete ptr;
+//	}
+//
+//	int& operator*() {
+//		return *ptr;
+//	}
+//
+//	int* operator->() {
+//		return ptr;
+//	}
+//};
+//
+//int main() {
+//	smart_ptr pObj(new int);
+//}
 
 
