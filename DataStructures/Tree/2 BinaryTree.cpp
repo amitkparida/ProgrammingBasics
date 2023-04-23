@@ -558,16 +558,16 @@ int main() {
     cout << endl;
 
     cout << "Left Side View is: ";
-    leftSideView1(root); //
+    leftSideView1(root); // 1 3 7
     cout << endl;
 
-    cout << "Left Side View is: ";
+    cout << "Left Side View is: "; // 1 3 7
     for (auto e : leftSideView(root)) {
         cout << e << " ";
     }
     cout << endl;
 
-    cout << "Top View is: ";
+    cout << "Top View is: "; // 7 3 1 5
     for (auto e : getTopView(root)) {
         cout << e << " ";
     }
