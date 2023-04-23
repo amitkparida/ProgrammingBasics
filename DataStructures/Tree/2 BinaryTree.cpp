@@ -498,9 +498,9 @@ int main() {
 
 //              1
 //
-//        3          5
+//        3           5
 //
-//     7    11    _     17
+//     7    11    17
 
 
     //creating a Tree
@@ -513,7 +513,7 @@ int main() {
     root->right = new Node(5);
     root->left->left = new Node(7);
     root->left->right = new Node(11);
-    root->right->right = new Node(17);
+    root->right->left = new Node(17);
 
     cout << "\nLevel order traversal is: ";
     levelOrderTraversal(root); // 1 3 5 7 11 17
