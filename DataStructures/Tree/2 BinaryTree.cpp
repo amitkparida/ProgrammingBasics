@@ -454,14 +454,53 @@ vector<int> leftSideView(Node* root) {
 }
 
 
+// Get Top View
+// https://www.youtube.com/watch?v=KddJCxkUaho
+#include<map>
+vector<int> getTopView(Node* root) {
+    if (root == NULL) return {};
+
+    vector<int> ans;
+    map<int, int> mp; //Map of  <Horizontal_Distance, Node_Data>
+    queue<pair<Node*, int>> q; //Queue of  <Node*, Horizontal_Distance>
+
+    q.push({ root, 0 });
+    
+    while (!q.empty()) {
+        auto temp = q.front();
+        q.pop();
+
+        Node* node = temp.first;
+        int hd = temp.second;
+
+        if (mp.find(hd) == mp.end()) {
+            mp[hd] = node->data;
+        }
+
+        if (node->left) {
+            q.push({ node->left, hd - 1 });
+        }
+
+        if (node->right) {
+            q.push({ node->right, hd + 1 });
+        }
+    }
+
+    for (auto x : mp) {
+        ans.push_back(x.second);
+    }
+
+    return ans;
+}
+
 
 int main() {
 
-//             1
+//              1
 //
-//        3         5
+//        3          5
 //
-//     7    11   17
+//     7    11    _     17
 
 
     //creating a Tree
@@ -524,6 +563,12 @@ int main() {
 
     cout << "Left Side View is: ";
     for (auto e : leftSideView(root)) {
+        cout << e << " ";
+    }
+    cout << endl;
+
+    cout << "Top View is: ";
+    for (auto e : getTopView(root)) {
         cout << e << " ";
     }
     cout << endl;
