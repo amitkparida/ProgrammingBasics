@@ -362,27 +362,58 @@ vector<int> zigZagTraversal2(Node* root) {
     return ans;
 }
 
-// Right/Left View of Binary Tree
-// https://www.youtube.com/watch?v=KV4mRzTjlAk
-void recursion(Node* root, int level, vector<int>& res)
-{
-	if (root == NULL) return;
-	if (level > res.size()) res.push_back(root->data);
+// Left/Right Side View of Binary Tree
 
-    //For rightSideView
-	recursion(root->right, level + 1, res);
-	recursion(root->left, level + 1, res);
+// Using Level Order Traversal
+void leftSideView1(Node* root) {
+    if (root == NULL) return;
+
+    queue<Node*>q;
+    q.push(root);
+
+    while (!q.empty()) {
+        int n = q.size();
+
+        for (int i = 1; i <= n; i++) {
+            Node* temp = q.front();
+            q.pop();
+
+            if (i == 1) {   // if (i == n) will be the condition for rightSideView
+                cout << temp->data << " ";
+            }
+
+            if (temp->left != NULL) {
+                q.push(temp->left);
+            }
+
+            if (temp->right != NULL) {
+                q.push(temp->right);
+           }
+        }
+    }
+}
+
+
+// Another approach using recursion
+// https://www.youtube.com/watch?v=KV4mRzTjlAk
+void recursion(Node* root, int level, vector<int>& res) {
+    if (root == NULL) return;
+    if (level > res.size()) res.push_back(root->data);
 
     //For leftSideView
-    //recursion(root->left, level + 1, res);
+    recursion(root->left, level + 1, res);
+    recursion(root->right, level + 1, res);
+
+    //For rightSideView
     //recursion(root->right, level + 1, res);
+    //recursion(root->left, level + 1, res);
+}
+vector<int> leftSideView(Node* root) {
+    vector<int> res;
+    recursion(root, 1, res);
+    return res;
 }
 
-vector<int> rightSideView(Node* root) {
-	vector<int> res;
-	recursion(root, 1, res);
-	return res;
-}
 
 
 int main() {
@@ -440,7 +471,15 @@ int main() {
     }
     cout << endl;
 
+    cout << "Left Side View is: ";
+    leftSideView1(root); //
+    cout << endl;
 
+    cout << "Left Side View is: ";
+    for (auto e : leftSideView(root)) {
+        cout << e << " ";
+    }
+    cout << endl;
 
     cout << "Leaf nodes are: ";
     int count = countLeafNodes(root); // 7 11 17
