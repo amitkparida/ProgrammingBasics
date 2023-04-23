@@ -1,4 +1,5 @@
 
+
 #include<iostream>
 using namespace std;
 
@@ -41,3 +42,26 @@ int main() {
 // O(n) <- Best 
 
 //Space Complexity = O(1)
+
+
+
+// SUMMARY ABOUT ALL SORTING ALGORITHMS:
+
+// The no. of comparisons and shifts/swaps in insertion sort is less in all practical scenarios than in Bubble sort and Selection sort. So Insertions sort is better than Bubble sort and Selection sort.
+// Insertion sort is suitable for LinkedList
+
+// Bubble and Insertion sorts are adaptive (Adaptive means, if the list is already sorted, the algorithm should take minimum time.)
+// Bubble, Insertion and Merge sorts are stable (Stable means, elements with duplicate values don't change their order. Useful for Databases.).
+// Slection sort is not adaptive, not stable.
+// Merge sort is stable, but not in-place .
+// k no of passes in Selection sort gives you k smallest elements
+// k no of passes in Bubble sort gives you k largest elements
+
+// Idea behind Quick Sort :
+// An element is in sorted position if all the elements before it are smaller than it and all the elements after it are larger than it.
+// Quick sort does not mean it is the fastest sort.
+
+// In Selection sort, we select the position and find out an element for that position. But in Quick sort we select an element and find out a postion for that element.
+
+// Quick sort is also called Selection Exchange sort or Partition Exchange sort
+
