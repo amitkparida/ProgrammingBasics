@@ -58,13 +58,17 @@ Node* buildTree(Node* root) {
 }
 
 void levelOrderTraversal(Node* root) {
+    if (root == NULL) {
+        return;
+    }
+
     queue<Node*> q;
     q.push(root);
 
     while (!q.empty()) {
         root = q.front();
-        cout << root->data << " ";
         q.pop();
+        cout << root->data << " ";
 
         if (root->left != NULL) {
             q.push(root->left);
@@ -75,6 +79,40 @@ void levelOrderTraversal(Node* root) {
         }
     }
 }
+
+// levelOrderTraversal (return level by level)
+vector<vector<int>> levelOrderTraversal1(Node* root) {
+    if (root == NULL) return {};
+
+    vector<vector<int>> ans;
+    queue<Node*> q;
+    q.push(root);
+
+    while (!q.empty()) {
+        int size = q.size();
+        vector<int> vt;
+
+        for (int i = 0; i < size; i++) {
+            Node* temp = q.front();
+            q.pop();
+
+            vt.push_back(temp->data);
+
+            if (temp->left != NULL) {
+                q.push(temp->left);
+            }
+
+            if (temp->right != NULL) {
+                q.push(temp->right);
+            }
+        }
+
+        ans.push_back(vt);
+    }
+
+    return ans;
+}
+
 
 void inorder(Node* root) {
     //base case
@@ -362,6 +400,7 @@ vector<int> zigZagTraversal2(Node* root) {
     return ans;
 }
 
+
 // Left/Right Side View of Binary Tree
 
 // Using Level Order Traversal
@@ -372,13 +411,13 @@ void leftSideView1(Node* root) {
     q.push(root);
 
     while (!q.empty()) {
-        int n = q.size();
+        int size = q.size();
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i < size; i++) {
             Node* temp = q.front();
             q.pop();
 
-            if (i == 1) {   // if (i == n) will be the condition for rightSideView
+            if (i == 0) {   // For rightSideView, the condition will be, if (i == size - 1)
                 cout << temp->data << " ";
             }
 
@@ -440,6 +479,14 @@ int main() {
     cout << "\nLevel order traversal is: ";
     levelOrderTraversal(root); // 1 3 5 7 11 17
     cout << endl;
+
+    cout << "Level order traversal is: " << endl;
+    for (auto vec : levelOrderTraversal1(root)) {
+        for (auto e : vec) {
+            cout << e << " ";
+        }
+        cout << endl;
+    }
 
     cout << "In order traversal is: ";
     inorder(root); // 7 3 11 1 17 5
