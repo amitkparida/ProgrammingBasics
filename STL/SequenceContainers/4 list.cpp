@@ -15,14 +15,41 @@
 #include <list>
 using namespace std;
 
-int main()
-{
-    list<int> list1 = { 5, 2, 4, 6, 2, 2, 2 };
-    list<int> list2 = { 7, 6, 1, 9 };
-    list1.sort();
-    list1.unique();
+void displayList(list<int> l) {
+    for (auto elm : l)
+        cout << elm << ' ';
+    cout << endl;
+}
+
+int main() {
+    list<int> list1 = { 7, 6, 1, 9 };
+    list1.push_back(3);
+    list1.push_back(2);
+    list1.push_front(1);
+
     for (auto elm : list1)
         cout << elm << ' ';
     cout << endl;
+
+    cout << "front element of list list1 is " << list1.front() << endl;
+    cout << "back element of list list1 is " << list1.back() << endl;
+
+    list<int> list2 = { 5, 2, 4, 6, 2, 2, 2 };
+
+    list2.sort(); // sort the linked list
+    displayList(list2);
+
+    list2.reverse(); // reverse the linked list
+    displayList(list2);
+
+    list2.unique();
+    displayList(list2);
+
+    list2.pop_back(); // remove an element from back of list
+    displayList(list2);
+
+    list2.pop_front(); // remove an element from front of list
+    displayList(list2);
+
     return 0;
 }

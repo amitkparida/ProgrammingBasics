@@ -3,7 +3,7 @@
 //Moves the elements in the range[first, last] into the range beginning at result.
 //The value of the elements in the[first, last] is transferred to the elements pointed by result.
 //After the call, the elements in the range[first, last] are left in an unspecified but valid state.
-/*
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -39,7 +39,6 @@ int main()
 
     return 0;
 }
-*/
 
 
 
@@ -47,23 +46,23 @@ int main()
 // It is used to convert an lvalue reference into the rvalue reference.
 // Used to move the resources from a source object i.e. for efficient transfer of resources from one object to another.
 
-#include <iomanip>
-#include <iostream>
-#include <vector>
-
-int main()
-{
-    std::string str = "Amit";
-    std::vector<std::string> v;
-
-    // Uses the push_back(const T&) overload, which means we'll incur the cost of copying str
-    v.push_back(str);
-    std::cout << "After copy, str is: " << str << '\n';
-
-    // Uses the rvalue reference push_back(T&&) overload, which means no strings will be copied; 
-    // instead, the contents of str will be moved into the vector. This is less expensive, but also means str might now be empty.
-    v.push_back(std::move(str));
-    std::cout << "After move, str is: " << str << '\n';
-
-    std::cout << "The contents of the vector are { " << std::quoted(v[0]) << ", " << std::quoted(v[1]) << " }\n";
-}
+//#include <iomanip>
+//#include <iostream>
+//#include <vector>
+//
+//int main()
+//{
+//    std::string str = "Amit";
+//    std::vector<std::string> v;
+//
+//    // Uses the push_back(const T&) overload, which means we'll incur the cost of copying str
+//    v.push_back(str);
+//    std::cout << "After copy, str is: " << str << '\n';
+//
+//    // Uses the rvalue reference push_back(T&&) overload, which means no strings will be copied; 
+//    // instead, the contents of str will be moved into the vector. This is less expensive, but also means str might now be empty.
+//    v.push_back(std::move(str));
+//    std::cout << "After move, str is: " << str << '\n';
+//
+//    std::cout << "The contents of the vector are { " << std::quoted(v[0]) << ", " << std::quoted(v[1]) << " }\n";
+//}

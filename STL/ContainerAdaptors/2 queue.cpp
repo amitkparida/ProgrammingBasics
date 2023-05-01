@@ -12,22 +12,22 @@
 #include <queue>
 using namespace std;
 
-void print(queue<int> que) {
-    while (!que.empty()) {
-        cout << que.front() << endl;
-        que.pop(); // Remove from the front
+int main() {
+    queue<int> q;
+
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+
+    // get the size of queue
+    cout << "The size of queue is " << q.size() << endl;
+
+    // iterate till queue is not empty
+    while (!q.empty()) {
+        cout << q.front() << " "; // get the front element of queue
+        q.pop(); // remove the front element of queue
     }
 }
 
-int main() {
-
-    queue<int> que;
-
-    que.push(2);
-    que.push(3);
-    que.push(4);
-
-    print(que);
-
-    return 0;
-}
+// 1 2 3 4
