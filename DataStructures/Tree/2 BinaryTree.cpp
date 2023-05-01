@@ -66,16 +66,16 @@ void levelOrderTraversal(Node* root) {
     q.push(root);
 
     while (!q.empty()) {
-        root = q.front();
+        Node* node = q.front();
         q.pop();
-        cout << root->data << " ";
+        cout << node->data << " ";
 
-        if (root->left != NULL) {
-            q.push(root->left);
+        if (node->left != NULL) {
+            q.push(node->left);
         }
 
-        if (root->right != NULL) {
-            q.push(root->right);
+        if (node->right != NULL) {
+            q.push(node->right);
         }
     }
 }
@@ -90,24 +90,24 @@ vector<vector<int>> levelOrderTraversal1(Node* root) {
 
     while (!q.empty()) {
         int size = q.size();
-        vector<int> vt;
+        vector<int> level;
 
         for (int i = 0; i < size; i++) {
-            Node* temp = q.front();
+            Node* node = q.front();
             q.pop();
 
-            vt.push_back(temp->data);
+            level.push_back(node->data);
 
-            if (temp->left != NULL) {
-                q.push(temp->left);
+            if (node->left != NULL) {
+                q.push(node->left);
             }
 
-            if (temp->right != NULL) {
-                q.push(temp->right);
+            if (node->right != NULL) {
+                q.push(node->right);
             }
         }
 
-        ans.push_back(vt);
+        ans.push_back(level);
     }
 
     return ans;
