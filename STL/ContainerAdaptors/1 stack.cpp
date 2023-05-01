@@ -21,7 +21,7 @@ using namespace std;
 //void print(stack<int> stk) {
 //    while (!stk.empty()) {
 //        cout << stk.top() << endl;
-//        stk.pop(); // Remove from the back
+//        stk.pop(); // Remove from the top
 //    }
 //}
 //
