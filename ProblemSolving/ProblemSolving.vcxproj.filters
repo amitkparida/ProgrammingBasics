@@ -168,6 +168,9 @@
     <ClCompile Include="PatternPrograms\22.cpp">
       <Filter>Source Files\PatternPrograms</Filter>
     </ClCompile>
+    <ClCompile Include="MergeStrings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList\LinkedList.h">
