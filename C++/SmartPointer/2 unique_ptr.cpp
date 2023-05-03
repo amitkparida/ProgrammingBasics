@@ -7,10 +7,13 @@
 // 3. similar to actual pointers we can use -> and * on the object of unique_ptr, because it is overloaded in unique_ptr class.
 // 4. When exception comes then also it will de-allocate the memory hence no memory leak.
 // 5. Not only object we can create array of objects of unique_ptr.
+// 6. Ownership cannot be shared, i.e. copies are not allowed. 
 
 // OPERATIONS:
 // release, reset, swap, get, get_deleter.
 
+// unique_ptr : https://www.youtube.com/watch?v=DHu0tv2qTYo&list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&index=35
+// Custom Deleters : https://www.youtube.com/watch?v=BY7wtCiy1uY&list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&index=84
 
 // PROGRAM: 
 
@@ -36,6 +39,7 @@ int main() {
     std::unique_ptr<Foo> p1(new Foo(10));
     std::unique_ptr<Foo> p2 = make_unique<Foo>(20);//Another way of declaration. make_unique is exception safe
     //auto p2 = make_unique<Foo>(20);
+    // std::unique_ptr<Foo> p2 = std::unique_ptr<Foo>(new Foo(20));
 
     std::cout << p1->getX() << endl << (*p2).getX() << endl;
 

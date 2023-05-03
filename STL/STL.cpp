@@ -66,13 +66,16 @@ All of, for_each, max_element, min_element, find, copy, sort, Transform,
 
 
 /*
-set and map are implemented using Red - Black tree.Operations are O(logn).
-Elements are sorted.Duplication of keys is not allowed.Multiset and multimap allow duplicate keys.
+set and map are implemented using Red-Black tree. Operations are O(logn). Keys are sorted. Duplication of keys is not allowed.
 
-unordered_set and unordered_map are implemented using Hash Tables.Operations are O(1).Elements are not sorted.
+Multiset and multimap allow duplicate keys. They are also implemented using Red-Black tree. Operations are O(logn). Keys are sorted. 
+
+unordered_set and unordered_map are implemented using Hash Tables. Operations are O(1). Keys are not sorted. Duplication of keys is not allowed.
+
+unordered_multiset and unordered_multimap are implemented using Hash Tables. Operations are O(1). Keys are not sorted. Duplication of keys is allowed.
 
 -----------------
-Why Red - Black tree is used in set and map, not any other tree ?
+Why Red-Black tree is used in set and map, not any other tree?
 
 Binary search tree operations are also O(logn) in average case, but in worst case if the BST is skewed, the operation will be O(n).
 
@@ -86,7 +89,7 @@ And if the insertionsand deletions are less frequentand search is a more frequen
 
 -----------------
 
-Why set and map are used when unordered set and unordered are more efficient ?
+Why set and map are used when unordered set and unordered map are more efficient ?
 
 Unordered map or unordered set doesn't allow user defined data types or pairs as keys. only allow integer and string.
 

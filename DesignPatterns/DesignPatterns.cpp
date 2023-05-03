@@ -53,7 +53,7 @@ class Foo1 {
 	}
 };
 
-//AGGREGATION - I have an object which I have borrowed from someone else. When Foo dies, Bar may live on.
+//AGGREGATION - I have an object which I have borrowed from someone else. When Foo dies, Bar may live on. Lifetime is not necessarily tied to the object.
 class Bar2 {};
 class Foo2 {
 	Bar2 _bar;

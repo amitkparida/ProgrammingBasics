@@ -3,7 +3,7 @@
 // NOTES:
 // 0. shared_ptr is a smart pointer which can share the ownership of object (managed object).
 // 1. Several shared_ptr can point to the same object (managed object).
-// 2. It keep a reference count to maintain how many shared_ptr are pointing to the same object.
+// 2. It keeps a reference count (maintained in control block) to maintain how many shared_ptr are pointing to the same object.
 //    and once last shared_ptr goes out of scope then the managed object gets deleted.
 // 3. shared_ptr is threads safe and not thread safe. [what is this??]
 //    a. control block is thread safe
@@ -14,41 +14,80 @@
 //    c. If you reset shared_ptr.
 // 5. Reference count doesn't work when we use reference or pointer of shared_ptr.
 
+// https://www.youtube.com/watch?v=1RtiiRpjq6w&list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&index=35
+
 
 #include <iostream>
 #include <memory>
-#include <thread>
-#include <mutex>
-using namespace std;
 
-class Foo {
-    int x;
+//Some Uder Defined Type
+class CMyClass {
 public:
-    Foo(int x) :x{ x } {}
-    int getX() { return x; }
-    ~Foo() { cout << "~Foo" << endl; }
+    CMyClass() { std::cout << "CMyClass created" << std::endl; };
+    ~CMyClass() { std::cout << "CMyClass destroyed" << std::endl; };
 };
 
-void fun(std::shared_ptr<Foo> sp, int count) {
-    static std::mutex m1;
-    std::lock_guard<std::mutex> loc(m1);
-    cout << "thread:" << count << " " << sp.use_count() << endl;
-}
-
 int main() {
-    std::shared_ptr<Foo> sp(new Foo(100));
-    //std::shared_ptr<Foo> sp = make_shared<Foo>(100);
-    //auto sp = make_shared<Foo>(100);
+    //std::shared_ptr<CMyClass> ptr1(new CMyClass());
+    std::shared_ptr<CMyClass> ptr1 = std::make_shared<CMyClass>();
+    //auto ptr1 = std::make_shared<CMyClass>();
 
-    cout << sp->getX() << endl;
-    cout << "Before: " << sp.use_count() << endl;
-    //std::shared_ptr<Foo> sp1 = sp; //Reference count incremented
-    ////std::shared_ptr<Foo>& sp1 = sp; //Reference count not incremented
-    ////std::shared_ptr<Foo>* sp1 = &sp; // //Reference count not incremented
-    //cout << "After: " << sp.use_count() << endl;
-    //cout << "After: " << sp1.use_count() << endl;
+    {
+        //In a new scope, I share the resource
+        std::shared_ptr<CMyClass> ptr2 = ptr1;
 
-    thread t1(fun, sp, 1), t2(fun, sp, 2), t3(fun, sp, 3);
-    t1.join(); t2.join(); t3.join();
+        //Reference count is updated
+        std::cout << "Use count = " << ptr2.use_count() << std::endl; //2
+        std::cout << "Use count = " << ptr1.use_count() << std::endl; //2
+    } //ptr2 is freed here
+
+    //Check updated reference count
+    std::cout << "Use count = " << ptr1.use_count() << std::endl; //1
+
+    std::cout << "We should see the destructor call as ptr1 is freed when main returns, because reference count becomes 0" << std::endl;
     return 0;
 }
+
+
+
+//=============================================================================
+
+// https://www.youtube.com/watch?v=-dREJCf2ve4
+
+//#include <iostream>
+//#include <memory>
+//#include <thread>
+//#include <mutex>
+//using namespace std;
+//
+//class Foo {
+//    int x;
+//public:
+//    Foo(int x) :x{ x } {}
+//    int getX() { return x; }
+//    ~Foo() { cout << "~Foo" << endl; }
+//};
+//
+//void fun(std::shared_ptr<Foo> sp, int count) {
+//    static std::mutex m1;
+//    std::lock_guard<std::mutex> loc(m1);
+//    cout << "thread:" << count << " " << sp.use_count() << endl;
+//}
+//
+//int main() {
+//    std::shared_ptr<Foo> sp(new Foo(100));
+//    //std::shared_ptr<Foo> sp = make_shared<Foo>(100);
+//    //auto sp = make_shared<Foo>(100);
+//
+//    cout << sp->getX() << endl;
+//    cout << "Before: " << sp.use_count() << endl;
+//    //std::shared_ptr<Foo> sp1 = sp; //Reference count incremented
+//    ////std::shared_ptr<Foo>& sp1 = sp; //Reference count not incremented
+//    ////std::shared_ptr<Foo>* sp1 = &sp; // //Reference count not incremented
+//    //cout << "After: " << sp.use_count() << endl;
+//    //cout << "After: " << sp1.use_count() << endl;
+//
+//    thread t1(fun, sp, 1), t2(fun, sp, 2), t3(fun, sp, 3);
+//    t1.join(); t2.join(); t3.join();
+//    return 0;
+//}
