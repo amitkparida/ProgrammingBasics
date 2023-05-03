@@ -53,5 +53,5 @@ int main() {
 	string str1 = "amit";
 	string str2 = "parida";
 
-	cout << mergeAlternatively2(str1, str2);
+	cout << mergeAlternatively2(str1, str2); //apmairtida
 }
