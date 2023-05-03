@@ -8,6 +8,7 @@
 // 3. We have to convert weak_ptr to shared_ptr in order to use the managed object.
 // 4. It is used to remove cyclic dependency between shared_ptr.
 
+// https://www.udemy.com/course/beg-modern-cpp/learn/lecture/27006192#overview
 // https://www.youtube.com/watch?v=dNaQoz1jCCg&list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&index=36
 
 
