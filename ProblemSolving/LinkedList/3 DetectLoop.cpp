@@ -41,6 +41,7 @@ bool DetectLoop3(Node* head) {
 
 	Node* temp = head;
 	while (temp) {
+		// if (s.find(temp) != s.end()) {
 		if (s.count(temp) > 0) {
 			return true;
 		}

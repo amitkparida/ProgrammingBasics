@@ -159,7 +159,7 @@ bool CLinkedList::DetectLoop3() {
 
 	Node* temp = head;
 	while (temp) {
-		// if (s.find(temp) == s.end()) {
+		// if (s.find(temp) != s.end()) {
 		if (s.count(temp) > 0) {
 			return true;
 		}
