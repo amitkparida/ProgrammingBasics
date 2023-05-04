@@ -44,5 +44,5 @@ Node* RemoveDuplicates(Node* head);
 Node* RemoveDuplicates1(Node* head);
 Node* MergeTwoLists(Node* list1, Node* list2);
 Node* MergeSort(Node* head);
-
+Node* addTwoNumbers(Node* l1, Node* l2);
 

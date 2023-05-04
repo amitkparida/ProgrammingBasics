@@ -35,6 +35,20 @@ int main()
 
 	DeleteList(head);
 
+
+	cout << "Add Two Numbers: " << endl;
+
+	Node* list1 = new Node(2);
+	list1->next = new Node(4);
+	list1->next->next = new Node(3);
+
+	Node* list2 = new Node(5);
+	list2->next = new Node(6);
+	list2->next->next = new Node(4);
+
+	Print(addTwoNumbers(list1, list2));
+
+
 	return 0;
 }
 

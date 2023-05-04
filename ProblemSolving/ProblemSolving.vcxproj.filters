@@ -171,6 +171,9 @@
     <ClCompile Include="MergeStrings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LinkedList\12 AddTwoNumbers.cpp">
+      <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList\LinkedList.h">
