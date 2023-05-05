@@ -1,4 +1,4 @@
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 //Find the middle node using 2 traversals
 Node* MiddleNode(Node* head) {

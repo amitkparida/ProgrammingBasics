@@ -1,4 +1,4 @@
-#include "linkedlist.h"
+#include "linkedlist.hpp"
 
 //Find the intersection point of two linked list
 

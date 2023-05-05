@@ -1,4 +1,4 @@
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 //Remove the loop in the list
 void RemoveLoop(Node* head) {

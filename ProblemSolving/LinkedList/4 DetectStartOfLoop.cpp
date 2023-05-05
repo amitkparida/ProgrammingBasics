@@ -1,7 +1,7 @@
 
 // https://leetcode.com/problems/linked-list-cycle-ii/
 
-#include "linkedlist.h"
+#include "linkedlist.hpp"
 
 //Find the starting node of the loop
 Node* DetectStartOfLoop(Node* head) {

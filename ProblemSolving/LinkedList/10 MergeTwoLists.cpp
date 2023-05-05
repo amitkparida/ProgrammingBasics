@@ -1,4 +1,4 @@
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 //Merge Two sorted linked lists.
 Node* MergeTwoLists(Node* list1, Node* list2) {

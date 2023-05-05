@@ -3,7 +3,7 @@
 // https://www.youtube.com/watch?v=j36ETLmbr_w&list=PLzjZaW71kMwQ1DIWTn0d_KDHU4_E52-rq&index=31
 
 
-#include "linkedlist.h"
+#include "linkedlist.hpp"
 
 Node* addTwoNumbers(Node* l1, Node* l2) {
 	Node* dummy = new Node(-1);

@@ -1,4 +1,4 @@
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 // Check if a Linked List is a Circular Linked List
 bool IsCircularList(Node* head) {

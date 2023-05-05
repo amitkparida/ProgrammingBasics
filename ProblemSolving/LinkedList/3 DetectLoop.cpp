@@ -1,7 +1,7 @@
 
 // https://leetcode.com/problems/linked-list-cycle/
 
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 // Find if the list contains a Loop or cycle
 bool DetectLoop(Node* head) {

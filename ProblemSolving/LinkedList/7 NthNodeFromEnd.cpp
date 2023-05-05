@@ -1,4 +1,4 @@
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 Node* FindNthNodeFromEnd(Node* head, int n)
 {

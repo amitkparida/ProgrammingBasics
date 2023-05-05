@@ -176,7 +176,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LinkedList\LinkedList.h">
+    <ClInclude Include="LinkedList\LinkedList.hpp">
       <Filter>Source Files\LinkedList</Filter>
     </ClInclude>
   </ItemGroup>

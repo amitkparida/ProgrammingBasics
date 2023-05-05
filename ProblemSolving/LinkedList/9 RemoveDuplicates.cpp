@@ -1,4 +1,4 @@
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 //Remove duplicates from a sorted list.
 Node* RemoveDuplicates(Node* head) {
