@@ -30,6 +30,12 @@
 #include <stack>
 using namespace std;
 
+//struct Node {
+//	int data;
+//	Node* next;
+//	Node(int x = 0, Node* next = NULL) : data(x), next(next) {}
+//};
+
 struct Node {
 	int data;
 	Node* next;

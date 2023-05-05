@@ -15,6 +15,13 @@
 #include <iostream>
 using namespace std;
 
+//struct Node {
+//	int data;
+//	Node* next;
+//	Node* prev;
+//	Node(int x = 0, Node* next = NULL, Node* prev = NULL) : data(x), next(next), prev(prev) {}
+//};
+
 struct Node {
 	int data;
 	Node* next;

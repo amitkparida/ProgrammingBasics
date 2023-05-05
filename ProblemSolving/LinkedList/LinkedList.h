@@ -14,6 +14,12 @@ struct Node {
 	Node(int x, Node* next) : data(x), next(next) {}
 };
 
+//struct Node {
+//	int data;
+//	Node* next;
+//	Node(int x = 0, Node* next = NULL) : data(x), next(next) {}
+//};
+
 
 Node* PushBack(Node*& head, int data); //InsertAtTail
 void Print(Node* head);
