@@ -69,7 +69,7 @@
     <ClCompile Include="Multithreading\2 CreatingThreads.cpp">
       <Filter>Source Files\Multithreading</Filter>
     </ClCompile>
-    <ClCompile Include="Multithreading\3 join_detach .cpp">
+    <ClCompile Include="Multithreading\3 join_detach.cpp">
       <Filter>Source Files\Multithreading</Filter>
     </ClCompile>
     <ClCompile Include="Multithreading\4 mutex.cpp">

@@ -23,15 +23,15 @@ int main()
 
 	//mylist->DeleteNode(200);
 
-	cout << "Middle Node: " << MiddleNode(head)->data << endl;
-	FindNthNodeFromEnd(head, 1);
-	DeleteNthNodeFromEnd(head, 1);
-	Print(head);
+	//cout << "Middle Node: " << MiddleNode(head)->data << endl;
+	//FindNthNodeFromEnd(head, 1);
+	//DeleteNthNodeFromEnd(head, 1);
+	//Print(head);
 
-	cout << "Sort the list: " << endl;
-	MergeSort(head);
-	Print(head);
-	Print(ReverseUsingRecursion1(head));
+	//cout << "Sort the list: " << endl;
+	//MergeSort(head);
+	//Print(head);
+	//Print(ReverseUsingRecursion1(head));
 
 	DeleteList(head);
 
@@ -47,7 +47,6 @@ int main()
 	list2->next->next = new Node(4);
 
 	Print(addTwoNumbers(list1, list2));
-
 
 	return 0;
 }

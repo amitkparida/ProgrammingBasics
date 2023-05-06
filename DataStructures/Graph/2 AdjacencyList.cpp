@@ -1,7 +1,6 @@
 
 // Adjacency List representation of graph
 
-/*
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -69,9 +68,10 @@ int main()
 
 
 //===========================================================================================================
-*/
 
 
+
+/*
 
 //Adjacency List representation, taking input from console
 
@@ -128,6 +128,8 @@ int main() {
 //4 -> 1 5 2 6
 //5 -> 4
 //6 -> 3 4
+
+*/
 
 
 
