@@ -109,8 +109,8 @@ string removeDuplicate4(string str)
 
 
 
-//Remove duplicates from a sorted array (Or Remove consecutive duplicates)
-//From Quick Heap programs. 
+//Remove duplicates from a sorted array of chars (Or Remove consecutive duplicates)
+//From Quick Heal programs. 
 //Time Complexity : O(n^2)
 //Auxiliary Space : O(1)
 char* removeDuplicateSorted(char str[], int n)
@@ -134,119 +134,58 @@ char* removeDuplicateSorted(char str[], int n)
     return str;
 }
 
+
 //Better solution
 //Time Complexity : O(n)
 //Auxiliary Space : O(1)
 char* removeDuplicateSorted1(char* str)
 {
-    int i = 1, j = 1;
+    int i = 0;
 
-    for (i = 1; str[i]; i++)
+    for (int j = 1; str[j]; j++)
     {
-        if (str[i] != str[i - 1])
+        if (str[i] != str[j])
         {
-            str[j] = str[i];
-            j++;
+            str[i + 1] = str[j];
+            i++;
         }
     }
 
-    str[j] = '\0';
+    str[i + 1] = '\0';
 
     return str;
 }
 
 
 
-
-
 //Remove duplicates from sorted array (of integers)
-//We can remove duplicates in a sorted array in 2 ways: using temporary array or using separate index
 
-//Using temporary array
+//Optimal way of using separate index
 //Time Complexity : O(n)
-//Auxiliary Space : O(n)
+//Auxiliary Space : O(1)
 int removeDuplicatesSortedInteger(int arr[], int n)
 {
-    // Return, if array is empty or contains a single element
     if (n == 0 || n == 1)
         return n;
 
-    int* temp = new int[n];
-    int index = 0;
+    int i = 0;
 
-    // If current element is not equal to next element then store that current element in temp array
-    for (int i = 0; i < n - 1; i++) {
-        if (arr[i] != arr[i + 1]) {
-            temp[index] = arr[i];
-            index++;
-        }
-    }
-
-    // Store the last element as it was not stored previously (whether it is unique or repeated)
-    temp[index] = arr[n - 1];
-    index++; //index became size now
-
-    // Modify original array
-    for (int i = 0; i < index; i++)
-        arr[i] = temp[i];
-
-    return index; // return new size of modified array.
-}
-
-
-//Just maintain a separate index for same array as maintained for different array in above Method.
-//Time Complexity : O(n)
-//Auxiliary Space : O(1)
-int removeDuplicatesSortedInteger1(int arr[], int n)
-{
-    if (n == 0 || n == 1)
-        return n;
-
-    // To store index of next unique element
-    int index = 0;
-
-    // Doing same as done in above Method. Just maintaining another updated index i.e. j
-    for (int i = 0; i < n - 1; i++) 
+    for (int j = 1; j < n; j++)
     {
-        if (arr[i] != arr[i + 1]) 
+        if (arr[i] != arr[j])
         {
-            arr[index] = arr[i];
-            index++;
+            arr[i + 1] = arr[j];
+            i++;
         }
     }
 
-    arr[index] = arr[n - 1];
-    index++;
-
-    return index; // return new size of modified array.
-}
-
-//Better way of using separate index
-//Time Complexity : O(n)
-//Auxiliary Space : O(1)
-int removeDuplicatesSortedInteger2(int arr[], int n)
-{
-    if (n == 0 || n == 1)
-        return n;
-
-    int index = 1;
-
-    for (int i = 1; i < n; i++)
-    {
-        if (arr[i] != arr[i - 1])
-        {
-            arr[index] = arr[i];
-            index++;
-        }
-    }
-
-    return index;
+    return i + 1;
 }
 
 
 // Using unordered_set. 
 // Time Complexity : O(nLogn), Auxiliary Space : O(n)
-int removeDuplicatesSortedInteger3(int arr[], int n)
+int removeDuplicatesSortedInteger1(int arr[], int n)
 {
     unordered_set<int> s(arr, arr + n);
 
@@ -273,11 +212,11 @@ int main()
 
     char str1[] = "aaaamitkummaar";
     std::sort(str1, str1 + n - 1);
-    cout << removeDuplicateSorted(str1, n) << endl << endl;
+    cout << removeDuplicateSorted1(str1) << endl << endl;
 
     int arr[] = { 1, 2, 2, 3, 4, 4, 4, 5 };
     n = sizeof(arr) / sizeof(arr[0]);
-    n = removeDuplicatesSortedInteger3(arr, n);
+    n = removeDuplicatesSortedInteger(arr, n);
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
 

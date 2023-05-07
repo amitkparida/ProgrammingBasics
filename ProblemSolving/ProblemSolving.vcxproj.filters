@@ -21,7 +21,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RemoveDuplicate.cpp">
+    <ClCompile Include="RemoveDuplicates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FrequencyOfAllElements.cpp">
@@ -173,6 +173,9 @@
     </ClCompile>
     <ClCompile Include="LinkedList\12 AddTwoNumbers.cpp">
       <Filter>Source Files\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc_Array.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
