@@ -126,5 +126,8 @@
     <ClCompile Include="tuple.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="14 lower_bound and upper_bound.cpp">
+      <Filter>Source Files\Algorithms</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
