@@ -21,8 +21,6 @@ int main()
 
 	Print(head);
 
-	//mylist->DeleteNode(200);
-
 	//cout << "Middle Node: " << MiddleNode(head)->data << endl;
 	//FindNthNodeFromEnd(head, 1);
 	//DeleteNthNodeFromEnd(head, 1);
