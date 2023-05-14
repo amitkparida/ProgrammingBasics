@@ -46,6 +46,8 @@
 // ASSOCIATION, AGGREGATION and COMPOSITION 
 // ========================================
 
+// https://blog.devgenius.io/association-composition-and-aggregation-in-c-925465987061
+
 //ASSOCIATION - I have a relationship with an object. Foo uses Bar.
 class Bar1 {};
 class Foo1 {

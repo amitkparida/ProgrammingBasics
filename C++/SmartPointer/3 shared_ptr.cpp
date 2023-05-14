@@ -14,8 +14,10 @@
 //    c. If you reset shared_ptr.
 // 5. Reference count doesn't work when we use reference or pointer of shared_ptr.
 
+// Good article: https://blog.devgenius.io/shared-pointer-and-implementation-in-c-7ac3d299769e
 // https://www.udemy.com/course/beg-modern-cpp/learn/lecture/27006076#overview
 // https://www.youtube.com/watch?v=1RtiiRpjq6w&list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&index=35
+// https://www.youtube.com/watch?v=Tp5-f9YAzNk (Dave's Garage)
 
 
 #include <iostream>

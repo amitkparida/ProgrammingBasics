@@ -6,8 +6,9 @@
 // 1. It actually reference to an object which is managed by shared_ptr.
 // 2. A weak_ptr is created as a copy of shared_ptr.
 // 3. We have to convert weak_ptr to shared_ptr in order to use the managed object.
-// 4. It is used to remove cyclic dependency between shared_ptr.
+// 4. It is used to remove cyclic dependency between two shared pointers.
 
+// Good article: https://blog.devgenius.io/weak-pointer-in-c-a960c9633c48
 // https://www.udemy.com/course/beg-modern-cpp/learn/lecture/27006192#overview
 // https://www.youtube.com/watch?v=dNaQoz1jCCg&list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&index=36
 
