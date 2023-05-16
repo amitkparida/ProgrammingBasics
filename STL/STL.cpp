@@ -99,13 +99,22 @@ map and set allow every data types.Also keys are sorted in map and set.
 
 /*
 Vectors
-A vector manages its elements in a dynamic array.It enables random access, which means we can access each element directly with index.
-Appending and removing elements at the end of the array is very fast.But inserting an element in the middle or at the beginning of the array takes time because all the following elements should be moved to make room for it while maintaining the order.
+- A vector manages its elements in a dynamic array.
+- It enables random access, which means we can access each element directly with index. 
+- Appending and removing elements at the end of the array is very fast. 
+- But inserting an element in the middle or at the beginning of the array takes time 
+  because all the following elements should be moved to make room for it while maintaining the order.
 
-Deques
-Double - ended - queue(deque) is a dynamic array that is implemented so that it can grow in both directions.So, inserting element at the endand at the beginning is fast.Insertingand elements in the middle, however, takes time because element must be moved.
+
+Deques (Double ended queue)
+- A deque is a dynamic array that is implemented so that it can grow in both directions. 
+- So, inserting element at the endand at the beginning is fast. 
+- Inserting elements in the middle, however, takes time because element must be moved.
+
 
 Lists
-A list is implemented as a doubly linked list of element.In other words, each element in a list has its own segment of memoryand refers to its predecessorand its successor.Lists do not provide random access.General access to an arbitrary element takes linear timeand this is a lot worse than vectorsand deques.
-The advantage of a list is that the insertion or removal of an element is fast at any position.Only the links must be changed.This implies that moving an element in the middle of a list is very fast compared with moving an element in a vector or a deque.
+- A list is implemented as a doubly linked list of elements.
+- In other words, each element in a list has its own segment of memory and refers to its predecessor and its successor.
+- Lists do not provide random access. General access to an arbitrary element takes linear time and this is a lot worse than vectors and deques.
+- The advantage of a list is that the insertion or removal of an element is fast at any position. Only the links must be changed. This implies that moving an element in the middle of a list is very fast compared with moving an element in a vector or a deque.
 */

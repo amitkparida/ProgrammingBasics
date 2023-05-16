@@ -10,6 +10,8 @@
 // MODIFIERS:
 // insert(), emplace(), push_back(), emplace_back(), pop_back(), resize(), swap(), erase(), clear()
 
+// Implementation: https://www.bogotobogo.com/cplusplus/stl_vector_list.php
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -94,9 +96,36 @@ int main() {
 //}
 
 
+// TOPIC: vector of vectors / 2D vector
+
+// Here is an example of vector of vectors: 3x2 Matrix initialization
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+#define ROW 3
+#define COL 2
+
+int main()
+{
+    // vector with ROW rows, each row has COL columns with initial value of 99
+    vector<vector<int> > mat(ROW, vector<int>(COL, 99));
+
+    for (int i = 0; i < ROW; ++i) {
+        for (int j = 0; j < COL; ++j) {
+            cout << mat[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+
 
 /*
-// TOPIC: vector inside vector
+// TOPIC: vector of vectors / 2D vector
+
+// Here is an example of vector of vectors: graph initialization
 
 #include <iostream>
 #include <vector>

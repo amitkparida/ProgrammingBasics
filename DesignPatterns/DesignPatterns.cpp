@@ -1,5 +1,6 @@
 
 // https://www.educative.io/courses/software-design-patterns-best-practices
+// https://github.com/kamranahmedse/design-patterns-for-humans
 
 // For folks, who are rushing through the course for an upcoming interview, 
 // I would suggest going through all the creational design patterns, decorator, proxy, iterator, observerand visitor patterns.
@@ -19,7 +20,7 @@
 // 3. Behavioral Design Pattern [Further 12 types]
 
 //1.Creational Design Patterns :
-//The first thing that we do while designing any system is, to create classesand instantiate them.How do we do that ?
+//The first thing that we do while designing any system is, to create classes and instantiate them.How do we do that ?
 //Creational Design Patterns solve this problem.
 //- Factory
 //- Abstract Factory
