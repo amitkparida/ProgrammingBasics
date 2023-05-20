@@ -53,7 +53,7 @@ using namespace std;
  //    
  //    Point(int x = 0, int y = 0) :x{ x }, y{ y } {}
 
- //    bool operator < (const Point& p1) {
+ //    bool operator<(const Point& p1) {
  //        return (x + y) < (p1.x + p1.y);
  //    }
  //};
