@@ -33,7 +33,7 @@ int main()
 	//	C[i] = new int[colCount];
 
 
-	//Using auto
+	// Using auto
 	auto D = new int[3][4];
 
 

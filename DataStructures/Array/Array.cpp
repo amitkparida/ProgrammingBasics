@@ -9,7 +9,6 @@ private:
 	int* A;
 	int size;
 	int length;
-	void swap(int* x, int* y);
 
 public:
 	Array()
@@ -49,6 +48,7 @@ public:
 	Array* Union(Array arr2);
 	Array* Diff(Array arr2);
 	Array* Inter(Array arr2);
+	void swap(int* x, int* y);
 };
 
 void Array::Display()
@@ -70,12 +70,16 @@ void Array::Insert(int index, int x)
 	int i;
 	if (index >= 0 && index <= length)
 	{
-		for (i = length; i > index; i--)
+		for (i = length; i > index; i--) 
+		{
 			A[i] = A[i - 1];
+		}
+
 		A[index] = x;
 		length++;
 	}
 }
+
 int Array::Delete(int index)
 {
 	int x = 0;
@@ -85,13 +89,17 @@ int Array::Delete(int index)
 	{
 		x = A[index];
 		for (i = index; i < length - 1; i++)
+		{
 			A[i] = A[i + 1];
+		}
+
 		length--;
 		return x;
 	}
 
 	return 0;
 }
+
 void Array::swap(int* x, int* y)
 {
 	int temp;
@@ -99,6 +107,7 @@ void Array::swap(int* x, int* y)
 	*x = *y;
 	*y = temp;
 }
+
 int Array::LinearSearch(int key)
 {
 	int i;
@@ -112,35 +121,47 @@ int Array::LinearSearch(int key)
 	}
 	return -1;
 }
+
 int Array::BinarySearch(int key)
 {
-	int l, mid, h;
-	l = 0;
-	h = length - 1;
+	int low, mid, high;
+	low = 0;
+	high = length - 1;
 
-	while (l <= h)
+	while (low <= high)
 	{
-		mid = (l + h) / 2;
+		mid = low + (high - low) / 2;
+
 		if (key == A[mid])
+		{
 			return mid;
+		}
 		else if (key < A[mid])
-			h = mid - 1;
+		{
+			high = mid - 1;
+		}
 		else
-			l = mid + 1;
+		{
+			low = mid + 1;
+		}
 	}
+	
 	return -1;
 }
+
 int Array::Get(int index)
 {
 	if (index >= 0 && index < length)
 		return A[index];
 	return -1;
 }
+
 void Array::Set(int index, int x)
 {
 	if (index >= 0 && index < length)
 		A[index] = x;
 }
+
 int Array::Max()
 {
 	int max = A[0];
@@ -152,6 +173,7 @@ int Array::Max()
 	}
 	return max;
 }
+
 int Array::Min()
 {
 	int min = A[0];
@@ -163,6 +185,7 @@ int Array::Min()
 	}
 	return min;
 }
+
 int Array::Sum()
 {
 	int s = 0;
@@ -172,10 +195,12 @@ int Array::Sum()
 
 	return s;
 }
+
 float Array::Avg()
 {
 	return (float)Sum() / length;
 }
+
 void Array::Reverse()
 {
 	int* B;
@@ -186,8 +211,8 @@ void Array::Reverse()
 		B[j] = A[i];
 	for (i = 0; i < length; i++)
 		A[i] = B[i];
-
 }
+
 void Array::Reverse2()
 {
 	int i, j;
@@ -196,6 +221,7 @@ void Array::Reverse2()
 		swap(&A[i], &A[j]);
 	}
 }
+
 void Array::InsertSort(int x)
 {
 	int i = length - 1;
@@ -210,6 +236,7 @@ void Array::InsertSort(int x)
 	length++;
 
 }
+
 int Array::isSorted()
 {
 	int i;
@@ -220,6 +247,7 @@ int Array::isSorted()
 	}
 	return 1;
 }
+
 void Array::Rearrange()
 {
 	int i, j;
@@ -230,10 +258,11 @@ void Array::Rearrange()
 	{
 		while (A[i] < 0)i++;
 		while (A[j] >= 0)j--;
-		if (i < j)swap(&A[i], &A[j]);
+		if (i < j)
+			swap(&A[i], &A[j]);
 	}
-
 }
+
 Array* Array::Merge(Array arr2)
 {
 	int i, j, k;
@@ -248,14 +277,18 @@ Array* Array::Merge(Array arr2)
 		else
 			arr3->A[k++] = arr2.A[j++];
 	}
+
 	for (; i < length; i++)
 		arr3->A[k++] = A[i];
+	
 	for (; j < arr2.length; j++)
 		arr3->A[k++] = arr2.A[j];
+	
 	arr3->length = length + arr2.length;
 
 	return arr3;
 }
+
 Array* Array::Union(Array arr2)
 {
 	int i, j, k;
@@ -266,17 +299,23 @@ Array* Array::Union(Array arr2)
 	while (i < length && j < arr2.length)
 	{
 		if (A[i] < arr2.A[j])
+		{
 			arr3->A[k++] = A[i++];
+		}
 		else if (arr2.A[j] < A[i])
+		{
 			arr3->A[k++] = arr2.A[j++];
+		}
 		else
 		{
 			arr3->A[k++] = A[i++];
 			j++;
 		}
 	}
+
 	for (; i < length; i++)
 		arr3->A[k++] = A[i];
+	
 	for (; j < arr2.length; j++)
 		arr3->A[k++] = arr2.A[j];
 
@@ -284,6 +323,7 @@ Array* Array::Union(Array arr2)
 
 	return arr3;
 }
+
 Array* Array::Inter(Array arr2)
 {
 	int i, j, k;
@@ -294,9 +334,13 @@ Array* Array::Inter(Array arr2)
 	while (i < length && j < arr2.length)
 	{
 		if (A[i] < arr2.A[j])
+		{
 			i++;
+		}
 		else if (arr2.A[j] < A[i])
+		{
 			j++;
+		}
 		else if (A[i] == arr2.A[j])
 		{
 			arr3->A[k++] = A[i++];
@@ -308,6 +352,7 @@ Array* Array::Inter(Array arr2)
 
 	return arr3;
 }
+
 Array* Array::Diff(Array arr2)
 {
 	int i, j, k;
@@ -318,23 +363,30 @@ Array* Array::Diff(Array arr2)
 	while (i < length && j < arr2.length)
 	{
 		if (A[i] < arr2.A[j])
+		{
 			arr3->A[k++] = A[i++];
+		}
 		else if (arr2.A[j] < A[i])
+		{
 			j++;
+		}
 		else
 		{
 			i++;
 			j++;
 		}
 	}
-	for (; i < length; i++)
-		arr3->A[k++] = A[i];
 
+	for (; i < length; i++)
+	{
+		arr3->A[k++] = A[i];
+	}
 
 	arr3->length = k;
 
 	return arr3;
 }
+
 int main()
 {
 	Array* arr1;

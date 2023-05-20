@@ -1,9 +1,8 @@
 // Linked List
 
 // NOTES:
-// 1. This is a sequencial data structure and is used to store data.
-// 2. Linked list is special data structure in which data elements are linked to one another.
-// 3. The pictorial look of a linked list is:
+// 1. This is a sequential data structure and is used to store data.
+// 2. Linked list is special data structure in which data elements are linked to one another
 
 // OPERATIONS:
 // Insertion, Deletion, Traversing.
@@ -268,7 +267,7 @@ void CLinkedList::InsertAtPosition(int position, int newdata) {
 	}
 
 	temp = head;
-	for (int i = 1; i < (position - 1) && temp != NULL; i++)  ////for 0 based index, the condition should be count < index
+	for (int i = 1; i < (position - 1) && temp != NULL; i++)  //for 0 based index, the condition should be count < index
 	{
 		temp = temp->next;
 	}
