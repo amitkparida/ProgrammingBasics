@@ -140,14 +140,13 @@ void CLinkedList::PushFront(int newdata) {
 }
 
 void CLinkedList::Print() {
-	Node* temp = head;
-
 	if (head == NULL)
 	{
 		cout << "List is empty" << endl;
 		return;
 	}
 
+	Node* temp = head;
 	while (temp != NULL)
 	{
 		cout << temp->data << " ";
@@ -420,15 +419,17 @@ void CLinkedList::ReverseUsingRecursion()
 //Using Recursion - Another approach
 void CLinkedList::ReverseRecUtil1(Node* prevNode, Node* currentNode)
 {
-	if (currentNode)
-	{
-		ReverseRecUtil1(currentNode, currentNode->next);
-		currentNode->next = prevNode;
-	}
-	else {
+	if (currentNode == NULL) {
 		head = prevNode;
+		return;
 	}
+
+	ReverseRecUtil1(currentNode, currentNode->next);
+	currentNode->next = prevNode;
+	
+	return;
 }
+
 void CLinkedList::ReverseUsingRecursion1() {
 	ReverseRecUtil1(NULL, head);
 }

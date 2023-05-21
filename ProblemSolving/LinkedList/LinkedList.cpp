@@ -29,7 +29,7 @@ int main()
 	//cout << "Sort the list: " << endl;
 	//MergeSort(head);
 	//Print(head);
-	//Print(ReverseUsingRecursion1(head));
+	Print(ReverseUsingRecursion(head));
 
 	DeleteList(head);
 
@@ -44,7 +44,7 @@ int main()
 	list2->next = new Node(6);
 	list2->next->next = new Node(4);
 
-	Print(addTwoNumbers(list1, list2));
+	//Print(addTwoNumbers(list1, list2));
 
 	return 0;
 }

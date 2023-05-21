@@ -19,6 +19,7 @@
 // 3. weak_ptr : 
 //    It is special type of shared_ptr which doesn't count the reference.
 
+// https://www.linkedin.com/pulse/smartpointers-from-c11-onwards-amit-nadiger/
 
 
 //Implementation of a basic Smart Pointer

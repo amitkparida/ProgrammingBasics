@@ -22,7 +22,7 @@ Node* RemoveDuplicates(Node* head) {
 	return head;
 }
 
-//Anouther approach using extra dummy node
+//Another approach using extra dummy node
 Node* RemoveDuplicates1(Node* head) {
 	if (head == NULL) {
 		return head;

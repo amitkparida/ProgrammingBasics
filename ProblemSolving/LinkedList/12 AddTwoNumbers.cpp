@@ -1,6 +1,6 @@
 // Add Two Numbers Represented by Linked Lists
 // https://leetcode.com/problems/add-two-numbers/
-// https://www.youtube.com/watch?v=j36ETLmbr_w&list=PLzjZaW71kMwQ1DIWTn0d_KDHU4_E52-rq&index=31
+// https://www.youtube.com/watch?v=j36ETLmbr_w
 
 
 #include "linkedlist.hpp"

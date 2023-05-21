@@ -7,6 +7,9 @@
 // 2. A weak_ptr is created as a copy of shared_ptr.
 // 3. We have to convert weak_ptr to shared_ptr in order to use the managed object.
 // 4. It is used to remove cyclic dependency between two shared pointers.
+// 5. APIs provided by weak_ptr :
+//  - lock() : Returns a std::shared_ptr<T> object that shares ownership of the managed object with the std::weak_ptr<T> if the object still exists, or returns an empty shared_ptr if the object has been deleted.
+//  - expired() : Returns true if the std::shared_ptr<T> that the std::weak_ptr<T> refers to has already been destroyed.
 
 // Good article: https://blog.devgenius.io/weak-pointer-in-c-a960c9633c48
 // https://www.udemy.com/course/beg-modern-cpp/learn/lecture/27006192#overview

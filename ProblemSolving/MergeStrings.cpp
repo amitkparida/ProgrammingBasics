@@ -18,7 +18,7 @@ string mergeAlternatively(string str1, string str2) {
 	}
 
 	while (i < len1) {
-		ans += ans + str1[i++];
+		ans += str1[i++];
 	}
 
 	while (j < len2) {

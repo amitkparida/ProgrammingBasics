@@ -16,7 +16,7 @@ int strStr(string str, string substr) {
 }
 
 //Brute Force
-//Time complexity : O(m*n) where mand n are lengths of s1and s2 respectively, Nested loops are used, outer from 0 to n – m and inner from 0 to m
+//Time complexity : O(m*n) where m and n are lengths of s1 and s2 respectively, Nested loops are used, outer from 0 to n – m and inner from 0 to m
 //Auxiliary Space : O(1), As no extra space is required.
 int strStr1(string s1, string s2)
 {

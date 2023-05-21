@@ -12,7 +12,15 @@
 //    a. If the last shared_ptr goes out of scope.
 //    b. If you initialize shared_ptr with some other shared_ptr.
 //    c. If you reset shared_ptr.
-// 5. Reference count doesn't work when we use reference or pointer of shared_ptr.
+// 5. Reference count doesn't increase when we use reference or pointer of shared_ptr.
+// 6. APIs provided by shared_ptr :
+//  - use_count() : Returns the number of std::shared_ptr objects that share ownership of the managed object.
+//  - reset() : This function resets the shared_ptr by releasing its ownership of the pointed object.If the shared_ptr was the last owner of the object, the object is deleted.
+//  - reset(ptr) : Resets the std::shared_ptr to manage the object pointed to by ptr.
+//  - release(): Releases ownership of the managed object and returns a pointer to it.
+//  - get() : Returns a pointer to the managed object.
+//  - operator->(): Returns a pointer to the managed object.
+//  - operator*(): Dereferences the managed object.
 
 // Good article: https://blog.devgenius.io/shared-pointer-and-implementation-in-c-7ac3d299769e
 // https://www.udemy.com/course/beg-modern-cpp/learn/lecture/27006076#overview

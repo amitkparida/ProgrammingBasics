@@ -67,41 +67,43 @@ void ReverseUsingStack(Node* head)
 
 
 //Using Recursion
+void ReverseRecUtil(Node* prevNode, Node* currentNode, Node*& head)
+{
+	if (currentNode == NULL) {
+		head = prevNode;
+		return;
+	}
+
+	ReverseRecUtil(currentNode, currentNode->next, head);
+	currentNode->next = prevNode;
+
+	return;
+}
+
+Node* ReverseUsingRecursion(Node* head) {
+	ReverseRecUtil(NULL, head, head);
+	return head;
+}
+
+
+//Using Recursion - Another approach
 //The idea is to reach the last node of the linked list using recursion then start reversing the linked list.
 //https://www.geeksforgeeks.org/reverse-a-linked-list/
 
-Node* ReverseUsingRecursion(Node* head) {
+Node* ReverseUsingRecursion1(Node* head) {
 	if (head == NULL || head->next == NULL) {
 		return head;
 	}
 
 	//Reverse the rest list and put the first element at the end.
 	Node* currNode = head;
-	Node* tempNode = ReverseUsingRecursion(head->next);
+	Node* tempNode = ReverseUsingRecursion1(head->next);
 	currNode->next->next = currNode;
 	currNode->next = NULL;
 
 	return tempNode;
 }
 
-
-// Using Recursion - Another approach
-void ReverseRecUtil1(Node* prevNode, Node* currentNode, Node*& head)
-{
-	if (currentNode)
-	{
-		ReverseRecUtil1(currentNode, currentNode->next, head);
-		currentNode->next = prevNode;
-	}
-	else {
-		head = prevNode;
-	}
-}
-
-Node* ReverseUsingRecursion1(Node* head) {
-	ReverseRecUtil1(NULL, head, head);
-	return head;
-}
 
 //Reverse a linked list from position m to n, where 1 =< m =< n =< length
 //Do it in-place and in one-pass. 
