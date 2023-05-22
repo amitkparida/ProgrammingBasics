@@ -2,7 +2,7 @@
 // Check whether two Strings are anagram of each other
 
 // An anagram of a string is another string that contains all the same characters once each, only the order of characters can be different. 
-// For example, “abcd”and “dabc” are an anagram of each other.
+// For example, “abcd” and “dabc” are an anagram of each other.
 
 #include <iostream>
 #include <algorithm>

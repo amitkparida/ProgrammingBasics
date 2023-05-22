@@ -1,4 +1,7 @@
 
+// Push the maximum to the last by adjacent swaps
+
+// https://takeuforward.org/data-structure/bubble-sort-algorithm/
 
 #include<iostream>
 using namespace std;
@@ -52,7 +55,7 @@ int main() {
 
 // Bubble and Insertion sorts are adaptive (Adaptive means, if the list is already sorted, the algorithm should take minimum time.)
 // Bubble, Insertion and Merge sorts are stable (Stable means, elements with duplicate values don't change their order. Useful for Databases.).
-// Slection sort is not adaptive, not stable.
+// Selection sort is not adaptive, not stable.
 // Merge sort is stable, but not in-place .
 // k no of passes in Selection sort gives you k smallest elements
 // k no of passes in Bubble sort gives you k largest elements

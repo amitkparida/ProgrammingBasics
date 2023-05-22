@@ -3,8 +3,8 @@
 //NOTES:
 //0. std::deque is an indexed sequence container.
 //1. It allows fast insertion at both beginning and end.
-//2. Unlike vector elements of deque are not stored contiguous.
-//3. it uses individual allocated fixed size array, with additional bookkeeping, meaning index based access to deque
+//2. Unlike vector, elements of deque are not stored contiguous.
+//3. It uses individual allocated fixed size array, with additional bookkeeping, meaning index based access to deque
 //   must perform two pointer dereference, but in vector we get in one dereference.
 //4. The storage of a deque is automatically expanded and contracted as needed.
 //5. Expension of deque is cheaper than expension of vector.

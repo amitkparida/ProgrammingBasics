@@ -1,4 +1,8 @@
 
+// Take an element from the array and insert it in the appropriate index.
+
+// https://takeuforward.org/data-structure/insertion-sort-algorithm/
+
 #include<iostream>
 using namespace std;
 

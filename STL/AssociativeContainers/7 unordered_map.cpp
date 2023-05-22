@@ -49,26 +49,6 @@ int main()
 
 
 //Problems:
-//Two sum
-
-vector<int> twoSum2(vector<int>& nums, int target)
-{
-    vector<int> ans;
-    unordered_map<int, int> umap;
-
-    for (int i = 0; i < nums.size(); i++) {
-        if (umap.find(target - nums[i]) != umap.end()) {
-            ans.push_back(umap[target - nums[i]]);
-            ans.push_back(i);
-            return ans;
-        }
-
-        umap[nums[i]] = i;
-    }
-
-    return ans;
-}
-
 
 // First Unique Character in a String
 int firstUniqChar(string s) {
@@ -88,9 +68,29 @@ int firstUniqChar(string s) {
 }
 
 
+//Two sum
+vector<int> twoSum2(vector<int>& nums, int target)
+{
+    vector<int> ans;
+    unordered_map<int, int> umap;
+
+    for (int i = 0; i < nums.size(); i++) {
+        if (umap.find(target - nums[i]) != umap.end()) {
+            ans.push_back(umap[target - nums[i]]);
+            ans.push_back(i);
+            return ans;
+        }
+
+        umap[nums[i]] = i;
+    }
+
+    return ans;
+}
+
+
 // Given an array of strings strs, group the anagrams together. You can return the answer in any order.
 // Input: strs = ["eat","tea","tan","ate","nat","bat"]
-// Output: [["bat"], ["nat", "tan"], ["ate", "eat", "te
+// Output: [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
 // https://leetcode.com/problems/group-anagrams/
 vector<vector<string>> groupAnagrams(vector<string>& strs) {
     vector<vector<string>> ans{};

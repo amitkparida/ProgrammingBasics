@@ -1,7 +1,14 @@
 
 //Idea behind Quick Sort :
-//An element is in sorted position if all the elements before it are smaller than it and all the elements after it are larger than it.
+//This algorithm is basically a repetition of two simple steps that are the following :
+// - Pick a pivot and place it in its correct place in the sorted array.
+// - Shift smaller elements(i.e.Smaller than the pivot) on the left of the pivot and larger ones to the right.
+
 //Quick sort does not mean it is the fastest sort.
+
+//In Selection sort, we select the position and find out an element for that position. But in Quick sort we select an element and find out a postion for that element.
+
+//Quick sort is also called Selection Exchange sort or Partition Exchange sort
 
 //Worst case: If the input list is sorted in ascending/descending order and partitioning is always done at either left most element or right most element, 
 //quick sort time complexity will become worst case i.e. O(n^2)
@@ -15,12 +22,9 @@
 //O(nlogn) <- Average, Best, 
 //O(n^2) <- Worst 
 
-//Space Complexity = O(logn)
+//Space Complexity = O(1) + O(N) auxiliary stack space.
 
-//In Selection sort, we select the position and find out an element for that position. But in Quick sort we select an element and find out a postion for that element.
-
-// Quick sort is also called Selection Exchange sort or Partition Exchange sort
-
+// https://takeuforward.org/data-structure/quick-sort-algorithm/
 
 #include <iostream>
 using namespace std;

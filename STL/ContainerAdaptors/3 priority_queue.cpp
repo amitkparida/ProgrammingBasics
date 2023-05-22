@@ -12,8 +12,8 @@
 // What is heap (binary heap)? 
 // It’s a tree like structure with these conditions :
 // - Complete binary tree
-// - Min heap : Every node should be smaller than the ones below it.So the element at the top(root node) will be the min one.
-// - Max heap : Every node should be bigger than the ones below it.So the element at the top(root node) will be the max one.
+// - Min heap : Every node should be smaller than the ones below it. So the element at the top (root node) will be the min one.
+// - Max heap : Every node should be bigger than the ones below it. So the element at the top (root node) will be the max one.
 
 // Relationship between array indexes and tree element in Heap / Complete Binary Tree:
 // - An array can be used to store the nodes of a Heap in the following way.
@@ -34,7 +34,6 @@ bool compare(int lhs, int rhs) {
     return lhs < rhs;
 }
 int main() {
-
     //push: ascending, pop: descending
     std::priority_queue<int> q;
     for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {

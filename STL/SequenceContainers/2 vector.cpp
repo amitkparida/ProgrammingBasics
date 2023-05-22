@@ -43,7 +43,7 @@ int main() {
 
     //Initialize by pushing elements one by one
     vec.reserve(11);
-    for (int i = 0; i <= 10; ++i) {
+    for (int i = 0; i < 11; ++i) {
         vec.push_back(i);
     }
 

@@ -1,6 +1,7 @@
+// We select the position and find out an element for that position. (Find minimum element and swap it with the selected position)
+
 //Time Complexity
-// O(n^2) <- Average, Worst, 
-// O(n) <- Best
+// O(n^2) <- Average, Worst, Best
 
 //Space Complexity = O(1)
 
@@ -10,6 +11,8 @@
 // k no of passes in Selection sort gives you k smallest elements
 // k no of passes in Bubble sort gives you k largest elements
 // Insertion sort is suitable for LinkedList
+
+// https://takeuforward.org/sorting/selection-sort-algorithm/
 
 #include<iostream>
 using namespace std;

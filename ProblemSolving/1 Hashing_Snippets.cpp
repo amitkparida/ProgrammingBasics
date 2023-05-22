@@ -21,9 +21,12 @@ int findDuplicate(int arr[], int n)
 		}
 		else 
 		{
+			delete freq;
 			return arr[i];
 		}
 	}
+
+	delete freq;
 	return 0;
 }
 

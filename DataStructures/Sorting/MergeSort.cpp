@@ -1,29 +1,41 @@
 
+// Intuition:
+// 1. Merge Sort is a divide and conquers algorithm, it divides the given array into equal parts and then merges the 2 sorted parts.
+// 2. There are 2 main functions :
+//   - merge() : This function is used to merge the 2 halves of the array.It assumes that both parts of the array are sorted and merges both of them.
+//   - mergeSort() : This function divides the array into 2 parts.low to mid and mid + 1 to high where,
+
+// https://takeuforward.org/data-structure/merge-sort-algorithm/
+
 #include <iostream>
 using namespace std;
 
 void Merge(int A[], int low, int mid, int high) {
-    int i = low;
-    int j = mid + 1;
-    int k = low;
-    int B[100]{}; //Use a random big size like 100. You can write "int B[high + 1];" if the compiler supports Variable Length Arrays 
+    int i = low; // starting index of left half of A[]
+    int j = mid + 1; // starting index of right half of A[]
+    
+    int *temp = new int[high + 1]; // temporary array. You can write "int temp[high + 1];" if the compiler supports Variable Length Arrays
+    int k = low; // starting index of temp array
+
     while (i <= mid && j <= high) {
         if (A[i] < A[j]) {
-            B[k++] = A[i++];
+            temp[k++] = A[i++];
         }
         else {
-            B[k++] = A[j++];
+            temp[k++] = A[j++];
         }
     }
     while (i <= mid) {
-        B[k++] = A[i++];
+        temp[k++] = A[i++];
     }
     while (j <= high) {
-        B[k++] = A[j++];
+        temp[k++] = A[j++];
     }
     for (int i = low; i <= high; i++) {
-        A[i] = B[i];
+        A[i] = temp[i];
     }
+
+    delete[] temp;
 }
 
 void RecursiveMergeSort(int A[], int low, int high) {
@@ -60,8 +72,8 @@ int main() {
     int A[] = { 2, 5, 8, 12, 3, 6, 7, 10 };
     int n = sizeof(A) / sizeof(A[0]);
 
-    //RecursiveMergeSort(A, 0, n - 1);
-    IterativeMergeSort(A, n);
+    RecursiveMergeSort(A, 0, n - 1);
+    //IterativeMergeSort(A, n);
 
     for (int i = 0; i < n; i++) {
         cout << A[i] << " ";
@@ -72,6 +84,6 @@ int main() {
 
 
 //Time Complexity = O(nLogn) <- Best, Worst, Average
-//Space Complexity = O(n)
+//Auxiliary Space Complexity: O(n), We are using a temporary array to store elements in sorted order.
 
 //Merge sort is stable, but not in-place 
