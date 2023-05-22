@@ -1,4 +1,4 @@
-// We select the position and find out an element for that position. (Find minimum element and swap it with the selected position)
+// We select the position and find out an (minimum) element for that position. (Find minimum element and swap it with the selected position)
 
 //Time Complexity
 // O(n^2) <- Average, Worst, Best

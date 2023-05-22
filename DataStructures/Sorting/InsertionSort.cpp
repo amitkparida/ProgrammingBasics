@@ -1,5 +1,5 @@
 
-// Take an element from the array and insert it in the appropriate index.
+// Take an element from the array and insert it in the appropriate index by shifting the element one by one.
 
 // https://takeuforward.org/data-structure/insertion-sort-algorithm/
 

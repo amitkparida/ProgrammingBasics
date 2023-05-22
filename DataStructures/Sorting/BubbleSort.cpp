@@ -51,12 +51,13 @@ int main() {
 // SUMMARY ABOUT ALL SORTING ALGORITHMS:
 
 // The no. of comparisons and shifts/swaps in insertion sort is less in all practical scenarios than in Bubble sort and Selection sort. So Insertions sort is better than Bubble sort and Selection sort.
-// Insertion sort is suitable for LinkedList
+// Insertion sort is online, i.e., if the input array size is not fixed, and can increase with time, you can use Insertion sort.
 
 // Bubble and Insertion sorts are adaptive (Adaptive means, if the list is already sorted, the algorithm should take minimum time.)
 // Bubble, Insertion and Merge sorts are stable (Stable means, elements with duplicate values don't change their order. Useful for Databases.).
 // Selection sort is not adaptive, not stable.
 // Merge sort is stable, but not in-place .
+// Merge sort is suitable for LinkedList. Quick sort is for arrays.
 // k no of passes in Selection sort gives you k smallest elements
 // k no of passes in Bubble sort gives you k largest elements
 
