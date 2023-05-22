@@ -38,3 +38,4 @@ int main() {
 
 //The no. of comparisons and shifts/swaps in insertion sort is less in all practical scenarios than in Bubble sort and Selection sort.
 //So Insertions sort is better than Bubble sort and Selection sort.
+//Insertion sort is online, i.e., if the input array size is not fixed, and can increase with time, you can use Insertion sort.
