@@ -4,7 +4,7 @@
 //From MyCodeSchool (YouTube)
 //Time Complexity : O(N), Traversing over the linked list of size N.
 //Auxiliary Space : O(1)
-void Reverse(Node* head) {
+Node* Reverse(Node* head) {
 	Node* prevNode, * currNode, * nextNode;
 
 	currNode = head;
@@ -16,11 +16,11 @@ void Reverse(Node* head) {
 		currNode = nextNode; 	   // Move Current to Next
 	}
 
-	head = prevNode;
+	return prevNode;
 }
 
 //From Abdul Bari (Udemy)
-void Reverse2(Node* head)
+Node* Reverse2(Node* head)
 {
 	Node* p, * q, * r;
 
@@ -34,7 +34,8 @@ void Reverse2(Node* head)
 		p = p->next; //p became Next
 		q->next = r; //Point current's next to Previous
 	}
-	head = q;
+
+	return q;
 }
 
 

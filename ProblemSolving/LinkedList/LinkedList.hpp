@@ -26,8 +26,8 @@ void Print(Node* head);
 void DeleteList(Node* head);
 void MakeLoop(Node* head);
 
-void Reverse(Node* head);
-void Reverse2(Node* head);
+Node* Reverse(Node* head);
+Node* Reverse2(Node* head);
 void ReverseUsingStack(Node* head);
 Node* ReverseUsingRecursion(Node* head);
 Node* ReverseUsingRecursion1(Node* head);
