@@ -19,40 +19,65 @@
 #include <iostream>
 #include <memory>
 
+////Some Uder Defined Type
+//class CResource {
+//public:
+//
+//    //If you declare below m_ptr as a shared_ptr, then reference count of ptr1 will become 2 when ptr1 is assigned to m_ptr in main().
+//    //When main() returns, reference count of ptr1 becomes 1 and hence the destructor ~CResource() will not be called (since the reference count > 0)
+//    
+//    //std::shared_ptr<CResource> m_ptr{}; // Avoid this. Use weak_pointer
+//
+//    //To avoid above leak scenario in case of cyclic reference, we use weak_pointer
+//    //Reference count will not increase if weak_pointer references any resource. The destructor ~CResource() will be called when main() returns.
+//    std::weak_ptr<CResource> m_ptr{};
+//
+//    CResource() { std::cout << "CResource created" << std::endl; };
+//    ~CResource() { std::cout << "CResource destroyed" << std::endl; };
+//};
+//
+//int main() {
+//    std::shared_ptr<CResource> ptr1 = std::make_shared<CResource>(); // Reference count of ptr1 becomes 1
+//    ptr1->m_ptr = ptr1; // self/cyclic reference. Reference count of ptr1 becomes 2 if m_ptr is a shared_pointer, but remains 1 if m_ptr is a weak_pointer 
+//}
+
+
+//=============================================================================================
+
 //Some Uder Defined Type
-class CMyClass {
-public:
-    CMyClass() { std::cout << "CMyClass created" << std::endl; };
-    ~CMyClass() { std::cout << "CMyClass destroyed" << std::endl; };
-};
-
-int main() {
-    std::weak_ptr<CMyClass> ptr2;
-
-    {
-        std::shared_ptr<CMyClass> ptr1 = std::make_shared<CMyClass>();
-
-        {
-            //In a new scope, I share the resource
-            ptr2 = ptr1;
-
-            //Reference count is NOT updated
-            std::cout << "Use count = " << ptr2.use_count() << std::endl; //1
-            std::cout << "Use count = " << ptr1.use_count() << std::endl; //1
-        } 
-
-        //Check updated reference count
-        std::cout << "Use count = " << ptr1.use_count() << std::endl; //1
-        std::cout << "Is weak_ptr (object that it points to) expired? " << ptr2.expired() << std::endl; //0
-
-        std::cout << "We should see the destructor call as ptr1 is freed here, and reference count becomes 0" << std::endl;
-    } // ptr1 will be destroyed
-
-    std::cout << "Use count = " << ptr2.use_count() << std::endl; //0
-    std::cout<< "Is weak_ptr (object that it points to) expired? " << ptr2.expired() << std::endl; //1
-
-    return 0;
-}
+//class CMyClass {
+//public:
+//    CMyClass() { std::cout << "CMyClass created" << std::endl; };
+//    ~CMyClass() { std::cout << "CMyClass destroyed" << std::endl; };
+//};
+//
+//int main() {
+//    std::weak_ptr<CMyClass> ptr2;
+//
+//    {
+//        std::shared_ptr<CMyClass> ptr1 = std::make_shared<CMyClass>();
+//
+//        {
+//            //In a new scope, I share the resource
+//            ptr2 = ptr1;
+//
+//            //Reference count is NOT updated
+//            std::cout << "Use count = " << ptr2.use_count() << std::endl; //1
+//            std::cout << "Use count = " << ptr1.use_count() << std::endl; //1
+//        }
+//
+//        //Check updated reference count
+//        std::cout << "Use count = " << ptr1.use_count() << std::endl; //1
+//        std::cout << "Is weak_ptr (object that it points to) expired? " << ptr2.expired() << std::endl; //0
+//
+//        std::cout << "We should see the destructor call as ptr1 is freed here, and reference count becomes 0" << std::endl;
+//    } // ptr1 will be destroyed
+//
+//    std::cout << "Use count = " << ptr2.use_count() << std::endl; //0
+//    std::cout << "Is weak_ptr (object that it points to) expired? " << ptr2.expired() << std::endl; //1
+//
+//    return 0;
+//}
 
 
 //=============================================================================================
@@ -94,7 +119,7 @@ int main() {
 
 // https://youtu.be/PC4XJyTP6I8?t=671
 
-/*
+
 
 struct Son;
 struct Daughter;
@@ -103,14 +128,14 @@ struct Mother {
     ~Mother() {
         std::cout << "Mother gone" << std::endl;
     }
-    void setSon(const std::shared_ptr<Son> s) {
+    void setSon(const std::weak_ptr<Son> s) {
         mySon = s.lock();
     }
     void setDaughter(const std::shared_ptr<Daughter> d) {
         myDaughter = d;
     }
-    std::shared_ptr<Son> mySon;
-    std::weak_ptr<Daughter> myDaughter;
+    std::weak_ptr<Son> mySon;
+    std::shared_ptr<Daughter> myDaughter;
 };
 
 struct Son {
@@ -141,4 +166,3 @@ int main() {
     std::cout << std::endl;
 }
 
-*/
