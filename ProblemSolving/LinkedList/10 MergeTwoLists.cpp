@@ -16,14 +16,14 @@ Node* MergeTwoLists(Node* list1, Node* list2) {
 	while (list1 != NULL && list2 != NULL) {
 		if (list1->data <= list2->data) {
 			temp->next = list1;
+			temp = temp->next;
 			list1 = list1->next;
 		}
 		else {
 			temp->next = list2;
+			temp = temp->next;
 			list2 = list2->next;
 		}
-
-		temp = temp->next;
 	}
 
 	//temp->next = (list1 != NULL) ? list1 : list2;
