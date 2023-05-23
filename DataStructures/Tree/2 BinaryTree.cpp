@@ -407,7 +407,7 @@ vector<int> zigZagTraversal2(Node* root) {
 void leftSideView1(Node* root) {
     if (root == NULL) return;
 
-    queue<Node*>q;
+    queue<Node*> q;
     q.push(root);
 
     while (!q.empty()) {
@@ -458,12 +458,14 @@ vector<int> leftSideView(Node* root) {
 // https://www.youtube.com/watch?v=KddJCxkUaho
 #include<map>
 vector<int> getTopView(Node* root) {
-    if (root == NULL) return {};
+    vector<int> ans{};
 
-    vector<int> ans;
+    if (root == NULL) 
+        return ans;
+
     map<int, int> mp; //Map of  <Horizontal_Distance, Node_Data>
-    queue<pair<Node*, int>> q; //Queue of  <Node*, Horizontal_Distance>
 
+    queue<pair<Node*, int>> q; //Queue of  <Node*, Horizontal_Distance>
     q.push({ root, 0 });
     
     while (!q.empty()) {

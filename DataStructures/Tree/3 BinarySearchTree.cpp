@@ -36,7 +36,7 @@ Node* insert(Node* root, int data) {
 		return new Node(data);
 	}
 
-	//rec case 
+	//recursion case 
 	if (data < root->data) {
 		root->left = insert(root->left, data);
 	}
@@ -55,10 +55,13 @@ bool search(Node* root, int data) {
 	if (root->data == data) {
 		return true;
 	}
+
 	if (data < root->data) {
 		return search(root->left, data);
 	}
-	return search(root->right, data);
+	else {
+		return search(root->right, data);
+	}
 }
 
 void printInOrder(Node* root) {
@@ -106,6 +109,7 @@ Node* remove(Node* root, int key) {
 	}
 	else {
 		//when the current node matches with the key
+		
 		// No children 
 		if (root->left == NULL and root->right == NULL) {
 			delete root;
@@ -182,7 +186,7 @@ void printRange(Node* root, int k1, int k2) {
 		printRange(root->left, k1, k2);
 	}
 	else {
-		// root->key < k1
+		// root->data < k1
 		printRange(root->right, k1, k2);
 	}
 }

@@ -7,7 +7,7 @@
 // 1. Sometimes in Base class we know the function name but not the definition of the function, 
 //    so we want Derived classes to provide the definition of the function.
 // 2. We can actually give body of pure virtual function.
-// 3. If you have pure virtual function in your class, it means that class is an Abstract class and 
+// 3. If you have atleast one pure virtual function in your class, the class becomes an Abstract class and 
 //    you can't create an object of that class. (But pointers and Reference can be created)
 // 4. You must implement pure virtual function in the derived class, otherwise the derived class will also become abstract class 
 
