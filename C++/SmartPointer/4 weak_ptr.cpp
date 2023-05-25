@@ -19,27 +19,27 @@
 #include <iostream>
 #include <memory>
 
-////Some Uder Defined Type
-//class CResource {
-//public:
-//
-//    //If you declare below m_ptr as a shared_ptr, then reference count of ptr1 will become 2 when ptr1 is assigned to m_ptr in main().
-//    //When main() returns, reference count of ptr1 becomes 1 and hence the destructor ~CResource() will not be called (since the reference count > 0)
-//    
-//    //std::shared_ptr<CResource> m_ptr{}; // Avoid this. Use weak_pointer
-//
-//    //To avoid above leak scenario in case of cyclic reference, we use weak_pointer
-//    //Reference count will not increase if weak_pointer references any resource. The destructor ~CResource() will be called when main() returns.
-//    std::weak_ptr<CResource> m_ptr{};
-//
-//    CResource() { std::cout << "CResource created" << std::endl; };
-//    ~CResource() { std::cout << "CResource destroyed" << std::endl; };
-//};
-//
-//int main() {
-//    std::shared_ptr<CResource> ptr1 = std::make_shared<CResource>(); // Reference count of ptr1 becomes 1
-//    ptr1->m_ptr = ptr1; // self/cyclic reference. Reference count of ptr1 becomes 2 if m_ptr is a shared_pointer, but remains 1 if m_ptr is a weak_pointer 
-//}
+//Some Uder Defined Type
+class CResource {
+public:
+
+    //If you declare below m_ptr as a shared_ptr, then reference count of ptr1 will become 2 when ptr1 is assigned to m_ptr in main().
+    //When main() returns, reference count of ptr1 becomes 1 and hence the destructor ~CResource() will not be called (since the reference count > 0)
+    
+    //std::shared_ptr<CResource> m_ptr{}; // Note that this line won't increment the reference count or call the constructor because it's just a declaration.
+
+    //To avoid above leak scenario in case of cyclic reference, we use weak_pointer
+    //Reference count will not increase if weak_pointer references any resource. The destructor ~CResource() will be called when main() returns.
+    std::weak_ptr<CResource> m_ptr{};
+
+    CResource() { std::cout << "CResource created" << std::endl; };
+    ~CResource() { std::cout << "CResource destroyed" << std::endl; };
+};
+
+int main() {
+    std::shared_ptr<CResource> ptr1 = std::make_shared<CResource>(); // Reference count of ptr1 becomes 1
+    ptr1->m_ptr = ptr1; // self/cyclic reference. Reference count of ptr1 becomes 2 if m_ptr is a shared_pointer, but remains 1 if m_ptr is a weak_pointer 
+}
 
 
 //=============================================================================================
@@ -117,9 +117,8 @@
 
 //=============================================================================================
 
+/*
 // https://youtu.be/PC4XJyTP6I8?t=671
-
-
 
 struct Son;
 struct Daughter;
@@ -128,13 +127,13 @@ struct Mother {
     ~Mother() {
         std::cout << "Mother gone" << std::endl;
     }
-    void setSon(const std::weak_ptr<Son> s) {
-        mySon = s.lock();
+    void setSon(const std::shared_ptr<Son> s) {
+        mySon = s;
     }
     void setDaughter(const std::shared_ptr<Daughter> d) {
         myDaughter = d;
     }
-    std::weak_ptr<Son> mySon;
+    std::weak_ptr<Son> mySon; // Break the cyclic reference with mother using weak_ptr
     std::shared_ptr<Daughter> myDaughter;
 };
 
@@ -165,4 +164,5 @@ int main() {
     }
     std::cout << std::endl;
 }
+*/
 
