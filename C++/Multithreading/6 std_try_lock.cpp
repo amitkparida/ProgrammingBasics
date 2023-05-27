@@ -7,6 +7,16 @@
 // 2. If it succeeds to lock all the mutexes, then it returns -1.
 // 3. If a call to try_lock results in an exception, unlock is called for any locked objects before rethrowing.
 
+// There are so many try_lock function
+// 1. std::try_lock
+// 2. std::mutex::try_lock
+// 3. std::shared_lock::try_lock
+// 4. std::timed_mutex::try_lock
+// 5. std::unique_lock::try_lock
+// 6. std::shared_mutex::try_lock
+// 7. std::recursive_mutex::try_lock
+// 8. std::shared_timed_mutex::try_lock
+// 9. std::recursive_timed_mutex::try_lock
 
 #include <mutex>
 #include <thread>
@@ -61,13 +71,4 @@ int main() {
 }
 
 
-// There are so many try_lock function
-// 1. std::try_lock
-// 2. std::mutex::try_lock
-// 3. std::shared_lock::try_lock
-// 4. std::timed_mutex::try_lock
-// 5. std::unique_lock::try_lock
-// 6. std::shared_mutex::try_lock
-// 7. std::recursive_mutex::try_lock
-// 8. std::shared_timed_mutex::try_lock
-// 9. std::recursive_timed_mutex::try_lock
+
