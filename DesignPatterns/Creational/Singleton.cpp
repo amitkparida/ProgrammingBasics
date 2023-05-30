@@ -18,7 +18,7 @@
 
 //Advantages:
 // 1. Save Memory: Only one instance is required, so why to create so many?
-// 2. SIngle access point: Logger, database connection
+// 2. Single access point: Logger, database connection
 // 3. Flexibility: Change anytime you want to
 
 // Usage: 

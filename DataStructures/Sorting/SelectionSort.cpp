@@ -5,7 +5,7 @@
 
 //Space Complexity = O(1)
 
-// Slection sort is not adaptive, not stable.
+// Selection sort is not adaptive, not stable.
 // Bubble and Insertion sorts are adaptive (Adaptive means, if the list is already sorted, the algorithm should take minimum time.)
 // Bubble, Insertion and Merge sorts are stable (Stable means, elements with duplicate values don't change their order. Useful for Databases.).
 // k no of passes in Selection sort gives you k smallest elements

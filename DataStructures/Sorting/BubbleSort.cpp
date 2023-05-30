@@ -65,7 +65,7 @@ int main() {
 // An element is in sorted position if all the elements before it are smaller than it and all the elements after it are larger than it.
 // Quick sort does not mean it is the fastest sort.
 
-// In Selection sort, we select the position and find out an element for that position. But in Quick sort we select an element and find out a postion for that element.
+// In Selection sort, we select the position and find out an element for that position. But in Quick sort we select an element and find out a position for that element.
 
 // Quick sort is also called Selection Exchange sort or Partition Exchange sort
 

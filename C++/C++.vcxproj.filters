@@ -132,5 +132,8 @@
     <ClCompile Include="Multithreading\20 Semaphore.cpp">
       <Filter>Source Files\Multithreading</Filter>
     </ClCompile>
+    <ClCompile Include="PrivateDestructor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

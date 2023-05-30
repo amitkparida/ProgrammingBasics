@@ -92,7 +92,7 @@ CString& CString::operator=(const CString& rhs) {
 }
 
 //Overload Move Constructor
-CString::CString(CString&& rhs) {
+CString::CString(CString&& rhs) { //Notice that const is not used in parameter
     length = rhs.length;
     str = rhs.str;
     rhs.str = NULL; // Ownership of pointer transferred
