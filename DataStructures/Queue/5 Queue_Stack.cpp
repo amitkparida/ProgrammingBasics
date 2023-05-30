@@ -53,8 +53,9 @@ struct Queue {
 
 //Time Complexity :
 //  Push operation : O(1). Same as pop operation in stack.
-//  Pop operation : O(N) in generaland O(1) amortized time complexity.
-//  In the worst case we have to empty the whole of stack 1 into stack 2 so its O(N). Amortized time is the way to express the time complexity when an algorithm has the very bad time complexity only once in a while besides the time complexity that happens most of time.So its O(1) amortized time complexity, since we have to empty whole of stack 1 only when stack 2 is empty, rest of the times the pop operation takes O(1) time.
+//  Pop operation : O(N) in general and O(1) amortized time complexity.
+//  In the worst case we have to empty the whole of stack 1 into stack 2 so its O(N). 
+//  Amortized time is the way to express the time complexity when an algorithm has the very bad time complexity only once in a while besides the time complexity that happens most of time. So its O(1) amortized time complexity, since we have to empty whole of stack 1 only when stack 2 is empty, rest of the times the pop operation takes O(1) time.
 //Auxiliary Space : O(N). Use of stack for storing values.
 
 struct Queue1 {
