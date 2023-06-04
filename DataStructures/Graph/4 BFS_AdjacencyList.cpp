@@ -36,7 +36,7 @@ vector<int> BFS(int node, vector<vector<int>> adj) {
 	vector <int> result;
 
 	//Mark all the vertices as not visited
-	vector <bool> visited;
+	vector<bool> visited;
 	visited.resize(adj.size(), false); 
 
 	//Create a queue for BFS

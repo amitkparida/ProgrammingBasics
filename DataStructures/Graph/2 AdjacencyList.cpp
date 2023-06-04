@@ -46,6 +46,8 @@ int main()
 
 	// declare the adjacent list 
 	vector<vector<int>> adj;
+
+	//Resize the 2D vector as adj[V+1][]
 	adj.resize(V + 1); // size  = V + 1 if the input graph is 1 based. If the input graph starts at 0, then size will be V.
 
 	addEdge(adj, 1, 2);
@@ -84,7 +86,7 @@ int main()
 using namespace std;
 
 int main() {
-	int V, E, u, v; //V = no of vertices/nodes, E = no of edges, (u, v) are source and destination nodes that represent an edge
+	int V, E, u, v; // V = no of vertices/nodes, E = no of edges, (u, v) are source and destination nodes that represent an edge
 
 	cin >> V >> E;
 
