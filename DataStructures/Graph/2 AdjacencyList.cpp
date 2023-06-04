@@ -1,10 +1,14 @@
 
-// Adjacency List representation of graph
+// Adjacency List representation of graph:
+// 1. An adjacency list represents a graph as an array of linked lists. 
+// 2. Each index of the array represents a vertex and each element in its linked list represents 
+//    the other vertices that are connected to the vertex by an edge.
+// 3. The size of the array is equal to the number of vertices.
+
 
 #include <iostream>
 #include <vector>
 using namespace std;
-
 
 // A utility function to add an edge in an undirected graph.
 void addEdge(vector<vector<int>>& adj, int u, int v)

@@ -1,3 +1,8 @@
+// Adjacency Matrix representation:
+// An adjacency matrix is a 2D array of size V x V where V is the number of vertices in the graph. It is a square matrix.
+// It is used to represent the graph by storing a 1 at position (i, j) if there is an edge from vertex i to vertex j,
+// and 0 otherwise.
+
 
 //Adjacency Matrix representation using vector, taking input from console
 
