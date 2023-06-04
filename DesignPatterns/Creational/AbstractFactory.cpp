@@ -10,6 +10,12 @@
 // 2. Show interface, not implementation
 // 3. System need to be configured with one of the multiple family of objects.
 
+/*
+The Abstract Factory pattern provides an interface for creating families of related or dependent objects.
+It is useful when there are multiple related objects that need to be created together to ensure their compatibility.
+The abstract factory interface declares a set of methods, each responsible for creating a different type of object.
+Concrete factory classes implement these methods to produce the desired objects.
+*/
 
 #include <iostream>
 using namespace std;

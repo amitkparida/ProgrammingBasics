@@ -1,10 +1,11 @@
 
-// 1. Factory Method pattern uses factory methods to deal with the problem of creating objects 
-// without having to specify the exact class of the object that will be created.
+// 1. Factory Method pattern uses factory methods to deal with the problem of creating objects without having to specify 
+// the exact class of the object that will be created.
 // 
-// 2. This is done by creating objects by calling a factory method - either specified in an abstract class
-// and implemented by child classes, or implemented in a base class and optionally overriden by derived classes
-// rather than by calling a constructor.
+// 2. The Factory Method pattern focuses on creating objects through subclasses.It defines an abstract base class with 
+// a method(the factory method) responsible for object creation. Subclasses then implement the factory method to
+// instantiate specific objects, allowing for different object types to be created without modifying the client code.
+
 
 
 #include <iostream>
