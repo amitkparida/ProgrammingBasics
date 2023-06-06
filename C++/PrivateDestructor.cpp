@@ -31,6 +31,13 @@
 // ATL COM objects are a prime example of this pattern.
 
 
+// How to restrict static/stack allocation of objects in C++ ?
+// Ans : The idea of is to keep the Destructor private so that you'll get compile error 
+// when you attempt to allocate object on stack..
+
+// How to restrict dynamic allocation of objects in C++ ?
+// Ans : The idea of is to keep new operator function private so that new cannot be called.
+
 
 #include <iostream>
 class A {
