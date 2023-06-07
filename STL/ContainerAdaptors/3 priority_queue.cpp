@@ -34,7 +34,7 @@ bool compare(int lhs, int rhs) {
     return lhs < rhs;
 }
 int main() {
-    //push: ascending, pop: descending
+    //max heap - push: ascending, pop: descending
     std::priority_queue<int> q;
     for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
         q.push(elm); 
@@ -46,7 +46,7 @@ int main() {
     std::cout << std::endl;
 
     
-    //push: descending, pop: ascending
+    //min-heap - push: descending, pop: ascending
     //Notice the 2 additional arguments below.
     std::priority_queue<int, std::vector<int>, std::greater<int> > q2;
     for (int elm : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) {
