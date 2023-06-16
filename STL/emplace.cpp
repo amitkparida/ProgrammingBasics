@@ -5,6 +5,8 @@
 // 3. Insert and Emplace is equal for premetive data types but when we deal with heavy objects
 //    we should use emplace if we can for efficiency.
 
+// https://medium.com/@its.me.siddh/modern-c-series-vector-push-back-or-emplace-back-part2-1ad564a5711b
+
 #include <iostream>
 #include <set>
 using namespace std;
